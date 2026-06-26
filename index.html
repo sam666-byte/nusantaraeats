@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResepKita — Mahakarya Kuliner Nusantara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- PARTICLE CANVAS -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#hero" class="logo">
+                    <span class="logo-icon">◆</span>
+                    Resep<span class="logo-accent">Kita</span>
+                </a>
+                <nav class="nav">
+                    <a href="#hero" class="nav-link">Beranda</a>
+                    <a href="#recipes" class="nav-link">Koleksi Resep</a>
+                    <a href="#about" class="nav-link">Warisan Kita</a>
+                </nav>
+                <button class="btn-gold" id="btnTambahResep">
+                    <span>+</span> Tambah Resep
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">— Warisan Kuliner Nusantara —</p>
+            <h1 class="hero-title">
+                Cita Rasa<br>
+                <span class="gold-text">Indonesia</span>
+            </h1>
+            <p class="hero-subtitle">
+                Menjelajahi kekayaan rempah, tradisi, dan kehangatan dapur Indonesia.<br>
+                Setiap resep adalah cerita — dari Sabang sampai Merauke.
+            </p>
+            <div class="hero-search">
+                <div class="search-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Cari resep favorit Anda... (rendang, soto, martabak)" autocomplete="off">
+                </div>
+                <button id="searchBtn" class="btn-search-gold">Temukan</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="10">0</span>
+                    <span class="stat-label">Resep Pilihan</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Kategori</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">4K</span>
+                    <span class="stat-label">Foto HD</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Jelajahi</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- KATEGORI -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">— Jelajahi Berdasarkan —</span>
+                <h2 class="section-title">Kategori <span class="gold-text">Populer</span></h2>
+                <div class="ornament-divider">
+                    <span>◆</span><span>◆</span><span>◆</span>
+                </div>
+            </div>
+            <div class="category-grid">
+                <div class="category-card" data-kategori="makanan-berat">
+                    <div class="category-icon-wrap">
+                        <span class="category-icon">🍛</span>
+                    </div>
+                    <h3>Makanan Berat</h3>
+                    <p>Hidangan utama pengisi jiwa</p>
+                </div>
+                <div class="category-card" data-kategori="sup-soto">
+                    <div class="category-icon-wrap">
+                        <span class="category-icon">🍜</span>
+                    </div>
+                    <h3>Sup & Soto</h3>
+                    <p>Kuah hangat penuh rempah</p>
+                </div>
+                <div class="category-card" data-kategori="sate-panggang">
+                    <div class="category-icon-wrap">
+                        <span class="category-icon">🍢</span>
+                    </div>
+                    <h3>Sate & Panggang</h3>
+                    <p>Bakar-bakar khas Nusantara</p>
+                </div>
+                <div class="category-card" data-kategori="jajanan">
+                    <div class="category-icon-wrap">
+                        <span class="category-icon">🍡</span>
+                    </div>
+                    <h3>Jajanan Pasar</h3>
+                    <p>Manis & gurih camilan kita</p>
+                </div>
+                <div class="category-card" data-kategori="minuman">
+                    <div class="category-icon-wrap">
+                        <span class="category-icon">🍹</span>
+                    </div>
+                    <h3>Minuman Segar</h3>
+                    <p>Pelepas dahaga tropis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEP -->
+    <section class="recipes" id="recipes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">— Koleksi Pilihan —</span>
+                <h2 class="section-title">Resep <span class="gold-text">Unggulan</span></h2>
+                <div class="ornament-divider">
+                    <span>◆</span><span>◆</span><span>◆</span>
+                </div>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="makanan-berat">Makanan Berat</button>
+                <button class="filter-btn" data-filter="sup-soto">Sup & Soto</button>
+                <button class="filter-btn" data-filter="sate-panggang">Sate & Panggang</button>
+                <button class="filter-btn" data-filter="jajanan">Jajanan</button>
+                <button class="filter-btn" data-filter="minuman">Minuman</button>
+            </div>
+            <div class="recipe-grid" id="recipeGrid">
+                <!-- JS populated -->
+            </div>
+            <div class="no-results" id="noResults" style="display:none;">
+                <p>Tidak ada resep ditemukan. Coba kata kunci lain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-bg-pattern"></div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text-side">
+                    <span class="section-eyebrow">— Warisan Kita —</span>
+                    <h2 class="section-title">Cerita di Balik<br><span class="gold-text">Setiap Resep</span></h2>
+                    <div class="ornament-divider left">
+                        <span>◆</span><span>◆</span><span>◆</span>
+                    </div>
+                    <p class="about-desc">
+                        ResepKita lahir dari kecintaan mendalam terhadap kuliner Indonesia. 
+                        Kami percaya bahwa setiap resep adalah <em>warisan budaya</em> — diturunkan dari 
+                        generasi ke generasi, dari dapur nenek di desa hingga meja makan modern di kota.
+                    </p>
+                    <p class="about-desc">
+                        Setiap foto diambil dalam resolusi <strong>4K</strong>, setiap langkah diuji 
+                        berkali-kali, dan setiap resep dikurasi oleh tim chef berpengalaman. 
+                        Kami hadir untuk menjaga api tradisi tetap menyala.
+                    </p>
+                </div>
+                <div class="about-image-side">
+                    <div class="about-image-frame">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" 
+                             alt="Dapur tradisional Indonesia" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-icon">◆</span>
+                    Resep<span class="logo-accent">Kita</span>
+                    <p>Mahakarya Kuliner Nusantara</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Beranda</a>
+                    <a href="#recipes">Resep</a>
+                    <a href="#about">Tentang</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ResepKita. Dibuat dengan penuh cinta untuk Indonesia. 🇮🇩</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DETAIL RESEP -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Tutup">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div class="modal-image-wrap">
+                <img id="modalImage" src="" alt="Foto resep" class="modal-img">
+                <div class="modal-image-overlay"></div>
+                <span class="modal-rating" id="modalRating"></span>
+            </div>
+            <div class="modal-body">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <div class="modal-meta" id="modalMeta"></div>
+                <div class="modal-section">
+                    <h3>🛒 Bahan-Bahan</h3>
+                    <ul id="modalIngredients" class="ingredients-list"></ul>
+                </div>
+                <div class="modal-section">
+                    <h3>👨‍🍳 Langkah Memasak</h3>
+                    <ol id="modalSteps" class="steps-list"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL TAMBAH RESEP -->
+    <div class="modal" id="addRecipeModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content modal-form-content">
+            <button class="modal-close" id="addModalClose" aria-label="Tutup">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <h2 class="form-title">✨ Tambah Resep Baru</h2>
+            <p class="form-subtitle">Bagikan warisan resep keluarga Anda</p>
+            <form id="addRecipeForm">
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="addNama">Nama Resep *</label>
+                        <input type="text" id="addNama" required placeholder="Misal: Pempek Kapal Selam Palembang">
+                    </div>
+                </div>
+                <div class="form-row form-row-3">
+                    <div class="form-group">
+                        <label for="addKategori">Kategori *</label>
+                        <select id="addKategori" required>
+                            <option value="">Pilih</option>
+                            <option value="makanan-berat">Makanan Berat</option>
+                            <option value="sup-soto">Sup & Soto</option>
+                            <option value="sate-panggang">Sate & Panggang</option>
+                            <option value="jajanan">Jajanan</option>
+                            <option value="minuman">Minuman</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="addWaktu">Waktu (menit) *</label>
+                        <input type="number" id="addWaktu" min="1" required placeholder="45">
+                    </div>
+                    <div class="form-group">
+                        <label for="addPorsi">Porsi *</label>
+                        <input type="text" id="addPorsi" required placeholder="4 orang">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="addKesulitan">Tingkat Kesulitan *</label>
+                    <select id="addKesulitan" required>
+                        <option value="">Pilih</option>
+                        <option value="Mudah">🟢 Mudah</option>
+                        <option value="Sedang">🟡 Sedang</option>
+                        <option value="Sulit">🔴 Sulit</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="addBahan">Bahan-Bahan * (satu per baris)</label>
+                    <textarea id="addBahan" rows="4" required placeholder="500 gr daging sapi has dalam&#10;2 batang serai, memarkan&#10;5 lembar daun jeruk&#10;..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="addLangkah">Langkah-Langkah * (satu per baris)</label>
+                    <textarea id="addLangkah" rows="6" required placeholder="1. Tumis bumbu halus hingga harum...&#10;2. Masukkan daging, aduk rata...&#10;3. Tuang santan..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="addGambar">URL Gambar (4K disarankan, opsional)</label>
+                    <input type="url" id="addGambar" placeholder="https://images.unsplash.com/photo-...">
+                </div>
+                <button type="submit" class="btn-gold btn-full">💾 Simpan Resep</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script src="recipes-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
