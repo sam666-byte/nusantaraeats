@@ -5,11 +5,11 @@ window.supabaseReady = false;
 async function loadRecipes() {
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/recipes?order=id.asc`,
+      `${window.SUPABASE_URL}/rest/v1/recipes?order=id.asc`,
       {
         headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
+          apikey: window.SUPABASE_KEY,
+          Authorization: `Bearer ${window.SUPABASE_KEY}`,
         },
       }
     );
