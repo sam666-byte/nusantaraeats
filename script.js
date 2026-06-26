@@ -244,6 +244,18 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// --- VISITOR COUNTER ---
+(function initCounter() {
+  const key = "nusantaraeats";
+  fetch(`https://api.countapi.xyz/hit/${key}/visits`)
+    .then(r => r.json())
+    .then(d => {
+      const el = document.getElementById("visitorCount");
+      if (el) el.textContent = d.value.toLocaleString();
+    })
+    .catch(() => {});
+})();
+
 // --- INIT ---
 function initRender() {
   if ((window.recipes || []).length > 0) renderRecipes();
