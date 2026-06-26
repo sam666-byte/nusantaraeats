@@ -1,27 +1,35 @@
 // ─── Loaded from Supabase ───
-let recipes = [];
-let supabaseReady = false;
+window.recipes = [];
+window.supabaseReady = false;
 
 async function loadRecipes() {
   try {
-    recipes = await fetchRecipes();
-    supabaseReady = true;
-    // Re-render UI
-    if (typeof renderRecipes === "function") renderRecipes();
-    if (typeof renderAdmin === "function") renderAdmin();
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/recipes?order=id.asc`,
+      {
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+        },
+      }
+    );
+    window.recipes = await res.json();
+    window.supabaseReady = true;
+    document.dispatchEvent(new Event("supabaseReady"));
   } catch (e) {
     console.warn("Supabase fallback", e);
     const local = localStorage.getItem("resepKitaRecipesV2");
-    recipes = local ? JSON.parse(local) : [];
+    window.recipes = local ? JSON.parse(local) : [];
+    window.supabaseReady = true;
+    document.dispatchEvent(new Event("supabaseReady"));
   }
-  // Mark loaded — trigger any pending renders
-  document.dispatchEvent(new Event("supabaseReady"));
 }
 
-// Backward compatibility
 function saveRecipes() {
-  localStorage.setItem("resepKitaRecipesV2", JSON.stringify(recipes));
+  localStorage.setItem(
+    "resepKitaRecipesV2",
+    JSON.stringify(window.recipes || [])
+  );
 }
 
-// Start loading
 loadRecipes();

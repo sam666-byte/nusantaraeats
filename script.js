@@ -93,7 +93,7 @@ function saveRecipes() {
 function renderRecipes(filter = 'all', searchQuery = '') {
     const grid = document.getElementById('recipeGrid');
     const noResults = document.getElementById('noResults');
-    let data = recipes;
+    let data = window.recipes || [];
 
     // Filter by category
     if (filter !== 'all') {
@@ -245,12 +245,10 @@ document.addEventListener('keydown', (e) => {
 });
 
 // --- INIT ---
-// Wait for Supabase data to load, with fallback
 function initRender() {
-  if (recipes.length > 0) renderRecipes();
-  else setTimeout(initRender, 300);
+  if ((window.recipes || []).length > 0) renderRecipes();
+  else setTimeout(initRender, 200);
 }
 document.addEventListener("supabaseReady", () => renderRecipes());
-setTimeout(initRender, 100);
-// Also render immediately if data already available
-if (recipes.length > 0) renderRecipes();
+setTimeout(initRender, 50);
+if ((window.recipes || []).length > 0) renderRecipes();
