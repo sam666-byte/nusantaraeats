@@ -3,11 +3,10 @@
 // ============================================================
 
 // --- DATA ---
-let recipes = JSON.parse(localStorage.getItem('resepKitaRecipesV2')) || [];
 let currentFilter = 'all';
 
 function saveRecipes() {
-    localStorage.setItem('resepKitaRecipesV2', JSON.stringify(recipes));
+    localStorage.setItem('resepKitaRecipesV2', JSON.stringify(window.recipes || []));
 }
 
 // --- PARTICLE CANVAS (Subtle Gold Dust) ---
