@@ -123,6 +123,17 @@
       padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 11px;
     }
     .recipe-table .del-btn:hover { background: rgba(239,68,68,0.1); }
+    .recipe-table .edit-btn {
+      background: none; border: 1px solid rgba(212,175,55,0.3); color: var(--gold);
+      padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 11px; margin-right: 4px;
+    }
+    .recipe-table .edit-btn:hover { background: rgba(212,175,55,0.1); }
+    .btn-cancel {
+      background: var(--surface2); border: 1px solid rgba(255,255,255,0.1);
+      padding: 14px 32px; border-radius: 4px; color: var(--text);
+      font-weight: 600; font-size: 14px; cursor: pointer; width: 100%;
+      text-transform: uppercase; letter-spacing: 1px; margin-top: 8px;
+    }
 
     /* Export/Import buttons */
     .data-actions { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
@@ -198,6 +209,38 @@
           </tr></thead>
           <tbody id="recipeTableBody"></tbody>
         </table>
+      </div>
+
+      <!-- TAB: Edit Recipe (hidden) -->
+      <div class="tab-content" id="tab-edit">
+        <div style="margin-bottom:16px">
+          <a href="#" onclick="switchTab('recipes');return false" style="color:var(--gold);font-size:13px;text-decoration:none">← Kembali ke daftar</a>
+        </div>
+        <form id="editForm" onsubmit="handleEditRecipe(event)">
+          <div class="form-grid">
+            <div class="form-group full"><label>Nama Resep</label><input type="text" id="eId" hidden><input type="text" id="eNama" required placeholder="Misal: Rendang Daging Sapi"></div>
+            <div class="form-group"><label>Kategori</label>
+              <select id="eKategori">
+                <option value="makanan-berat">Makanan Berat</option>
+                <option value="sup-soto">Sup & Soto</option>
+                <option value="sate-panggang">Sate & Panggang</option>
+                <option value="jajanan">Jajanan</option>
+                <option value="minuman">Minuman</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Rating</label><input type="number" id="eRating" min="0" max="5" step="0.1"></div>
+            <div class="form-group"><label>Waktu (menit)</label><input type="number" id="eWaktu" min="1" required></div>
+            <div class="form-group"><label>Porsi</label><input type="text" id="ePorsi" required></div>
+            <div class="form-group"><label>Kesulitan</label>
+              <select id="eKesulitan"><option>Mudah</option><option selected>Sedang</option><option>Sulit</option></select>
+            </div>
+            <div class="form-group full"><label>URL Foto</label><input type="url" id="eGambar"></div>
+            <div class="form-group full"><label>Bahan-Bahan (satu per baris)</label><textarea id="eBahan" rows="5" required></textarea></div>
+            <div class="form-group full"><label>Langkah Memasak (satu per baris)</label><textarea id="eLangkah" rows="6" required></textarea></div>
+          </div>
+          <button type="submit" class="btn-submit">💾 Simpan Perubahan</button>
+          <button type="button" class="btn-cancel" onclick="switchTab('recipes')">Batal</button>
+        </form>
       </div>
 
       <!-- TAB: Add Recipe -->
@@ -302,7 +345,7 @@
           <td><strong>${r.nama}</strong></td>
           <td>${r.kategori}</td>
           <td>${r.rating ? '★'.repeat(Math.floor(r.rating)) + '☆'.repeat(5-Math.floor(r.rating)) : '☆☆☆☆☆'}</td>
-          <td><button class="del-btn" onclick="deleteRecipe(${r.id})">Hapus</button></td>
+          <td><button class="edit-btn" onclick="editRecipe(${r.id})">Edit</button><button class="del-btn" onclick="deleteRecipe(${r.id})">Hapus</button></td>
         </tr>
       `).join("");
     }
@@ -314,6 +357,47 @@
       saveAdmin();
       renderAdmin();
       showToast("✅ Resep dihapus");
+    }
+
+    function editRecipe(id) {
+      const r = adminRecipes.find(x => x.id === id);
+      if (!r) return;
+      document.getElementById("eId").value = r.id;
+      document.getElementById("eNama").value = r.nama;
+      document.getElementById("eKategori").value = r.kategori;
+      document.getElementById("eRating").value = r.rating || 0;
+      document.getElementById("eWaktu").value = r.waktu;
+      document.getElementById("ePorsi").value = r.porsi;
+      document.getElementById("eKesulitan").value = r.kesulitan;
+      document.getElementById("eGambar").value = r.gambar || "";
+      document.getElementById("eBahan").value = (r.bahan || []).join("\n");
+      document.getElementById("eLangkah").value = (r.langkah || []).join("\n");
+      switchTab("edit");
+    }
+
+    function handleEditRecipe(e) {
+      e.preventDefault();
+      const id = parseInt(document.getElementById("eId").value);
+      const idx = adminRecipes.findIndex(r => r.id === id);
+      if (idx === -1) return;
+
+      adminRecipes[idx] = {
+        ...adminRecipes[idx],
+        nama: document.getElementById("eNama").value.trim(),
+        kategori: document.getElementById("eKategori").value,
+        rating: parseFloat(document.getElementById("eRating").value) || 0,
+        waktu: parseInt(document.getElementById("eWaktu").value),
+        porsi: document.getElementById("ePorsi").value.trim(),
+        kesulitan: document.getElementById("eKesulitan").value,
+        gambar: document.getElementById("eGambar").value.trim() || adminRecipes[idx].gambar,
+        bahan: document.getElementById("eBahan").value.trim().split("\n").map(b => b.trim()).filter(b => b),
+        langkah: document.getElementById("eLangkah").value.trim().split("\n").map(l => l.trim()).filter(l => l),
+      };
+
+      saveAdmin();
+      renderAdmin();
+      switchTab("recipes");
+      showToast("✅ Resep berhasil diupdate!");
     }
 
     function handleAddRecipe(e) {
@@ -361,7 +445,8 @@
     function switchTab(name) {
       document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
       document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
-      document.querySelector(`.tab[onclick*="${name}"]`).classList.add("active");
+      const tab = document.querySelector(`.tab[onclick*="${name}"]`);
+      if (tab) tab.classList.add("active");
       document.getElementById(`tab-${name}`).classList.add("active");
     }
 
