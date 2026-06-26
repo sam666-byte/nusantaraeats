@@ -245,4 +245,12 @@ document.addEventListener('keydown', (e) => {
 });
 
 // --- INIT ---
-renderRecipes();
+// Wait for Supabase data to load, with fallback
+function initRender() {
+  if (recipes.length > 0) renderRecipes();
+  else setTimeout(initRender, 300);
+}
+document.addEventListener("supabaseReady", () => renderRecipes());
+setTimeout(initRender, 100);
+// Also render immediately if data already available
+if (recipes.length > 0) renderRecipes();
