@@ -256,11 +256,23 @@ document.addEventListener('keydown', (e) => {
     .catch(() => {});
 })();
 
+// --- UPDATE STATS ---
+function updateStats() {
+  const count = (window.recipes || []).length;
+  const el = document.getElementById("statRecipes");
+  if (el) el.textContent = count;
+}
+
 // --- INIT ---
 function initRender() {
-  if ((window.recipes || []).length > 0) renderRecipes();
-  else setTimeout(initRender, 200);
+  if ((window.recipes || []).length > 0) {
+    updateStats();
+    renderRecipes();
+  } else setTimeout(initRender, 200);
 }
-document.addEventListener("supabaseReady", () => renderRecipes());
+document.addEventListener("supabaseReady", () => {
+  updateStats();
+  renderRecipes();
+});
 setTimeout(initRender, 50);
 if ((window.recipes || []).length > 0) renderRecipes();
