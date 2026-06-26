@@ -225,68 +225,7 @@ function closeRecipeModal() {
 modalClose.addEventListener('click', closeRecipeModal);
 recipeModal.querySelector('.modal-backdrop').addEventListener('click', closeRecipeModal);
 
-// --- MODAL ADD ---
-const addModal = document.getElementById('addRecipeModal');
-const addForm = document.getElementById('addRecipeForm');
 
-document.getElementById('btnTambahResep').addEventListener('click', () => {
-    addModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-});
-
-function closeAddModal() {
-    addModal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-document.getElementById('addModalClose').addEventListener('click', closeAddModal);
-addModal.querySelector('.modal-backdrop').addEventListener('click', closeAddModal);
-
-addForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nama = document.getElementById('addNama').value.trim();
-    const kategori = document.getElementById('addKategori').value;
-    const waktu = parseInt(document.getElementById('addWaktu').value);
-    const porsi = document.getElementById('addPorsi').value.trim();
-    const kesulitan = document.getElementById('addKesulitan').value;
-    const bahanRaw = document.getElementById('addBahan').value.trim();
-    const langkahRaw = document.getElementById('addLangkah').value.trim();
-    let gambar = document.getElementById('addGambar').value.trim();
-
-    if (!nama || !kategori || !waktu || !porsi || !kesulitan || !bahanRaw || !langkahRaw) {
-        showToast('⚠️ Mohon isi semua field yang bertanda *');
-        return;
-    }
-
-    if (!gambar) {
-        gambar = `https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80`;
-    }
-
-    const bahan = bahanRaw.split('\n').map(b => b.trim()).filter(b => b.length > 0);
-    const langkah = langkahRaw.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-
-    const newRecipe = {
-        id: Date.now(),
-        nama,
-        kategori,
-        waktu,
-        porsi,
-        kesulitan,
-        rating: 0,
-        gambar,
-        bahan,
-        langkah
-    };
-
-    recipes.unshift(newRecipe);
-    saveRecipes();
-    renderRecipes(currentFilter);
-    addForm.reset();
-    closeAddModal();
-    showToast('✅ Resep berhasil ditambahkan!');
-    document.getElementById('recipes').scrollIntoView({ behavior: 'smooth' });
-});
 
 // --- TOAST ---
 function showToast(message) {
@@ -303,7 +242,6 @@ function showToast(message) {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeRecipeModal();
-        closeAddModal();
     }
 });
 

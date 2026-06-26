@@ -26,9 +26,9 @@
                     <a href="#recipes" class="nav-link">Koleksi Resep</a>
                     <a href="#about" class="nav-link">Warisan Kita</a>
                 </nav>
-                <button class="btn-gold" id="btnTambahResep">
-                    <span>+</span> Tambah Resep
-                </button>
+                <a href="/admin/" class="btn-gold">
+                    <span>◆</span> Admin
+                </a>
             </div>
         </div>
     </header>
@@ -237,71 +237,6 @@
                     <ol id="modalSteps" class="steps-list"></ol>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- MODAL TAMBAH RESEP -->
-    <div class="modal" id="addRecipeModal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content modal-form-content">
-            <button class="modal-close" id="addModalClose" aria-label="Tutup">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-            </button>
-            <h2 class="form-title">✨ Tambah Resep Baru</h2>
-            <p class="form-subtitle">Bagikan warisan resep keluarga Anda</p>
-            <form id="addRecipeForm">
-                <div class="form-row">
-                    <div class="form-group full-width">
-                        <label for="addNama">Nama Resep *</label>
-                        <input type="text" id="addNama" required placeholder="Misal: Pempek Kapal Selam Palembang">
-                    </div>
-                </div>
-                <div class="form-row form-row-3">
-                    <div class="form-group">
-                        <label for="addKategori">Kategori *</label>
-                        <select id="addKategori" required>
-                            <option value="">Pilih</option>
-                            <option value="makanan-berat">Makanan Berat</option>
-                            <option value="sup-soto">Sup & Soto</option>
-                            <option value="sate-panggang">Sate & Panggang</option>
-                            <option value="jajanan">Jajanan</option>
-                            <option value="minuman">Minuman</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="addWaktu">Waktu (menit) *</label>
-                        <input type="number" id="addWaktu" min="1" required placeholder="45">
-                    </div>
-                    <div class="form-group">
-                        <label for="addPorsi">Porsi *</label>
-                        <input type="text" id="addPorsi" required placeholder="4 orang">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="addKesulitan">Tingkat Kesulitan *</label>
-                    <select id="addKesulitan" required>
-                        <option value="">Pilih</option>
-                        <option value="Mudah">🟢 Mudah</option>
-                        <option value="Sedang">🟡 Sedang</option>
-                        <option value="Sulit">🔴 Sulit</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="addBahan">Bahan-Bahan * (satu per baris)</label>
-                    <textarea id="addBahan" rows="4" required placeholder="500 gr daging sapi has dalam&#10;2 batang serai, memarkan&#10;5 lembar daun jeruk&#10;..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="addLangkah">Langkah-Langkah * (satu per baris)</label>
-                    <textarea id="addLangkah" rows="6" required placeholder="1. Tumis bumbu halus hingga harum...&#10;2. Masukkan daging, aduk rata...&#10;3. Tuang santan..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="addGambar">URL Gambar (4K disarankan, opsional)</label>
-                    <input type="url" id="addGambar" placeholder="https://images.unsplash.com/photo-...">
-                </div>
-                <button type="submit" class="btn-gold btn-full">💾 Simpan Resep</button>
-            </form>
         </div>
     </div>
 
