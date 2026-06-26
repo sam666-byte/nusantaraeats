@@ -23,3 +23,14 @@ function saveRecipes() {
 
 // Start loading immediately
 loadRecipes();
+
+// Retry render every second until data arrives (for race condition)
+const retryInterval = setInterval(() => {
+  if (recipes.length > 0) {
+    if (typeof renderRecipes === "function") {
+      document.getElementById("recipeGrid") && renderRecipes();
+    }
+    if (typeof renderAdmin === "function") renderAdmin();
+    clearInterval(retryInterval);
+  }
+}, 500);
