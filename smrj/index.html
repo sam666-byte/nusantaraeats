@@ -309,6 +309,7 @@
 
   <div class="toast" id="toast"></div>
 
+  <script src="../supabase-config.js"></script>
   <script src="../recipes-data.js"></script>
   <script>
     // ─── AUTH ───
@@ -340,11 +341,20 @@
       document.getElementById("dashboard").style.display = "block";
       setupUpload("fGambarUpload", "fGambarPreview", "fGambar");
       setupUpload("eGambarUpload", "eGambarPreview", "eGambar");
-      renderAdmin();
+      loadAdminData();
     }
 
     // ─── RECIPES DATA ───
-    let adminRecipes = JSON.parse(localStorage.getItem("resepKitaRecipesV2")) || [];
+    let adminRecipes = [];
+
+    async function loadAdminData() {
+      if (supabaseReady && recipes.length > 0) {
+        adminRecipes = [...recipes];
+      } else {
+        adminRecipes = JSON.parse(localStorage.getItem("resepKitaRecipesV2")) || [];
+      }
+      renderAdmin();
+    }
 
     function saveAdmin() {
       localStorage.setItem("resepKitaRecipesV2", JSON.stringify(adminRecipes));
@@ -410,6 +420,7 @@
       if (!confirm("Hapus resep ini?")) return;
       adminRecipes = adminRecipes.filter(r => r.id !== id);
       saveAdmin();
+      supabaseDelete(id);
       renderAdmin();
       showToast("✅ Resep dihapus");
     }
@@ -451,6 +462,7 @@
       };
 
       saveAdmin();
+      supabaseUpdate(adminRecipes[idx].id, adminRecipes[idx]);
       renderAdmin();
       switchTab("recipes");
       showToast("✅ Resep berhasil diupdate!");
@@ -491,6 +503,7 @@
 
       adminRecipes.unshift(newRecipe);
       saveAdmin();
+      supabaseInsert(newRecipe);
       renderAdmin();
       document.getElementById("addForm").reset();
       switchTab("recipes");
@@ -539,11 +552,9 @@
     }
 
     function resetToDefault() {
-      if (!confirm("Reset ke 10 resep default? Semua resep custom akan hilang.")) return;
-      localStorage.removeItem("resepKitaRecipesV2");
-      adminRecipes = JSON.parse(localStorage.getItem("resepKitaRecipesV2")) || [];
-      renderAdmin();
-      showToast("🔄 Reset ke resep default");
+      if (!confirm("Reset ke data dari Supabase? Semua perubahan lokal akan hilang.")) return;
+      loadAdminData();
+      showToast("🔄 Reload dari Supabase");
     }
 
     // ─── TOAST ───
