@@ -245,34 +245,28 @@ document.addEventListener('keydown', (e) => {
 });
 
 // --- VISITOR COUNTER ---
-(function initCounter() {
-  const key = "nusantaraeats";
-  fetch(`https://api.countapi.xyz/hit/${key}/visits`)
+(function () {
+  fetch("https://api.countapi.xyz/hit/nusantaraeats/visits")
     .then(r => r.json())
     .then(d => {
       const el = document.getElementById("visitorCount");
-      if (el) el.textContent = d.value.toLocaleString();
+      if (el) el.textContent = (d.value || 0).toLocaleString();
     })
     .catch(() => {});
 })();
 
-// --- UPDATE STATS ---
-function updateStats() {
-  const count = (window.recipes || []).length;
+// --- READY CHECK ---
+window._onReady = function () {
   const el = document.getElementById("statRecipes");
-  if (el) el.textContent = count;
-}
-
-// --- INIT ---
-function initRender() {
-  if ((window.recipes || []).length > 0) {
-    updateStats();
-    renderRecipes();
-  } else setTimeout(initRender, 200);
-}
-document.addEventListener("supabaseReady", () => {
-  updateStats();
+  if (el) el.textContent = (window.recipes || []).length;
   renderRecipes();
-});
-setTimeout(initRender, 50);
-if ((window.recipes || []).length > 0) renderRecipes();
+};
+
+// Poll until data loaded (handles any race condition)
+(function poll() {
+  if (window.supabaseReady && window.recipes.length > 0) {
+    window._onReady();
+  } else {
+    setTimeout(poll, 150);
+  }
+})();
