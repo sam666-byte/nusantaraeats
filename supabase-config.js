@@ -151,18 +151,41 @@ window.apiDelete = async function (id) {
 // --- Async Init: fetch from Supabase, fallback to inline ---
 (async function initFromSupabase() {
   if (!window.recipes) window.recipes = [];
+  const inlineRecipes = window.recipes.slice(); // backup
   try {
-    const res = await fetch(SB_URL + "/rest/v1/recipes?select=*", {
+    const res = await fetch(SB_URL + "/rest/v1/recipes?select=id", {
       headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
     });
     if (res.ok) {
-      const remote = await res.json();
-      if (remote && remote.length > 0) {
-        window.recipes = remote;
+      const remoteIds = await res.json();
+      if (remoteIds && remoteIds.length > 0) {
+        // Recipes exist in Supabase, fetch all data
+        const res2 = await fetch(SB_URL + "/rest/v1/recipes?select=*", {
+          headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
+        });
+        if (res2.ok) {
+          const remote = await res2.json();
+          if (remote && remote.length > 0) {
+            window.recipes = remote;
+          }
+        }
+      } else {
+        // Supabase empty! Insert all 100 recipes into Supabase
+        console.log("Supabase empty - inserting " + inlineRecipes.length + " recipes...");
+        for (let i = 0; i < inlineRecipes.length; i++) {
+          try {
+            await fetch(SB_URL + "/rest/v1/recipes", {
+              method: "POST",
+              headers: {"Content-Type": "application/json", apikey: SB_KEY, Authorization: "Bearer " + SB_KEY },
+              body: JSON.stringify(inlineRecipes[i])
+            });
+          } catch(e) {}
+        }
+        console.log("Insert done!");
       }
     }
   } catch(e) {
-    // Supabase offline - pakai inline data
+    // Supabase fetch failed - pakai inline data
   }
   window.supabaseReady = true;
   if (window._onReady) window._onReady();
