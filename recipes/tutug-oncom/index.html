@@ -40,32 +40,32 @@
   },
   "recipeIngredient": [
     "3 piring nasi",
-    "200 gr oncom",
-    "5 cabe rawit",
-    "3 siung bawang putih",
-    "3 cm kencur",
+    "200 g oncom",
+    "5 bird eye chilies",
+    "3 cloves garlic cloves",
+    "3 cm aromatic ginger",
     "Daun kemangi"
   ],
   "recipeInstructions": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "text": "Goreng oncom, hancurkan."
+      "text": "Deep fry oncom, hancurkan."
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "text": "Haluskan bumbu."
+      "text": "Grind into a paste bumbu."
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "text": "Campur nasi dengan bumbu."
+      "text": "Mix nasi dengan bumbu."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "text": "Sajikan dengan tempe goreng."
+      "text": "Serve dengan tempe goreng."
     }
   ],
   "aggregateRating": {
@@ -105,31 +105,98 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <style>
-    .recipe-page { max-width: 960px; margin: 0 auto; padding: 120px 24px 60px; }
-    .recipe-page h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--text); }
-    .recipe-page .meta { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; font-size: 14px; color: var(--muted); }
-    .recipe-page .meta span { background: var(--surface); padding: 6px 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.06); }
-    .recipe-page .hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin: 24px 0; border: 1px solid rgba(212,175,55,0.2); }
-    .recipe-page section { margin: 40px 0; }
-    .recipe-page h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(212,175,55,0.15); }
-    .recipe-page p, .recipe-page li { line-height: 1.8; color: var(--text-secondary); }
-    .recipe-page .ingredients { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; list-style: none; padding: 0; }
-    .recipe-page .ingredients li { background: var(--surface); padding: 10px 14px; border-radius: 4px; border-left: 2px solid var(--gold); font-size: 14px; }
-    .recipe-page .steps { padding-left: 24px; }
-    .recipe-page .steps li { margin-bottom: 12px; }
-    .recipe-page .steps li::marker { color: var(--gold); font-weight: 700; }
-    .recipe-page .tip-box { background: linear-gradient(135deg, rgba(212,175,55,0.08), transparent); border: 1px solid rgba(212,175,55,0.15); padding: 24px; border-radius: 8px; margin: 24px 0; }
-    .recipe-page .faq-item { margin-bottom: 20px; padding: 16px; background: var(--surface); border-radius: 6px; border: 1px solid rgba(255,255,255,0.04); }
-    .recipe-page .faq-item h3 { font-size: 15px; color: var(--text); margin-bottom: 6px; }
-    .recipe-page .nav-links { display: flex; justify-content: space-between; margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .recipe-page .nav-links a { color: var(--gold); text-decoration: none; font-size: 14px; }
-    .recipe-page .nav-links a:hover { text-decoration: underline; }
-    .recipe-page .back-link { display: inline-block; margin-bottom: 24px; color: var(--muted); text-decoration: none; font-size: 13px; }
-    .recipe-page .back-link:hover { color: var(--gold); }
-    .rating-stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; }
-    @media (max-width: 768px) {
-      .recipe-page .ingredients { grid-template-columns: 1fr; }
-      .recipe-page .hero-img { height: 250px; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --gold: #D4AF37; --gold-dark: #8B6914; --gold-light: #FCD34D;
+      --bg: #0A0A0A; --surface: #1A1A1A; --surface2: #242424; --text: #F0ECE6; --text-secondary: #A8A29A; --muted: #6B6560;
+    }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
+    ::-webkit-scrollbar { width:5px; } ::-webkit-scrollbar-track { background:#111; } ::-webkit-scrollbar-thumb { background:var(--gold-dark); border-radius:3px; }
+    ::selection { background:#b8942e; color:#0a0a0a; }
+
+    /* Nav */
+    .page-nav { border-bottom:1px solid rgba(212,175,55,0.1); background:rgba(10,10,10,0.95); backdrop-filter:blur(20px); position:sticky; top:0; z-index:50; }
+    .page-nav-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 24px; }
+    .page-nav .logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; color:var(--text); text-decoration:none; letter-spacing:2px; }
+    .page-nav .logo span { color:var(--gold); font-style:italic; }
+    .page-nav a { color:var(--muted); text-decoration:none; font-size:12px; text-transform:uppercase; letter-spacing:1px; transition:color 0.2s; }
+    .page-nav a:hover { color:var(--gold); }
+
+    /* Layout */
+    .recipe-page { max-width:960px; margin:0 auto; padding:48px 24px 60px; position:relative; z-index:1; }
+    .recipe-page h1 { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,42px); color:var(--text); line-height:1.15; margin-bottom:12px; }
+    .recipe-page .back-link { display:inline-flex; align-items:center; gap:6px; color:var(--muted); text-decoration:none; font-size:12px; text-transform:uppercase; letter-spacing:1px; margin-bottom:24px; }
+    .recipe-page .back-link:hover { color:var(--gold); }
+
+    /* Hero image wrap */
+    .hero-wrap { position:relative; border-radius:12px; overflow:hidden; margin:20px 0 32px; border:1px solid rgba(212,175,55,0.15); box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+    .hero-wrap img { width:100%; height:420px; object-fit:cover; display:block; transition:transform 0.6s; }
+    .hero-wrap:hover img { transform:scale(1.03); }
+    .hero-overlay { position:absolute; bottom:0; left:0; right:0; height:50%; background:linear-gradient(transparent,rgba(10,10,10,0.9)); pointer-events:none; }
+    .hero-badge { position:absolute; top:16px; right:16px; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px); border:1px solid rgba(212,175,55,0.2); padding:8px 16px; border-radius:4px; font-size:12px; color:var(--gold); font-weight:600; letter-spacing:1px; }
+
+    /* Rating + Meta */
+    .rating-stars { color:var(--gold); font-size:20px; letter-spacing:3px; margin-bottom:16px; }
+    .meta-wrap { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px; }
+    .meta-tag { background:var(--surface); border:1px solid rgba(255,255,255,0.06); padding:8px 16px; border-radius:6px; font-size:13px; color:var(--text-secondary); display:flex; align-items:center; gap:6px; }
+
+    /* Sections */
+    .recipe-page section { margin:48px 0; }
+    .recipe-page h2 { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--text); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
+    .recipe-page h2::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,var(--gold),transparent); }
+    .recipe-page .intro-text { font-size:16px; line-height:1.9; color:var(--text-secondary); margin-bottom:16px; font-weight:300; }
+
+    /* Ingredients Grid */
+    .ingredients-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; list-style:none; padding:0; }
+    .ingredients-grid li { background:var(--surface); padding:12px 16px; border-radius:6px; border-left:3px solid var(--gold); font-size:14px; color:var(--text-secondary); line-height:1.5; }
+
+    /* Steps */
+    .steps-list { padding-left:0; list-style:none; counter-reset:step; }
+    .steps-list li { counter-increment:step; margin-bottom:16px; display:flex; gap:14px; align-items:flex-start; }
+    .steps-list li::before { content:counter(step); min-width:28px; height:28px; background:linear-gradient(135deg,var(--gold),var(--gold-dark)); color:#000; font-weight:700; font-size:13px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .steps-list li span { padding-top:4px; font-size:15px; line-height:1.7; color:var(--text-secondary); }
+
+    /* Tips Box */
+    .tip-box { background:linear-gradient(135deg,rgba(212,175,55,0.06),transparent); border:1px solid rgba(212,175,55,0.15); border-radius:10px; padding:28px; margin:24px 0; }
+    .tip-box li { margin-bottom:10px; font-size:14px; color:var(--text-secondary); line-height:1.6; }
+    .tip-box li:last-child { margin-bottom:0; }
+
+    /* Variations */
+    .vars-list { list-style:none; padding:0; }
+    .vars-list li { padding:12px 16px; margin-bottom:10px; background:var(--surface); border-radius:6px; border:1px solid rgba(255,255,255,0.04); font-size:14px; color:var(--text-secondary); }
+
+    /* What to serve */
+    .serve-list { list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .serve-list li { padding:12px 16px; background:var(--surface); border-radius:6px; border:1px solid rgba(255,255,255,0.04); font-size:14px; color:var(--text-secondary); }
+    .serve-list li a { color:var(--gold); text-decoration:none; }
+    .serve-list li a:hover { text-decoration:underline; }
+
+    /* FAQ */
+    .faq-item { margin-bottom:12px; border:1px solid rgba(255,255,255,0.04); border-radius:8px; overflow:hidden; }
+    .faq-q { padding:16px 20px; background:var(--surface); cursor:pointer; font-size:14px; font-weight:500; color:var(--text); display:flex; justify-content:space-between; align-items:center; }
+    .faq-q::after { content:'+'; font-size:18px; color:var(--gold); }
+    .faq-item.open .faq-q::after { content:'−'; }
+    .faq-a { padding:0 20px; max-height:0; overflow:hidden; transition:all 0.3s; background:var(--bg); font-size:14px; color:var(--text-secondary); line-height:1.7; }
+    .faq-item.open .faq-a { padding:16px 20px; max-height:200px; }
+
+    /* Nav links */
+    .nav-links { display:flex; justify-content:space-between; margin-top:48px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.06); }
+    .nav-links a { color:var(--gold); text-decoration:none; font-size:13px; font-weight:500; }
+    .nav-links a:hover { text-decoration:underline; }
+    .nav-links .nav-disabled { color:var(--muted); font-size:13px; }
+
+    /* Footer */
+    .page-footer { border-top:1px solid rgba(212,175,55,0.08); padding:32px 24px; text-align:center; }
+    .page-footer p { font-size:12px; color:var(--muted); }
+    .page-footer a { color:var(--gold); text-decoration:none; }
+
+    @media (max-width:768px) {
+      .recipe-page { padding:24px 16px 40px; }
+      .hero-wrap img { height:250px; }
+      .ingredients-grid { grid-template-columns:1fr; }
+      .serve-list { grid-template-columns:1fr; }
+      .meta-wrap { gap:6px; }
+      .meta-tag { font-size:11px; padding:6px 10px; }
     }
   </style>
 </head>
@@ -173,15 +240,15 @@
     <section>
       <h2>🛒 Ingredients</h2>
       <ul class="ingredients">
-        <li>3 piring nasi</li><li>200 gr oncom</li><li>5 cabe rawit</li><li>3 siung bawang putih</li><li>3 cm kencur</li><li>Daun kemangi</li>
+        <li>3 piring nasi</li><li>200 g oncom</li><li>5 bird eye chilies</li><li>3 cloves garlic cloves</li><li>3 cm aromatic ginger</li><li>Daun kemangi</li>
       </ul>
     </section>
 
     <!-- Instructions -->
     <section>
       <h2>👨‍🍳 Step-by-Step Instructions</h2>
-      <ol class="steps">
-        <li>Goreng oncom, hancurkan.</li><li>Haluskan bumbu.</li><li>Campur nasi dengan bumbu.</li><li>Sajikan dengan tempe goreng.</li>
+      <ol class="steps-list">
+        <li><span>Deep fry oncom, hancurkan.</span></li><li><span>Grind into a paste bumbu.</span></li><li><span>Mix nasi dengan bumbu.</span></li><li><span>Serve dengan tempe goreng.</span></li>
       </ol>
     </section>
 
@@ -198,7 +265,7 @@
     <!-- Variations -->
     <section>
       <h2>🔄 Variations</h2>
-      <ul class="steps">
+      <ul class="vars-list">
         <li>Protein swap — substitute the main protein with chicken, tofu, or tempeh</li><li>Spice level — adjust chili quantity for mild or extra spicy version</li><li>Dietary — make it vegan by omitting animal products and using plant-based alternatives</li>
       </ul>
     </section>
@@ -207,7 +274,7 @@
     <section>
       <h2>🍚 What to Serve With</h2>
       <p>This dish pairs perfectly with:</p>
-      <ul class="steps">
+      <ul class="serve-list">
         <li>Steamed jasmine rice or coconut rice (nasi uduk)</li>
         <li>Kerupuk (Indonesian shrimp crackers) for crunch</li>
         <li>Sambal terasi or sambal matah for extra heat</li>
