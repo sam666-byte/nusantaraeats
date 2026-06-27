@@ -1,0 +1,6 @@
+{
+  "access_key": "biKVebiytjOfBDmjH7eHMoTqJZNpNWho6ZYCUPb4awY",
+  "secret_key": "JPpAk_8zTGcASpIYKhCXcTSWj97XWqI1-4dBIbBmSX8"
+}
+'EOF
+echo "Saved" && chmod 600 ~/nusantaraeats-site/unsplash-config.json
