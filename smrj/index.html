@@ -309,8 +309,8 @@
 
   <div class="toast" id="toast"></div>
 
-  <script src="../supabase-config.js?v=1782526813"></script>
-  <script src="../recipes-data.js?v=1782526813"></script>
+  <script src="../supabase-config.js?v=1782527000"></script>
+  <script src="../recipes-data.js?v=1782527000"></script>
   <script>
     // ─── AUTH ───
     const ADMIN_USER = "samir";
@@ -504,7 +504,7 @@
 
       adminRecipes.unshift(newRecipe);
       saveAdmin();
-      supabaseInsert(newRecipe);
+      window.apiInsert(newRecipe);
       renderAdmin();
       document.getElementById("addForm").reset();
       switchTab("recipes");

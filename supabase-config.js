@@ -119,7 +119,7 @@ window.apiInsert = async function (recipe) {
   try {
     await fetch(`${SB_URL}/rest/v1/recipes`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "return=minimal" },
+      headers: { "Content-Type": "application/json", apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "resolution=merge-duplicates" },
       body: JSON.stringify(recipe),
     });
   } catch(e) {}
@@ -128,9 +128,9 @@ window.apiInsert = async function (recipe) {
 
 window.apiUpdate = async function (id, data) {
   try {
-    await fetch(`${SB_URL}/rest/v1/recipes?id=eq.${id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json", apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "return=minimal" },
+    await fetch(`${SB_URL}/rest/v1/recipes`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "resolution=merge-duplicates" },
       body: JSON.stringify(data),
     });
   } catch(e) {}
@@ -151,41 +151,43 @@ window.apiDelete = async function (id) {
 // --- Async Init: fetch from Supabase, fallback to inline ---
 (async function initFromSupabase() {
   if (!window.recipes) window.recipes = [];
-  const inlineRecipes = window.recipes.slice(); // backup
+  const inlineRecipes = window.recipes.slice();
   try {
+    // Fetch existing IDs from Supabase
     const res = await fetch(SB_URL + "/rest/v1/recipes?select=id", {
       headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
     });
     if (res.ok) {
-      const remoteIds = await res.json();
-      if (remoteIds && remoteIds.length > 0) {
-        // Recipes exist in Supabase, fetch all data
-        const res2 = await fetch(SB_URL + "/rest/v1/recipes?select=*", {
-          headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
-        });
-        if (res2.ok) {
-          const remote = await res2.json();
-          if (remote && remote.length > 0) {
-            window.recipes = remote;
-          }
-        }
-      } else {
-        // Supabase empty! Insert all 100 recipes into Supabase
-        console.log("Supabase empty - inserting " + inlineRecipes.length + " recipes...");
-        for (let i = 0; i < inlineRecipes.length; i++) {
+      const existing = await res.json();
+      const existingIds = new Set((existing || []).map(function(r) { return r.id; }));
+      // Find recipes in inline that are NOT in Supabase
+      const toInsert = inlineRecipes.filter(function(r) { return !existingIds.has(r.id); });
+      if (toInsert.length > 0) {
+        console.log("Inserting " + toInsert.length + " missing recipes into Supabase...");
+        for (let i = 0; i < toInsert.length; i++) {
           try {
             await fetch(SB_URL + "/rest/v1/recipes", {
               method: "POST",
               headers: {"Content-Type": "application/json", apikey: SB_KEY, Authorization: "Bearer " + SB_KEY },
-              body: JSON.stringify(inlineRecipes[i])
+              body: JSON.stringify(toInsert[i])
             });
           } catch(e) {}
         }
         console.log("Insert done!");
       }
+      // Now fetch ALL recipes from Supabase (they should all be there now)
+      const res2 = await fetch(SB_URL + "/rest/v1/recipes?select=*&order=id.asc", {
+        headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
+      });
+      if (res2.ok) {
+        const remote = await res2.json();
+        if (remote && remote.length > 0) {
+          window.recipes = remote;
+        }
+      }
     }
   } catch(e) {
-    // Supabase fetch failed - pakai inline data
+    console.log("Supabase sync failed, using inline data");
   }
   window.supabaseReady = true;
   if (window._onReady) window._onReady();
