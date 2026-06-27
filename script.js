@@ -89,6 +89,11 @@ function saveRecipes() {
     });
 })();
 
+// --- TRANSLATION HELPERS ---
+function tDiff(d) { return {Mudah:"Easy",Sedang:"Medium",Sulit:"Hard"}[d]||d; }
+function tPorsi(p) { return p.replace(/orang/g,"servings").replace(/gelas/g,"glasses").replace(/porsi/g,"servings"); }
+function tWaktu(m) { return m+" mins"; }
+
 // --- RENDER RECIPES ---
 function renderRecipes(filter = 'all', searchQuery = '') {
     const grid = document.getElementById('recipeGrid');
@@ -131,15 +136,15 @@ function renderRecipes(filter = 'all', searchQuery = '') {
                      alt="${recipe.nama}" 
                      loading="lazy"
                      onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\\'height:240px;background:var(--black-600);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:14px;\\'>📷 Foto ${recipe.nama}</div>';">
-                <span class="recipe-card-badge">${recipe.kesulitan}</span>
+                <span class="recipe-card-badge">${tDiff(recipe.kesulitan)}</span>
             </div>
             <div class="recipe-card-body">
                 <h3>${recipe.nama}</h3>
                 <div class="recipe-card-rating">${stars} <small style="color:#A8A29A; font-family:Inter,sans-serif;">${recipe.rating}</small></div>
                 <div class="recipe-card-meta">
-                    <span>⏱ ${recipe.waktu} mnt</span>
-                    <span>👥 ${recipe.porsi}</span>
-                    <span>📊 ${recipe.kesulitan}</span>
+                    <span>⏱ ${tWaktu(recipe.waktu)}</span>
+                    <span>👥 ${tPorsi(recipe.porsi)}</span>
+                    <span>📊 ${tDiff(recipe.kesulitan)}</span>
                 </div>
             </div>
         `;
@@ -198,7 +203,7 @@ function openRecipeModal(recipe) {
     };
     document.getElementById('modalTitle').textContent = recipe.nama;
     document.getElementById('modalMeta').innerHTML = `
-        ⏱️ ${recipe.waktu} menit &nbsp;|&nbsp; 👥 ${recipe.porsi} &nbsp;|&nbsp; 📊 ${recipe.kesulitan}
+        ⏱️ ${tWaktu(recipe.waktu)} &nbsp;|&nbsp; 👥 ${tPorsi(recipe.porsi)} &nbsp;|&nbsp; 📊 ${tDiff(recipe.kesulitan)}
     `;
     const stars = '★'.repeat(Math.floor(recipe.rating)) + '☆'.repeat(5 - Math.floor(recipe.rating));
     document.getElementById('modalRating').textContent = stars;
