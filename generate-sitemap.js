@@ -28,6 +28,8 @@ let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 
   <!-- Static Pages -->
   <url><loc>https://nusantaraeats.com/about</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://nusantaraeats.com/blog</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraeats.com/blog/ultimate-indonesian-food-guide</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nusantaraeats.com/recipes</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://nusantaraeats.com/search</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://nusantaraeats.com/guides/indonesian-food-guide</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
