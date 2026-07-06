@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [],
+  "rules": [
+    { "pattern": "www.nusantaraeats.com/*", "status": 301, "destination": "https://nusantaraeats.com/:splat" },
+    { "pattern": "/resep/*", "status": 301, "destination": "/recipes/:splat" }
+  ]
+}

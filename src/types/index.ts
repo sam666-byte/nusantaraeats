@@ -4,6 +4,7 @@ export interface Recipe {
   id: number;
   slug: string;
   title: string;
+  shortTitle?: string;
   description: string;
   image: string;
   kategori: Kategori;
@@ -15,6 +16,7 @@ export interface Recipe {
   ingredients: string[];
   instructions: string[];
   tips?: string;
+  [key: string]: any;
 }
 
 export interface KategoriInfo {

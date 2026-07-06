@@ -1,0 +1,7 @@
+name = "nusantaraeats"
+compatibility_date = "2024-01-01"
+
+# KV namespace for view counters
+[[kv_namespaces]]
+binding = "VIEWS_KV"
+id = "7736b7450fc74eba80ab78f51068b3c6"

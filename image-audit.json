@@ -1,0 +1,1010 @@
+[
+  {
+    "id": 1,
+    "slug": "rendang",
+    "title": "Rendang",
+    "query": "rendang beef indonesian",
+    "photoInfo": "Close-up of savoury beef rendang with chili and sides on a w",
+    "url": "https://images.pexels.com/photos/37081040/pexels-photo-37081040.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 2,
+    "slug": "soto-betawi",
+    "title": "Soto Betawi",
+    "query": "soto betawi coconut soup indonesia",
+    "photoInfo": "A bowl of traditional Indonesian soto ayam with fresh vegeta",
+    "url": "https://images.pexels.com/photos/12676932/pexels-photo-12676932.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 3,
+    "slug": "rawon",
+    "title": "Rawon",
+    "query": "rawon black soup beef java",
+    "photoInfo": "Indonesian meal setup with rawon, sambal, and traditional te",
+    "url": "https://images.pexels.com/photos/36905214/pexels-photo-36905214.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 4,
+    "slug": "pempek",
+    "title": "Pempek",
+    "query": "pempek palembang fish cake",
+    "photoInfo": "Delicious traditional Indonesian Pempek served with soy sauc",
+    "url": "https://images.pexels.com/photos/23879736/pexels-photo-23879736.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 5,
+    "slug": "gudeg",
+    "title": "Gudeg",
+    "query": "gudeg jackfruit yogyakarta",
+    "photoInfo": "A detailed view of ripe jackfruits hanging from a tree in na",
+    "url": "https://images.pexels.com/photos/11669555/pexels-photo-11669555.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 6,
+    "slug": "coto-makassar",
+    "title": "Coto Makassar",
+    "query": "coto makassar beef soup",
+    "photoInfo": "A savory bowl of Indonesian Sop Buntut soup with rice, garni",
+    "url": "https://images.pexels.com/photos/36865953/pexels-photo-36865953.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 7,
+    "slug": "ayam-taliwang",
+    "title": "Ayam Taliwang",
+    "query": "ayam taliwang grilled chicken lombok",
+    "photoInfo": "Close-up of traditional Indonesian grilled chicken sizzling ",
+    "url": "https://images.pexels.com/photos/37320453/pexels-photo-37320453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 8,
+    "slug": "papeda",
+    "title": "Papeda",
+    "query": "papeda sago porridge maluku",
+    "photoInfo": "Top view of assorted Asian desserts featuring tofu pudding, ",
+    "url": "https://images.pexels.com/photos/5652196/pexels-photo-5652196.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 9,
+    "slug": "sate-madura",
+    "title": "Satay Madura",
+    "query": "sate ayam satay chicken indonesia",
+    "photoInfo": "Close-up of chicken satay being grilled over charcoal in Jaw",
+    "url": "https://images.pexels.com/photos/37265039/pexels-photo-37265039.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 10,
+    "slug": "mie-aceh",
+    "title": "Mie Aceh",
+    "query": "mie aceh noodle spicy",
+    "photoInfo": "A mouthwatering plate of authentic Indonesian mie goreng gar",
+    "url": "https://images.pexels.com/photos/37338513/pexels-photo-37338513.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 201,
+    "slug": "soto-betawi-asli",
+    "title": "Original Betawi Soto",
+    "query": "soto betawi indonesian soup",
+    "photoInfo": "Delicious bowl of Indonesian Soto soup, perfect for showcasi",
+    "url": "https://images.pexels.com/photos/37081083/pexels-photo-37081083.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 202,
+    "slug": "nasi-goreng-kampung-malaysia",
+    "title": "Malaysian Village Fried Rice",
+    "query": "nasi goreng fried rice wok",
+    "photoInfo": "Appetizing Nasi Goreng served with satay, fried egg, and veg",
+    "url": "https://images.pexels.com/photos/8570300/pexels-photo-8570300.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 203,
+    "slug": "ayam-bakar-bumbu-rica",
+    "title": "Rica-Rica Grilled Chicken",
+    "query": "ayam rica rica grilled chicken spicy",
+    "photoInfo": "Close-up of traditional Indonesian grilled chicken sizzling ",
+    "url": "https://images.pexels.com/photos/37320453/pexels-photo-37320453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 268,
+    "slug": "ayam-bakar-bumbu-bali",
+    "title": "Balinese Spiced Grilled Chicken",
+    "query": "ayam bakar bumbu bali balinese chicken",
+    "photoInfo": "Authentic Indonesian grilled chicken served with fresh green",
+    "url": "https://images.pexels.com/photos/37179941/pexels-photo-37179941.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 301,
+    "slug": "soto-lamongan",
+    "title": "Lamongan Soto",
+    "query": "soto lamongan chicken soup yellow",
+    "photoInfo": "A bowl of traditional Indonesian soto ayam with fresh vegeta",
+    "url": "https://images.pexels.com/photos/12676932/pexels-photo-12676932.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 302,
+    "slug": "tahu-tek-tek",
+    "title": "Tahu Tek Tek",
+    "query": "tahu tofu peanut sauce indonesia",
+    "photoInfo": "Top view of Indonesian Gado-Gado salad on a banana leaf with",
+    "url": "https://images.pexels.com/photos/37113556/pexels-photo-37113556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 303,
+    "slug": "sop-iga-bakar",
+    "title": "Smoky Grilled Rib Soup",
+    "query": "sop iga bakar beef rib soup",
+    "photoInfo": "Delicious sop buntut oxtail soup with spices and fresh veget",
+    "url": "https://images.pexels.com/photos/37106523/pexels-photo-37106523.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 304,
+    "slug": "kue-bolu-mekar",
+    "title": "Steamed Bolu Cake",
+    "query": "kue bolu steamed sponge cake",
+    "photoInfo": "Delectable slices of green pandan chiffon cake on a white pl",
+    "url": "https://images.pexels.com/photos/7833950/pexels-photo-7833950.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 305,
+    "slug": "nasi-goreng-kambing",
+    "title": "Goat Fried Rice",
+    "query": "nasi goreng kambing goat fried rice",
+    "photoInfo": "Appetizing Nasi Goreng served with fried egg, satay, and cra",
+    "url": "https://images.pexels.com/photos/37204728/pexels-photo-37204728.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 306,
+    "slug": "es-sop-kelapa",
+    "title": "Coconut Soup Ice",
+    "query": "young coconut drink ice",
+    "photoInfo": "Chilled green coconuts submerged in ice, perfect for a refre",
+    "url": "https://images.pexels.com/photos/37279431/pexels-photo-37279431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 307,
+    "slug": "ayam-bakar-wangi",
+    "title": "Fragrant Grilled Chicken",
+    "query": "ayam bakar grilled chicken aromatic",
+    "photoInfo": "Authentic Indonesian grilled chicken served with fresh green",
+    "url": "https://images.pexels.com/photos/37179941/pexels-photo-37179941.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 308,
+    "slug": "soto-lamongan-asli",
+    "title": "Authentic Lamongan Soto",
+    "query": "soto lamongan chicken broth noodle",
+    "photoInfo": "A bowl of traditional Indonesian soto ayam with fresh vegeta",
+    "url": "https://images.pexels.com/photos/12676932/pexels-photo-12676932.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 309,
+    "slug": "tahu-tek",
+    "title": "Tahu Tek",
+    "query": "tahu telur egg tofu peanut java",
+    "photoInfo": "Traditional Indonesian tofu and siomay dish garnished with f",
+    "url": "https://images.pexels.com/photos/6302868/pexels-photo-6302868.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 310,
+    "slug": "soto-banjar",
+    "title": "Banjar Chicken Soup",
+    "query": "soto banjar chicken soup borneo",
+    "photoInfo": "A bowl of traditional Indonesian soto ayam with fresh vegeta",
+    "url": "https://images.pexels.com/photos/12676932/pexels-photo-12676932.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 311,
+    "slug": "mie-goreng-seafood",
+    "title": "Seafood Fried Noodles",
+    "query": "mie goreng seafood fried noodle",
+    "photoInfo": "A mouthwatering plate of authentic Indonesian mie goreng gar",
+    "url": "https://images.pexels.com/photos/37338513/pexels-photo-37338513.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 312,
+    "slug": "tempe-goreng-tepung",
+    "title": "Crispy Tempeh Fritters",
+    "query": "tempe mendoan fried tempeh crispy",
+    "photoInfo": "Mendoan served with sambal and tea on a rustic table in Band",
+    "url": "https://images.pexels.com/photos/36985924/pexels-photo-36985924.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 313,
+    "slug": "es-alpukat-kocok",
+    "title": "Shaken Avocado Ice",
+    "query": "es alpukat avocado ice drink",
+    "photoInfo": "Delicious summer smoothies with fresh fruits, perfect for a ",
+    "url": "https://images.pexels.com/photos/12318617/pexels-photo-12318617.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 314,
+    "slug": "nasi-goreng-seafood",
+    "title": "Seafood Fried Rice",
+    "query": "nasi goreng seafood fried rice shrimp",
+    "photoInfo": "Close-up of Indonesian nasi goreng with vegetables and shrim",
+    "url": "https://images.pexels.com/photos/37287422/pexels-photo-37287422.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 316,
+    "slug": "martabak-telur",
+    "title": "Savory Egg Martabak",
+    "query": "martabak telur savory egg pancake",
+    "photoInfo": "Delicious Indonesian martabak manis filled with cheese, feat",
+    "url": "https://images.pexels.com/photos/37225937/pexels-photo-37225937.png?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 317,
+    "slug": "ayam-bakar-honey",
+    "title": "Honey Grilled Chicken",
+    "query": "honey grilled chicken glazed",
+    "photoInfo": "Delicious grilled chicken teriyaki topped with fresh leeks a",
+    "url": "https://images.pexels.com/photos/13065185/pexels-photo-13065185.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 318,
+    "slug": "bakso-ayam",
+    "title": "Chicken Meatballs",
+    "query": "bakso ayam chicken meatball soup",
+    "photoInfo": "Delicious bowl of traditional Indonesian mie ayam served wit",
+    "url": "https://images.pexels.com/photos/7926171/pexels-photo-7926171.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 319,
+    "slug": "sate-lilit-ikan",
+    "title": "Balinese Fish Satay",
+    "query": "sate lilit bali fish satay",
+    "photoInfo": "Close-up of Sate Lilit skewers on a black plate with vibrant",
+    "url": "https://images.pexels.com/photos/37211519/pexels-photo-37211519.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 320,
+    "slug": "gado-gado-bali",
+    "title": "Balinese Mixed Vegetable Salad",
+    "query": "gado gado peanut sauce salad bali",
+    "photoInfo": "A vibrant Indonesian Gado-Gado dish featuring vegetables, to",
+    "url": "https://images.pexels.com/photos/37113568/pexels-photo-37113568.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 321,
+    "slug": "nasi-goreng-kampung",
+    "title": "Village Fried Rice",
+    "query": "nasi goreng kampung village fried rice",
+    "photoInfo": "Delicious Nasi Goreng with chicken, shrimp, and fresh sides,",
+    "url": "https://images.pexels.com/photos/37173549/pexels-photo-37173549.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 322,
+    "slug": "ayam-penyet",
+    "title": "Smashed Fried Chicken",
+    "query": "ayam penyet smashed fried chicken sambal",
+    "photoInfo": "Authentic Indonesian ayam penyet served with steamed rice an",
+    "url": "https://images.pexels.com/photos/37303556/pexels-photo-37303556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 323,
+    "slug": "es-teler-77",
+    "title": "Es Teler 77",
+    "query": "es teler coconut avocado mixed ice",
+    "photoInfo": "A delectable slice of cake alongside a colorful fruit salad,",
+    "url": "https://images.pexels.com/photos/31336116/pexels-photo-31336116.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 324,
+    "slug": "rawon-setan",
+    "title": "Devil's Rawon",
+    "query": "rawon black beef soup dark",
+    "photoInfo": "Indonesian meal setup with rawon, sambal, and traditional te",
+    "url": "https://images.pexels.com/photos/36905214/pexels-photo-36905214.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 325,
+    "slug": "nasi-campur-bali",
+    "title": "Balinese Mixed Rice",
+    "query": "nasi campur bali mixed rice",
+    "photoInfo": "Delicious Nasi Campur with rice, meat, and vegetables served",
+    "url": "https://images.pexels.com/photos/36892229/pexels-photo-36892229.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 326,
+    "slug": "es-buah",
+    "title": "Indonesian Fruit Ice",
+    "query": "es buah mixed fruit ice indonesia",
+    "photoInfo": "Street vendors and fruit stalls along a bustling market in W",
+    "url": "https://images.pexels.com/photos/31727424/pexels-photo-31727424.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 327,
+    "slug": "sop-kaki-sapi",
+    "title": "Beef Trotter Soup",
+    "query": "sop kaki sapi beef leg soup",
+    "photoInfo": "Delicious sop buntut oxtail soup with spices and fresh veget",
+    "url": "https://images.pexels.com/photos/37106523/pexels-photo-37106523.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 328,
+    "slug": "gado-gado-jakarta",
+    "title": "Jakarta Gado-Gado",
+    "query": "gado gado jakarta peanut vegetable",
+    "photoInfo": "Top view of Indonesian Gado-Gado salad on a banana leaf with",
+    "url": "https://images.pexels.com/photos/37113556/pexels-photo-37113556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 329,
+    "slug": "soto-mie",
+    "title": "Noodle Soup",
+    "query": "soto mie noodle soup bogor",
+    "photoInfo": "Authentic Indonesian noodle soup with boiled eggs, tomatoes,",
+    "url": "https://images.pexels.com/photos/37173529/pexels-photo-37173529.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 330,
+    "slug": "pisang-epe",
+    "title": "Makassar Pressed Banana",
+    "query": "pisang epe grilled banana makassar",
+    "photoInfo": "Street vendors and fruit stalls along a bustling market in W",
+    "url": "https://images.pexels.com/photos/31727424/pexels-photo-31727424.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 331,
+    "slug": "nasi-goreng-mawut",
+    "title": "Scrambled Fried Rice",
+    "query": "nasi goreng mie egg fried rice noodle",
+    "photoInfo": "A mouthwatering plate of authentic Indonesian mie goreng gar",
+    "url": "https://images.pexels.com/photos/37338513/pexels-photo-37338513.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 332,
+    "slug": "es-martabak",
+    "title": "Martabak Ice Cream",
+    "query": "martabak manis sweet pancake chocolate",
+    "photoInfo": "A top view of chocolate pancakes on a plate drizzled with sy",
+    "url": "https://images.pexels.com/photos/17653577/pexels-photo-17653577.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 333,
+    "slug": "sop-buntut-bakar",
+    "title": "Grilled Oxtail Soup",
+    "query": "sop buntut bakar grilled oxtail soup",
+    "photoInfo": "Top view of traditional Indonesian oxtail soup with vegetabl",
+    "url": "https://images.pexels.com/photos/37090680/pexels-photo-37090680.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 334,
+    "slug": "tahu-bulat",
+    "title": "Round Fried Tofu",
+    "query": "tahu bulat round fried tofu crispy",
+    "photoInfo": "Variety of traditional Indonesian street food displayed in a",
+    "url": "https://images.pexels.com/photos/37109715/pexels-photo-37109715.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 335,
+    "slug": "es-cendol-jelly",
+    "title": "Cendol Jelly Drink",
+    "query": "es cendol coconut milk jelly drink",
+    "photoInfo": "A vibrant Asian dessert in a black bowl showcasing colorful ",
+    "url": "https://images.pexels.com/photos/37146770/pexels-photo-37146770.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 336,
+    "slug": "sate-padang-kuah",
+    "title": "Padang Satay with Thick Sauce",
+    "query": "sate padang satay yellow sauce minang",
+    "photoInfo": "Delicious Sate Padang served on banana leaf, showcasing auth",
+    "url": "https://images.pexels.com/photos/37121686/pexels-photo-37121686.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 337,
+    "slug": "kue-mochi-ubi",
+    "title": "Sweet Potato Mochi",
+    "query": "mochi ubi purple yam rice cake",
+    "photoInfo": "A vibrant assortment of mochi desserts elegantly presented o",
+    "url": "https://images.pexels.com/photos/6645975/pexels-photo-6645975.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 338,
+    "slug": "nasi-goreng-petai",
+    "title": "Stink Bean Fried Rice",
+    "query": "nasi goreng petai stink bean fried rice",
+    "photoInfo": "Appetizing Nasi Goreng served with fried egg, satay, and cra",
+    "url": "https://images.pexels.com/photos/37204728/pexels-photo-37204728.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 339,
+    "slug": "es-sop-buah",
+    "title": "Fruit Soup Ice",
+    "query": "es sop buah mixed fruit soup ice",
+    "photoInfo": "A savory bowl of Indonesian Sop Buntut soup with rice, garni",
+    "url": "https://images.pexels.com/photos/36865953/pexels-photo-36865953.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 340,
+    "slug": "ayam-bakar-padang",
+    "title": "Padang Grilled Chicken",
+    "query": "ayam bakar padang minang grilled chicken",
+    "photoInfo": "Close-up of traditional Indonesian grilled chicken sizzling ",
+    "url": "https://images.pexels.com/photos/37320453/pexels-photo-37320453.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 341,
+    "slug": "soto-ayam-bening",
+    "title": "Clear Chicken Soto",
+    "query": "soto ayam clear chicken soup indonesia",
+    "photoInfo": "A bowl of traditional Indonesian soto ayam with fresh vegeta",
+    "url": "https://images.pexels.com/photos/12676932/pexels-photo-12676932.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 342,
+    "slug": "martabak-mie",
+    "title": "Noodle Martabak",
+    "query": "martabak mie noodle savory",
+    "photoInfo": "Mouth-watering Mie Goreng with spicy red sauce topped with a",
+    "url": "https://images.pexels.com/photos/8395783/pexels-photo-8395783.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 343,
+    "slug": "tahu-sumedang",
+    "title": "Sumedang Fried Tofu",
+    "query": "tahu sumedang deep fried tofu crispy",
+    "photoInfo": "Fried tofu being prepared in a street market for a crispy sn",
+    "url": "https://images.pexels.com/photos/36548816/pexels-photo-36548816.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 344,
+    "slug": "es-rujak",
+    "title": "Fruit Rujak Ice",
+    "query": "es rujak mixed spicy fruit ice",
+    "photoInfo": "Top view of Indonesian Gado-Gado salad on a banana leaf with",
+    "url": "https://images.pexels.com/photos/37113556/pexels-photo-37113556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 345,
+    "slug": "ayam-bakar-bumbu-rujak",
+    "title": "Rujak-Spiced Grilled Chicken",
+    "query": "ayam bakar bumbu rujak spicy chicken",
+    "photoInfo": "Authentic Indonesian grilled chicken served with fresh green",
+    "url": "https://images.pexels.com/photos/37179941/pexels-photo-37179941.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 346,
+    "slug": "bubur-ketan-hitam",
+    "title": "Black Glutinous Rice Porridge",
+    "query": "bubur ketan hitam black rice porridge",
+    "photoInfo": "Bustling scene at a street food stall serving porridge in Si",
+    "url": "https://images.pexels.com/photos/37193132/pexels-photo-37193132.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 347,
+    "slug": "nasi-ayam-penyet",
+    "title": "Smashed Chicken Rice",
+    "query": "nasi ayam penyet smashed chicken rice",
+    "photoInfo": "Delicious Indonesian Nasi Ayam Geprek served with sambal, te",
+    "url": "https://images.pexels.com/photos/37320405/pexels-photo-37320405.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 348,
+    "slug": "sop-iga-sapi-bakar",
+    "title": "Grilled Beef Rib Soup",
+    "query": "sop iga sapi beef rib soup",
+    "photoInfo": "Delicious sop buntut oxtail soup with spices and fresh veget",
+    "url": "https://images.pexels.com/photos/37106523/pexels-photo-37106523.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 349,
+    "slug": "es-dawet",
+    "title": "Dawet Ice",
+    "query": "es dawet cendol coconut palm sugar",
+    "photoInfo": "Close-up of hands making traditional Indonesian putu cake in",
+    "url": "https://images.pexels.com/photos/37145390/pexels-photo-37145390.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 350,
+    "slug": "kue-cucur",
+    "title": "Cucur Cake",
+    "query": "kue cucur brown sugar cake fried",
+    "photoInfo": "Delicious Thai-style fried shrimp cakes served on a banana l",
+    "url": "https://images.pexels.com/photos/19093025/pexels-photo-19093025.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 351,
+    "slug": "nasi-ulam",
+    "title": "Herb Rice",
+    "query": "nasi ulam herbs rice betawi",
+    "photoInfo": "A vibrant Nasi Kuning plate with traditional Indonesian side",
+    "url": "https://images.pexels.com/photos/37106996/pexels-photo-37106996.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 352,
+    "slug": "sup-kambing-madura",
+    "title": "Madura Goat Soup",
+    "query": "sup kambing goat soup madura",
+    "photoInfo": "Delicious bowl of Indonesian beef stew with potatoes, served",
+    "url": "https://images.pexels.com/photos/37142080/pexels-photo-37142080.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 353,
+    "slug": "kue-serabi-kinca",
+    "title": "Serabi with Kinca Sauce",
+    "query": "kue serabi rice pancake coconut",
+    "photoInfo": "Close-up of Indonesian Serabi pancakes with a coconut sauce,",
+    "url": "https://images.pexels.com/photos/6802090/pexels-photo-6802090.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 354,
+    "slug": "ayam-geprek-sambal-matah",
+    "title": "Smashed Chicken with Raw Sambal",
+    "query": "ayam geprek smashed chicken sambal",
+    "photoInfo": "Enjoy a delicious plate of Indonesian Ayam Geprek with rice,",
+    "url": "https://images.pexels.com/photos/37320395/pexels-photo-37320395.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 355,
+    "slug": "nasi-tumpeng-mini",
+    "title": "Mini Tumpeng",
+    "query": "nasi tumpeng cone yellow rice",
+    "photoInfo": "Nasi Tumpeng with sides, a festive Indonesian dish, traditio",
+    "url": "https://images.pexels.com/photos/36890105/pexels-photo-36890105.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 356,
+    "slug": "es-sirup-markisa",
+    "title": "Passion Fruit Syrup Ice",
+    "query": "es sirup markisa passion fruit drink",
+    "photoInfo": "Vibrant fruit cocktail sitting on a sunlit table, perfect fo",
+    "url": "https://images.pexels.com/photos/16678544/pexels-photo-16678544.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 357,
+    "slug": "babi-panggang-karo",
+    "title": "Karo Roast Pork",
+    "query": "babi panggang pork roasted batak",
+    "photoInfo": "Close-up of juicy grilled meat sizzling on an outdoor barbec",
+    "url": "https://images.pexels.com/photos/12688928/pexels-photo-12688928.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 358,
+    "slug": "soto-betawi-kuah-susu",
+    "title": "Creamy Milk Soto",
+    "query": "soto betawi milk coconut broth",
+    "photoInfo": "Delicious creamy noodle soup garnished with vegetables and s",
+    "url": "https://images.pexels.com/photos/7318799/pexels-photo-7318799.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 359,
+    "slug": "tahu-geprek-sambal",
+    "title": "Smashed Tofu with Sambal",
+    "query": "tahu geprek fried tofu smashed sambal",
+    "photoInfo": "A delicious plate of Nasi Timbel featuring fried tempeh, chi",
+    "url": "https://images.pexels.com/photos/37320411/pexels-photo-37320411.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 360,
+    "slug": "es-pisang-ior",
+    "title": "Banana Milk Ice",
+    "query": "es pisang ior banana ice makassar",
+    "photoInfo": "Street vendors and fruit stalls along a bustling market in W",
+    "url": "https://images.pexels.com/photos/31727424/pexels-photo-31727424.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 361,
+    "slug": "kue-putu-ayu",
+    "title": "Putu Ayu Cake",
+    "query": "kue putu ayu green pandan steamed",
+    "photoInfo": "Close-up of Indonesian Putu Cake with coconut and sugar on a",
+    "url": "https://images.pexels.com/photos/37327284/pexels-photo-37327284.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 362,
+    "slug": "nasi-goreng-merah",
+    "title": "Red Fried Rice",
+    "query": "nasi goreng merah red fried rice",
+    "photoInfo": "Appetizing Nasi Goreng served with fried egg, satay, and cra",
+    "url": "https://images.pexels.com/photos/37204728/pexels-photo-37204728.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 363,
+    "slug": "es-kacang-hijau",
+    "title": "Mung Bean Ice",
+    "query": "es kacang hijau mung bean ice",
+    "photoInfo": "Creamy mung bean dessert in a vibrant green bowl, perfect fo",
+    "url": "https://images.pexels.com/photos/36211530/pexels-photo-36211530.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 364,
+    "slug": "ayam-bakar-hoisin",
+    "title": "Hoisin Grilled Chicken",
+    "query": "ayam bakar hoisin grilled chicken",
+    "photoInfo": "Authentic Indonesian grilled chicken served with fresh green",
+    "url": "https://images.pexels.com/photos/37179941/pexels-photo-37179941.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 365,
+    "slug": "sop-ayam-bening",
+    "title": "Clear Chicken Soup",
+    "query": "sop ayam bening clear chicken soup",
+    "photoInfo": "A bowl of traditional Indonesian soto ayam with fresh vegeta",
+    "url": "https://images.pexels.com/photos/12676932/pexels-photo-12676932.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 366,
+    "slug": "kue-lemper-ayam",
+    "title": "Chicken Lemper",
+    "query": "lemper ayam chicken sticky rice",
+    "photoInfo": "A beautifully plated dish of Ayam Betutu served with rice an",
+    "url": "https://images.pexels.com/photos/37211465/pexels-photo-37211465.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 367,
+    "slug": "sate-usus",
+    "title": "Intestine Satay",
+    "query": "sate usus intestine satay crispy",
+    "photoInfo": "Delicious Indonesian chicken skewers served with noodles and",
+    "url": "https://images.pexels.com/photos/37338385/pexels-photo-37338385.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 368,
+    "slug": "es-alpukat-kopi",
+    "title": "Avocado Coffee Ice",
+    "query": "es alpukat kopi avocado coffee ice",
+    "photoInfo": "Person working on laptop with iced coffee drinks in a café, ",
+    "url": "https://images.pexels.com/photos/37433831/pexels-photo-37433831.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 369,
+    "slug": "nasi-goreng-pedas",
+    "title": "Extra Spicy Fried Rice",
+    "query": "nasi goreng pedas spicy fried rice",
+    "photoInfo": "Appetizing Nasi Goreng served with fried egg, satay, and cra",
+    "url": "https://images.pexels.com/photos/37204728/pexels-photo-37204728.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 371,
+    "slug": "sop-konro-makassar",
+    "title": "Makassar Rib Soup",
+    "query": "sop konro makassar beef rib black soup",
+    "photoInfo": "Delicious sop buntut oxtail soup with spices and fresh veget",
+    "url": "https://images.pexels.com/photos/37106523/pexels-photo-37106523.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 372,
+    "slug": "kue-cara-birambi",
+    "title": "Aceh Birambi Cake",
+    "query": "kue cara birambi aceh traditional cake",
+    "photoInfo": "Indonesian butter cookies presented in a flat lay setting, p",
+    "url": "https://images.pexels.com/photos/7429685/pexels-photo-7429685.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 373,
+    "slug": "nasi-goreng-kambing-gulai",
+    "title": "Gulai Goat Fried Rice",
+    "query": "nasi goreng gulai goat fried rice curry",
+    "photoInfo": "Appetizing Nasi Goreng served with fried egg, satay, and cra",
+    "url": "https://images.pexels.com/photos/37204728/pexels-photo-37204728.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 374,
+    "slug": "es-teh-pelangi",
+    "title": "Rainbow Tea Ice",
+    "query": "rainbow tea ice layered colorful drink",
+    "photoInfo": "Close-up of vibrant colorful iced drinks in plastic cups wit",
+    "url": "https://images.pexels.com/photos/8250376/pexels-photo-8250376.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 375,
+    "slug": "ayam-goreng-mentega",
+    "title": "Butter Fried Chicken",
+    "query": "ayam goreng mentega butter fried chicken",
+    "photoInfo": "Enjoy a plate of Indonesian Ayam Geprek with spicy noodles a",
+    "url": "https://images.pexels.com/photos/28041446/pexels-photo-28041446.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 376,
+    "slug": "sup-konro-bakar",
+    "title": "Grilled Rib Soup Special",
+    "query": "sup konro bakar grilled rib soup makassar",
+    "photoInfo": "Close-up of delicious grilled ribs showcasing juicy and tend",
+    "url": "https://images.pexels.com/photos/37297551/pexels-photo-37297551.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 377,
+    "slug": "nasi-ayam-geprek",
+    "title": "Smashed Chicken Rice Bowl",
+    "query": "nasi ayam geprek smashed chicken rice bowl",
+    "photoInfo": "Delicious Indonesian Nasi Ayam Geprek served with sambal, te",
+    "url": "https://images.pexels.com/photos/37320405/pexels-photo-37320405.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 378,
+    "slug": "es-jus-alpukat",
+    "title": "Avocado Juice",
+    "query": "es jus alpukat avocado juice milk",
+    "photoInfo": "Top view of avocado dessert with cream in glass bowls on woo",
+    "url": "https://images.pexels.com/photos/6063321/pexels-photo-6063321.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 379,
+    "slug": "soto-betawi-original",
+    "title": "Original Betawi Soto",
+    "query": "soto betawi original coconut milk soup",
+    "photoInfo": "A close-up of Lontong Sayur, an Indonesian dish, served in a",
+    "url": "https://images.pexels.com/photos/36981854/pexels-photo-36981854.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 380,
+    "slug": "kue-kue-citul",
+    "title": "Citul Rice Crackers",
+    "query": "kue traditional indonesian snack rice",
+    "photoInfo": "Colorful Ongol-Ongol served on a black plate, showcasing a t",
+    "url": "https://images.pexels.com/photos/37107008/pexels-photo-37107008.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 381,
+    "slug": "es-kelapa-muda",
+    "title": "Fresh Young Coconut",
+    "query": "young coconut fresh ice drink",
+    "photoInfo": "Chilled green coconuts submerged in ice, perfect for a refre",
+    "url": "https://images.pexels.com/photos/37279431/pexels-photo-37279431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 382,
+    "slug": "nasi-goreng-petai-stink",
+    "title": "Petai Fried Rice",
+    "query": "nasi goreng petai stink bean wok",
+    "photoInfo": "Delicious spicy shrimp dish with green vegetables in a rich,",
+    "url": "https://images.pexels.com/photos/36929077/pexels-photo-36929077.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 383,
+    "slug": "es-dawet-ayu",
+    "title": "Dawet Ayu Ice",
+    "query": "es dawet ayu traditional cendol green",
+    "photoInfo": "A bustling street scene in Jakarta with locals buying fresh ",
+    "url": "https://images.pexels.com/photos/36564829/pexels-photo-36564829.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 384,
+    "slug": "lotek",
+    "title": "Lotek Vegetable Salad",
+    "query": "lotek peanut sauce vegetable salad bandung",
+    "photoInfo": "Delicious Indonesian traditional salad with peanut sauce cap",
+    "url": "https://images.pexels.com/photos/37307576/pexels-photo-37307576.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 385,
+    "slug": "nasi-timbel",
+    "title": "Timbel Wrapped Rice",
+    "query": "nasi timbel banana leaf sundanese rice",
+    "photoInfo": "A vibrant display of traditional Indonesian cuisine featurin",
+    "url": "https://images.pexels.com/photos/37051562/pexels-photo-37051562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 386,
+    "slug": "sop-konro",
+    "title": "Makassar Beef Rib Soup",
+    "query": "sop konro beef rib soup black makassar",
+    "photoInfo": "Delicious sop buntut oxtail soup with spices and fresh veget",
+    "url": "https://images.pexels.com/photos/37106523/pexels-photo-37106523.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 387,
+    "slug": "gohu-ikan",
+    "title": "Ternate Raw Fish Salad",
+    "query": "gohu ikan tuna salad maluku",
+    "photoInfo": "A grilled tuna steak topped with lemon slices served with a ",
+    "url": "https://images.pexels.com/photos/31779503/pexels-photo-31779503.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 388,
+    "slug": "nasi-bebek-bengil",
+    "title": "Dirty Duck Rice",
+    "query": "nasi bebek bengil crispy duck bali",
+    "photoInfo": "A vibrant Nasi Kuning plate with traditional Indonesian side",
+    "url": "https://images.pexels.com/photos/37106996/pexels-photo-37106996.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 389,
+    "slug": "ikan-bakar-woku",
+    "title": "North Sulawesi Woku Fish",
+    "query": "ikan bakar woku spicy fish manado",
+    "photoInfo": "A vibrant spread of traditional Indonesian dishes on a woode",
+    "url": "https://images.pexels.com/photos/37062602/pexels-photo-37062602.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 390,
+    "slug": "karedok",
+    "title": "Raw Vegetable Salad with Peanut Sauce",
+    "query": "karedok raw vegetable peanut sauce sundanese",
+    "photoInfo": "Delicious Indonesian traditional salad with peanut sauce cap",
+    "url": "https://images.pexels.com/photos/37307576/pexels-photo-37307576.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 391,
+    "slug": "sop-buntut-madu",
+    "title": "Honey Glazed Oxtail Soup",
+    "query": "sop buntut madu honey oxtail soup",
+    "photoInfo": "Top view of traditional Indonesian oxtail soup with vegetabl",
+    "url": "https://images.pexels.com/photos/37090680/pexels-photo-37090680.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 392,
+    "slug": "nasi-uduk-cream",
+    "title": "Creamy Coconut Rice",
+    "query": "nasi uduk coconut rice jakarta betawi",
+    "photoInfo": "Delicious assortment of traditional Indonesian foods beautif",
+    "url": "https://images.pexels.com/photos/37052497/pexels-photo-37052497.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 393,
+    "slug": "ayam-bakar-kecap",
+    "title": "Sweet Soy Grilled Chicken",
+    "query": "ayam bakar kecap sweet soy grilled chicken",
+    "photoInfo": "Authentic Indonesian grilled chicken served with fresh green",
+    "url": "https://images.pexels.com/photos/37179941/pexels-photo-37179941.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 394,
+    "slug": "sop-buntut-bakar-premium",
+    "title": "Premium Grilled Oxtail",
+    "query": "oxtail soup grilled beef premium",
+    "photoInfo": "Delicious sop buntut oxtail soup with spices and fresh veget",
+    "url": "https://images.pexels.com/photos/37106523/pexels-photo-37106523.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 395,
+    "slug": "nasi-goreng-seafood-premium",
+    "title": "Premium Seafood Fried Rice",
+    "query": "nasi goreng seafood premium shrimp squid",
+    "photoInfo": "Close-up of Indonesian nasi goreng with vegetables and shrim",
+    "url": "https://images.pexels.com/photos/37287422/pexels-photo-37287422.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 396,
+    "slug": "ayam-betutu-premium",
+    "title": "Premium Balinese Duck",
+    "query": "ayam betutu bali spiced chicken roasted",
+    "photoInfo": "A vibrant display of Ayam Betutu with rice and spices, showc",
+    "url": "https://images.pexels.com/photos/37106528/pexels-photo-37106528.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 397,
+    "slug": "sate-lilit-udang",
+    "title": "Prawn Satay Bali",
+    "query": "sate lilit udang shrimp satay bali",
+    "photoInfo": "Close-up of Sate Lilit skewers on a black plate with vibrant",
+    "url": "https://images.pexels.com/photos/37211519/pexels-photo-37211519.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 398,
+    "slug": "nasi-ayam-bakar-madu",
+    "title": "Honey Chicken Rice",
+    "query": "nasi ayam bakar madu honey grilled chicken rice",
+    "photoInfo": "Close-up of Indonesian ayam bakar served with rice and fresh",
+    "url": "https://images.pexels.com/photos/14098784/pexels-photo-14098784.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 399,
+    "slug": "sop-conro-premium",
+    "title": "Premium Konro Soup",
+    "query": "sop konro conro beef rib soup premium",
+    "photoInfo": "Delicious sop buntut oxtail soup with spices and fresh veget",
+    "url": "https://images.pexels.com/photos/37106523/pexels-photo-37106523.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 400,
+    "slug": "gado-gado-premium",
+    "title": "Premium Jakarta Salad",
+    "query": "gado gado peanut sauce vegetable egg",
+    "photoInfo": "A vibrant Indonesian Gado-Gado dish featuring vegetables, to",
+    "url": "https://images.pexels.com/photos/37113568/pexels-photo-37113568.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 401,
+    "slug": "martabak-manis-premium",
+    "title": "Premium Sweet Martabak",
+    "query": "martabak manis sweet stuffed pancake",
+    "photoInfo": "Delicious Indonesian martabak manis filled with cheese, feat",
+    "url": "https://images.pexels.com/photos/37225937/pexels-photo-37225937.png?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 402,
+    "slug": "es-cendol-premium",
+    "title": "Premium Cendol",
+    "query": "es cendol premium green jelly coconut milk",
+    "photoInfo": "A vibrant Asian dessert in a black bowl showcasing colorful ",
+    "url": "https://images.pexels.com/photos/37146770/pexels-photo-37146770.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 403,
+    "slug": "nasi-tumpeng-premium",
+    "title": "Premium Tumpeng",
+    "query": "nasi tumpeng cone rice ceremony festive",
+    "photoInfo": "Nasi Tumpeng with sides, a festive Indonesian dish, traditio",
+    "url": "https://images.pexels.com/photos/36890105/pexels-photo-36890105.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 404,
+    "slug": "sate-padang-premium",
+    "title": "Premium Padang Satay",
+    "query": "sate padang minangkabau satay turmeric",
+    "photoInfo": "Delicious Sate Padang served on banana leaf, showcasing auth",
+    "url": "https://images.pexels.com/photos/37121686/pexels-photo-37121686.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "id": 405,
+    "slug": "ayam-rica-rica-premium",
+    "title": "Premium Rica-Rica Chicken",
+    "query": "ayam rica rica spicy chicken manado",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 406,
+    "slug": "sop-saffron",
+    "title": "Saffron Chicken Soup",
+    "query": "saffron soup chicken broth premium",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 407,
+    "slug": "nasi-kuning-premium",
+    "title": "Premium Yellow Rice",
+    "query": "nasi kuning yellow turmeric rice festive",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 408,
+    "slug": "rendang-wagyu",
+    "title": "Wagyu Rendang",
+    "query": "wagyu beef rendang dry curry premium",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 409,
+    "slug": "bakso-wagyu",
+    "title": "Wagyu Meatball Soup",
+    "query": "wagyu meatball soup premium beef",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 410,
+    "slug": "es-matcha-alpukat",
+    "title": "Matcha Avocado Ice",
+    "query": "matcha green tea avocado ice drink",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 411,
+    "slug": "ayam-bakar-truffle",
+    "title": "Truffle Grilled Chicken",
+    "query": "truffle grilled chicken gourmet",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 412,
+    "slug": "sop-buntut-truffle",
+    "title": "Truffle Oxtail Soup",
+    "query": "truffle oxtail soup premium",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 413,
+    "slug": "nasi-goreng-truffle",
+    "title": "Truffle Fried Rice",
+    "query": "truffle fried rice gourmet premium",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  },
+  {
+    "id": 414,
+    "slug": "martabak-tiramisu",
+    "title": "Tiramisu Martabak",
+    "query": "martabak tiramisu sweet pancake cream",
+    "photoInfo": "NO_RESULTS",
+    "url": null
+  }
+]

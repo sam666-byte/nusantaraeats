@@ -1,0 +1,884 @@
+[
+  {
+    "id": 1,
+    "title": "Rendang",
+    "image": "https://nusantaraeats.com/images/rendang.jpg",
+    "link": "https://nusantaraeats.com/recipes/rendang",
+    "caption": "Rendang 🍛\n\nWest Sumatra cuisine.\n\n⏱ 240 min | Hard\n\nFull recipe 👉 nusantaraeats.com/recipes/rendang\n\n#IndonesianFood #PadangFood #Minang"
+  },
+  {
+    "id": 2,
+    "title": "Soto Betawi",
+    "image": "https://nusantaraeats.com/images/soto-betawi.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-betawi",
+    "caption": "Comfort in a bowl 🍜\n\nSoto Betawi from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-betawi\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 3,
+    "title": "Rawon",
+    "image": "https://nusantaraeats.com/images/rawon.jpg",
+    "link": "https://nusantaraeats.com/recipes/rawon",
+    "caption": "Comfort in a bowl 🍜\n\nRawon from East Java\n\nFull recipe 👉 nusantaraeats.com/recipes/rawon\n\n#Soto #EastJava #Javanese"
+  },
+  {
+    "id": 4,
+    "title": "Pempek",
+    "image": "https://nusantaraeats.com/images/pempek.jpg",
+    "link": "https://nusantaraeats.com/recipes/pempek",
+    "caption": "Street food vibes 🍡\n\nPempek from South Sumatra\n\nFull recipe 👉 nusantaraeats.com/recipes/pempek\n\n#StreetFood #Palembang #FishCake"
+  },
+  {
+    "id": 5,
+    "title": "Gudeg",
+    "image": "https://nusantaraeats.com/images/gudeg.jpg",
+    "link": "https://nusantaraeats.com/recipes/gudeg",
+    "caption": "Gudeg 🍛\n\nYogyakarta cuisine.\n\n⏱ 240 min | Hard\n\nFull recipe 👉 nusantaraeats.com/recipes/gudeg\n\n#IndonesianFood #Yogyakarta #Jogja"
+  },
+  {
+    "id": 6,
+    "title": "Coto Makassar",
+    "image": "https://nusantaraeats.com/images/coto-makassar.jpg",
+    "link": "https://nusantaraeats.com/recipes/coto-makassar",
+    "caption": "Comfort in a bowl 🍜\n\nCoto Makassar from South Sulawesi\n\nFull recipe 👉 nusantaraeats.com/recipes/coto-makassar\n\n#Soto #Makassar #Sulawesi"
+  },
+  {
+    "id": 7,
+    "title": "Ayam Taliwang",
+    "image": "https://nusantaraeats.com/images/ayam-taliwang.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-taliwang",
+    "caption": "Grilled perfection 🔥🍢\n\nAyam Taliwang from West Nusa Tenggara\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-taliwang\n\n#Satay #Lombok #NTB"
+  },
+  {
+    "id": 8,
+    "title": "Papeda",
+    "image": "https://nusantaraeats.com/images/papeda.jpg",
+    "link": "https://nusantaraeats.com/recipes/papeda",
+    "caption": "Papeda 🍛\n\nPapua & Maluku cuisine.\n\n⏱ 45 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/papeda\n\n#IndonesianFood #Papua #Eastern"
+  },
+  {
+    "id": 9,
+    "title": "Satay Madura",
+    "image": "https://nusantaraeats.com/images/sate-madura.jpg",
+    "link": "https://nusantaraeats.com/recipes/sate-madura",
+    "caption": "Grilled perfection 🔥🍢\n\nSatay Madura from East Java (Madura)\n\nFull recipe 👉 nusantaraeats.com/recipes/sate-madura\n\n#Satay #Indonesian #Food"
+  },
+  {
+    "id": 10,
+    "title": "Mie Aceh",
+    "image": "https://nusantaraeats.com/images/mie-aceh.jpg",
+    "link": "https://nusantaraeats.com/recipes/mie-aceh",
+    "caption": "Mie Aceh 🍛\n\nAceh cuisine.\n\n⏱ 40 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/mie-aceh\n\n#IndonesianFood #AcehFood #Spicy"
+  },
+  {
+    "id": 11,
+    "title": "Original Betawi Soto",
+    "image": "https://nusantaraeats.com/images/soto-betawi-asli.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-betawi-asli",
+    "caption": "Comfort in a bowl 🍜\n\nOriginal Betawi Soto from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-betawi-asli\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 12,
+    "title": "Malaysian Village Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-kampung-malaysia.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-kampung-malaysia",
+    "caption": "Malaysian Village Fried Rice 🍛\n\nMalaysia cuisine.\n\n⏱ 25 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-kampung-malaysia\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 13,
+    "title": "Rica-Rica Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-bumbu-rica.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-bumbu-rica",
+    "caption": "Grilled perfection 🔥🍢\n\nRica-Rica Grilled Chicken from North Sulawesi\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-bumbu-rica\n\n#Satay #Manado #Minahasa"
+  },
+  {
+    "id": 14,
+    "title": "Lamongan Soto",
+    "image": "https://nusantaraeats.com/images/soto-lamongan.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-lamongan",
+    "caption": "Comfort in a bowl 🍜\n\nLamongan Soto from East Java (Lamongan)\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-lamongan\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 15,
+    "title": "Tahu Tek Tek",
+    "image": "https://nusantaraeats.com/images/tahu-tek-tek.jpg",
+    "link": "https://nusantaraeats.com/recipes/tahu-tek-tek",
+    "caption": "Street food vibes 🍡\n\nTahu Tek Tek from East Java (Surabaya)\n\nFull recipe 👉 nusantaraeats.com/recipes/tahu-tek-tek\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 16,
+    "title": "Smoky Grilled Rib Soup",
+    "image": "https://nusantaraeats.com/images/sop-iga-bakar.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-iga-bakar",
+    "caption": "Comfort in a bowl 🍜\n\nSmoky Grilled Rib Soup from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-iga-bakar\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 17,
+    "title": "Steamed Bolu Cake",
+    "image": "https://nusantaraeats.com/images/kue-bolu-mekar.jpg",
+    "link": "https://nusantaraeats.com/recipes/kue-bolu-mekar",
+    "caption": "Street food vibes 🍡\n\nSteamed Bolu Cake from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/kue-bolu-mekar\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 18,
+    "title": "Goat Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-kambing.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-kambing",
+    "caption": "Goat Fried Rice 🍛\n\nMiddle Eastern-Indonesian cuisine.\n\n⏱ 45 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-kambing\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 19,
+    "title": "Coconut Soup Ice",
+    "image": "https://nusantaraeats.com/images/es-sop-kelapa.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-sop-kelapa",
+    "caption": "Refresh your day 🧊🍹\n\nCoconut Soup Ice from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-sop-kelapa\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 20,
+    "title": "Fragrant Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-wangi.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-wangi",
+    "caption": "Grilled perfection 🔥🍢\n\nFragrant Grilled Chicken from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-wangi\n\n#Satay #Indonesian #Food"
+  },
+  {
+    "id": 21,
+    "title": "Authentic Lamongan Soto",
+    "image": "https://nusantaraeats.com/images/soto-lamongan-asli.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-lamongan-asli",
+    "caption": "Comfort in a bowl 🍜\n\nAuthentic Lamongan Soto from East Java (Lamongan)\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-lamongan-asli\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 22,
+    "title": "Tahu Tek",
+    "image": "https://nusantaraeats.com/images/tahu-tek.jpg",
+    "link": "https://nusantaraeats.com/recipes/tahu-tek",
+    "caption": "Street food vibes 🍡\n\nTahu Tek from East Java (Surabaya)\n\nFull recipe 👉 nusantaraeats.com/recipes/tahu-tek\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 23,
+    "title": "Banjar Chicken Soup",
+    "image": "https://nusantaraeats.com/images/soto-banjar.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-banjar",
+    "caption": "Comfort in a bowl 🍜\n\nBanjar Chicken Soup from South Kalimantan (Banjar)\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-banjar\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 24,
+    "title": "Seafood Fried Noodles",
+    "image": "https://nusantaraeats.com/images/mie-goreng-seafood.jpg",
+    "link": "https://nusantaraeats.com/recipes/mie-goreng-seafood",
+    "caption": "Seafood Fried Noodles 🍛\n\nChinese-Indonesian cuisine.\n\n⏱ 35 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/mie-goreng-seafood\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 25,
+    "title": "Crispy Tempeh Fritters",
+    "image": "https://nusantaraeats.com/images/tempe-goreng-tepung.jpg",
+    "link": "https://nusantaraeats.com/recipes/tempe-goreng-tepung",
+    "caption": "Street food vibes 🍡\n\nCrispy Tempeh Fritters from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/tempe-goreng-tepung\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 26,
+    "title": "Shaken Avocado Ice",
+    "image": "https://nusantaraeats.com/images/es-alpukat-kocok.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-alpukat-kocok",
+    "caption": "Refresh your day 🧊🍹\n\nShaken Avocado Ice from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/es-alpukat-kocok\n\n#Drinks #JakartaFood #Betawi"
+  },
+  {
+    "id": 27,
+    "title": "Seafood Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-seafood.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-seafood",
+    "caption": "Seafood Fried Rice 🍛\n\nChinese-Indonesian cuisine.\n\n⏱ 30 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-seafood\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 28,
+    "title": "Savory Egg Martabak",
+    "image": "https://nusantaraeats.com/images/martabak-telur.jpg",
+    "link": "https://nusantaraeats.com/recipes/martabak-telur",
+    "caption": "Street food vibes 🍡\n\nSavory Egg Martabak from Aceh / Java\n\nFull recipe 👉 nusantaraeats.com/recipes/martabak-telur\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 29,
+    "title": "Honey Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-honey.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-honey",
+    "caption": "Grilled perfection 🔥🍢\n\nHoney Grilled Chicken from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-honey\n\n#Satay #Indonesian #Food"
+  },
+  {
+    "id": 30,
+    "title": "Chicken Meatballs",
+    "image": "https://nusantaraeats.com/images/bakso-ayam.jpg",
+    "link": "https://nusantaraeats.com/recipes/bakso-ayam",
+    "caption": "Comfort in a bowl 🍜\n\nChicken Meatballs from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/bakso-ayam\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 31,
+    "title": "Balinese Fish Satay",
+    "image": "https://nusantaraeats.com/images/sate-lilit-ikan.jpg",
+    "link": "https://nusantaraeats.com/recipes/sate-lilit-ikan",
+    "caption": "Grilled perfection 🔥🍢\n\nBalinese Fish Satay from Bali\n\nFull recipe 👉 nusantaraeats.com/recipes/sate-lilit-ikan\n\n#Satay #BaliFood #Island"
+  },
+  {
+    "id": 32,
+    "title": "Balinese Mixed Vegetable Salad",
+    "image": "https://nusantaraeats.com/images/gado-gado-bali.jpg",
+    "link": "https://nusantaraeats.com/recipes/gado-gado-bali",
+    "caption": "Balinese Mixed Vegetable Salad 🍛\n\nBali cuisine.\n\n⏱ 40 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/gado-gado-bali\n\n#IndonesianFood #BaliFood #Island"
+  },
+  {
+    "id": 33,
+    "title": "Village Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-kampung.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-kampung",
+    "caption": "Village Fried Rice 🍛\n\nMalaysia / Indonesia cuisine.\n\n⏱ 25 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-kampung\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 34,
+    "title": "Smashed Fried Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-penyet.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-penyet",
+    "caption": "Smashed Fried Chicken 🍛\n\nEast Java cuisine.\n\n⏱ 60 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-penyet\n\n#IndonesianFood #EastJava #Javanese"
+  },
+  {
+    "id": 35,
+    "title": "Es Teler 77",
+    "image": "https://nusantaraeats.com/images/es-teler-77.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-teler-77",
+    "caption": "Refresh your day 🧊🍹\n\nEs Teler 77 from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/es-teler-77\n\n#Drinks #JakartaFood #Betawi"
+  },
+  {
+    "id": 36,
+    "title": "Devil's Rawon",
+    "image": "https://nusantaraeats.com/images/rawon-setan.jpg",
+    "link": "https://nusantaraeats.com/recipes/rawon-setan",
+    "caption": "Comfort in a bowl 🍜\n\nDevil's Rawon from East Java (Malang)\n\nFull recipe 👉 nusantaraeats.com/recipes/rawon-setan\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 37,
+    "title": "Balinese Mixed Rice",
+    "image": "https://nusantaraeats.com/images/nasi-campur-bali.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-campur-bali",
+    "caption": "Balinese Mixed Rice 🍛\n\nBali cuisine.\n\n⏱ 120 min | Hard\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-campur-bali\n\n#IndonesianFood #BaliFood #Island"
+  },
+  {
+    "id": 38,
+    "title": "Indonesian Fruit Ice",
+    "image": "https://nusantaraeats.com/images/es-buah.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-buah",
+    "caption": "Refresh your day 🧊🍹\n\nIndonesian Fruit Ice from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-buah\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 39,
+    "title": "Beef Trotter Soup",
+    "image": "https://nusantaraeats.com/images/sop-kaki-sapi.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-kaki-sapi",
+    "caption": "Comfort in a bowl 🍜\n\nBeef Trotter Soup from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-kaki-sapi\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 40,
+    "title": "Jakarta Gado-Gado",
+    "image": "https://nusantaraeats.com/images/gado-gado-jakarta.jpg",
+    "link": "https://nusantaraeats.com/recipes/gado-gado-jakarta",
+    "caption": "Jakarta Gado-Gado 🍛\n\nJakarta cuisine.\n\n⏱ 35 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/gado-gado-jakarta\n\n#IndonesianFood #JakartaFood #Betawi"
+  },
+  {
+    "id": 41,
+    "title": "Noodle Soup",
+    "image": "https://nusantaraeats.com/images/soto-mie.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-mie",
+    "caption": "Comfort in a bowl 🍜\n\nNoodle Soup from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-mie\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 42,
+    "title": "Makassar Pressed Banana",
+    "image": "https://nusantaraeats.com/images/pisang-epe.jpg",
+    "link": "https://nusantaraeats.com/recipes/pisang-epe",
+    "caption": "Street food vibes 🍡\n\nMakassar Pressed Banana from South Sulawesi (Makassar)\n\nFull recipe 👉 nusantaraeats.com/recipes/pisang-epe\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 43,
+    "title": "Scrambled Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-mawut.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-mawut",
+    "caption": "Scrambled Fried Rice 🍛\n\nJava cuisine.\n\n⏱ 20 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-mawut\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 44,
+    "title": "Martabak Ice Cream",
+    "image": "https://nusantaraeats.com/images/es-martabak.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-martabak",
+    "caption": "Street food vibes 🍡\n\nMartabak Ice Cream from Indonesia (Modern)\n\nFull recipe 👉 nusantaraeats.com/recipes/es-martabak\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 45,
+    "title": "Grilled Oxtail Soup",
+    "image": "https://nusantaraeats.com/images/sop-buntut-bakar.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-buntut-bakar",
+    "caption": "Comfort in a bowl 🍜\n\nGrilled Oxtail Soup from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-buntut-bakar\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 46,
+    "title": "Round Fried Tofu",
+    "image": "https://nusantaraeats.com/images/tahu-bulat.jpg",
+    "link": "https://nusantaraeats.com/recipes/tahu-bulat",
+    "caption": "Street food vibes 🍡\n\nRound Fried Tofu from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/tahu-bulat\n\n#StreetFood #JakartaFood #Betawi"
+  },
+  {
+    "id": 47,
+    "title": "Cendol Jelly Drink",
+    "image": "https://nusantaraeats.com/images/es-cendol-jelly.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-cendol-jelly",
+    "caption": "Refresh your day 🧊🍹\n\nCendol Jelly Drink from Indonesia (Modern)\n\nFull recipe 👉 nusantaraeats.com/recipes/es-cendol-jelly\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 48,
+    "title": "Padang Satay with Thick Sauce",
+    "image": "https://nusantaraeats.com/images/sate-padang-kuah.jpg",
+    "link": "https://nusantaraeats.com/recipes/sate-padang-kuah",
+    "caption": "Grilled perfection 🔥🍢\n\nPadang Satay with Thick Sauce from West Sumatra\n\nFull recipe 👉 nusantaraeats.com/recipes/sate-padang-kuah\n\n#Satay #PadangFood #Minang"
+  },
+  {
+    "id": 49,
+    "title": "Sweet Potato Mochi",
+    "image": "https://nusantaraeats.com/images/kue-mochi-ubi.jpg",
+    "link": "https://nusantaraeats.com/recipes/kue-mochi-ubi",
+    "caption": "Street food vibes 🍡\n\nSweet Potato Mochi from Indonesia (Fusion)\n\nFull recipe 👉 nusantaraeats.com/recipes/kue-mochi-ubi\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 50,
+    "title": "Stink Bean Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-petai.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-petai",
+    "caption": "Stink Bean Fried Rice 🍛\n\nMalaysia / Indonesia cuisine.\n\n⏱ 30 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-petai\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 51,
+    "title": "Fruit Soup Ice",
+    "image": "https://nusantaraeats.com/images/es-sop-buah.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-sop-buah",
+    "caption": "Refresh your day 🧊🍹\n\nFruit Soup Ice from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-sop-buah\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 52,
+    "title": "Padang Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-padang.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-padang",
+    "caption": "Grilled perfection 🔥🍢\n\nPadang Grilled Chicken from West Sumatra\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-padang\n\n#Satay #PadangFood #Minang"
+  },
+  {
+    "id": 53,
+    "title": "Clear Chicken Soto",
+    "image": "https://nusantaraeats.com/images/soto-ayam-bening.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-ayam-bening",
+    "caption": "Comfort in a bowl 🍜\n\nClear Chicken Soto from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-ayam-bening\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 54,
+    "title": "Noodle Martabak",
+    "image": "https://nusantaraeats.com/images/martabak-mie.jpg",
+    "link": "https://nusantaraeats.com/recipes/martabak-mie",
+    "caption": "Street food vibes 🍡\n\nNoodle Martabak from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/martabak-mie\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 55,
+    "title": "Sumedang Fried Tofu",
+    "image": "https://nusantaraeats.com/images/tahu-sumedang.jpg",
+    "link": "https://nusantaraeats.com/recipes/tahu-sumedang",
+    "caption": "Street food vibes 🍡\n\nSumedang Fried Tofu from West Java (Sumedang)\n\nFull recipe 👉 nusantaraeats.com/recipes/tahu-sumedang\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 56,
+    "title": "Fruit Rujak Ice",
+    "image": "https://nusantaraeats.com/images/es-rujak.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-rujak",
+    "caption": "Refresh your day 🧊🍹\n\nFruit Rujak Ice from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/es-rujak\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 57,
+    "title": "Rujak-Spiced Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-bumbu-rujak.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-bumbu-rujak",
+    "caption": "Grilled perfection 🔥🍢\n\nRujak-Spiced Grilled Chicken from East Java\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-bumbu-rujak\n\n#Satay #EastJava #Javanese"
+  },
+  {
+    "id": 58,
+    "title": "Black Glutinous Rice Porridge",
+    "image": "https://nusantaraeats.com/images/bubur-ketan-hitam.jpg",
+    "link": "https://nusantaraeats.com/recipes/bubur-ketan-hitam",
+    "caption": "Street food vibes 🍡\n\nBlack Glutinous Rice Porridge from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/bubur-ketan-hitam\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 59,
+    "title": "Smashed Chicken Rice",
+    "image": "https://nusantaraeats.com/images/nasi-ayam-penyet.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-ayam-penyet",
+    "caption": "Smashed Chicken Rice 🍛\n\nEast Java cuisine.\n\n⏱ 60 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-ayam-penyet\n\n#IndonesianFood #EastJava #Javanese"
+  },
+  {
+    "id": 60,
+    "title": "Grilled Beef Rib Soup",
+    "image": "https://nusantaraeats.com/images/sop-iga-sapi-bakar.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-iga-sapi-bakar",
+    "caption": "Comfort in a bowl 🍜\n\nGrilled Beef Rib Soup from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-iga-sapi-bakar\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 61,
+    "title": "Dawet Ice",
+    "image": "https://nusantaraeats.com/images/es-dawet.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-dawet",
+    "caption": "Refresh your day 🧊🍹\n\nDawet Ice from Central Java\n\nFull recipe 👉 nusantaraeats.com/recipes/es-dawet\n\n#Drinks #CentralJava #Javanese"
+  },
+  {
+    "id": 62,
+    "title": "Cucur Cake",
+    "image": "https://nusantaraeats.com/images/kue-cucur.jpg",
+    "link": "https://nusantaraeats.com/recipes/kue-cucur",
+    "caption": "Street food vibes 🍡\n\nCucur Cake from Java / Malaysia\n\nFull recipe 👉 nusantaraeats.com/recipes/kue-cucur\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 63,
+    "title": "Herb Rice",
+    "image": "https://nusantaraeats.com/images/nasi-ulam.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-ulam",
+    "caption": "Herb Rice 🍛\n\nMalacca / Indonesian cuisine.\n\n⏱ 60 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-ulam\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 64,
+    "title": "Madura Goat Soup",
+    "image": "https://nusantaraeats.com/images/sup-kambing-madura.jpg",
+    "link": "https://nusantaraeats.com/recipes/sup-kambing-madura",
+    "caption": "Comfort in a bowl 🍜\n\nMadura Goat Soup from East Java (Madura)\n\nFull recipe 👉 nusantaraeats.com/recipes/sup-kambing-madura\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 65,
+    "title": "Serabi with Kinca Sauce",
+    "image": "https://nusantaraeats.com/images/kue-serabi-kinca.jpg",
+    "link": "https://nusantaraeats.com/recipes/kue-serabi-kinca",
+    "caption": "Street food vibes 🍡\n\nSerabi with Kinca Sauce from Central Java\n\nFull recipe 👉 nusantaraeats.com/recipes/kue-serabi-kinca\n\n#StreetFood #CentralJava #Javanese"
+  },
+  {
+    "id": 66,
+    "title": "Smashed Chicken with Raw Sambal",
+    "image": "https://nusantaraeats.com/images/ayam-geprek-sambal-matah.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-geprek-sambal-matah",
+    "caption": "Smashed Chicken with Raw Sambal 🍛\n\nBali / Java cuisine.\n\n⏱ 50 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-geprek-sambal-matah\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 67,
+    "title": "Mini Tumpeng",
+    "image": "https://nusantaraeats.com/images/nasi-tumpeng-mini.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-tumpeng-mini",
+    "caption": "Mini Tumpeng 🍛\n\nJava cuisine.\n\n⏱ 120 min | Hard\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-tumpeng-mini\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 68,
+    "title": "Passion Fruit Syrup Ice",
+    "image": "https://nusantaraeats.com/images/es-sirup-markisa.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-sirup-markisa",
+    "caption": "Refresh your day 🧊🍹\n\nPassion Fruit Syrup Ice from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-sirup-markisa\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 69,
+    "title": "Karo Roast Pork",
+    "image": "https://nusantaraeats.com/images/babi-panggang-karo.jpg",
+    "link": "https://nusantaraeats.com/recipes/babi-panggang-karo",
+    "caption": "Grilled perfection 🔥🍢\n\nKaro Roast Pork from North Sumatra (Karo)\n\nFull recipe 👉 nusantaraeats.com/recipes/babi-panggang-karo\n\n#Satay #Indonesian #Food"
+  },
+  {
+    "id": 70,
+    "title": "Creamy Milk Soto",
+    "image": "https://nusantaraeats.com/images/soto-betawi-kuah-susu.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-betawi-kuah-susu",
+    "caption": "Comfort in a bowl 🍜\n\nCreamy Milk Soto from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-betawi-kuah-susu\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 71,
+    "title": "Smashed Tofu with Sambal",
+    "image": "https://nusantaraeats.com/images/tahu-geprek-sambal.jpg",
+    "link": "https://nusantaraeats.com/recipes/tahu-geprek-sambal",
+    "caption": "Street food vibes 🍡\n\nSmashed Tofu with Sambal from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/tahu-geprek-sambal\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 72,
+    "title": "Banana Milk Ice",
+    "image": "https://nusantaraeats.com/images/es-pisang-ior.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-pisang-ior",
+    "caption": "Refresh your day 🧊🍹\n\nBanana Milk Ice from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-pisang-ior\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 73,
+    "title": "Putu Ayu Cake",
+    "image": "https://nusantaraeats.com/images/kue-putu-ayu.jpg",
+    "link": "https://nusantaraeats.com/recipes/kue-putu-ayu",
+    "caption": "Street food vibes 🍡\n\nPutu Ayu Cake from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/kue-putu-ayu\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 74,
+    "title": "Red Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-merah.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-merah",
+    "caption": "Red Fried Rice 🍛\n\nJava cuisine.\n\n⏱ 30 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-merah\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 75,
+    "title": "Mung Bean Ice",
+    "image": "https://nusantaraeats.com/images/es-kacang-hijau.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-kacang-hijau",
+    "caption": "Refresh your day 🧊🍹\n\nMung Bean Ice from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/es-kacang-hijau\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 76,
+    "title": "Hoisin Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-hoisin.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-hoisin",
+    "caption": "Grilled perfection 🔥🍢\n\nHoisin Grilled Chicken from Chinese-Indonesian\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-hoisin\n\n#Satay #Indonesian #Food"
+  },
+  {
+    "id": 77,
+    "title": "Clear Chicken Soup",
+    "image": "https://nusantaraeats.com/images/sop-ayam-bening.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-ayam-bening",
+    "caption": "Comfort in a bowl 🍜\n\nClear Chicken Soup from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-ayam-bening\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 78,
+    "title": "Chicken Lemper",
+    "image": "https://nusantaraeats.com/images/kue-lemper-ayam.jpg",
+    "link": "https://nusantaraeats.com/recipes/kue-lemper-ayam",
+    "caption": "Street food vibes 🍡\n\nChicken Lemper from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/kue-lemper-ayam\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 79,
+    "title": "Intestine Satay",
+    "image": "https://nusantaraeats.com/images/sate-usus.jpg",
+    "link": "https://nusantaraeats.com/recipes/sate-usus",
+    "caption": "Grilled perfection 🔥🍢\n\nIntestine Satay from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/sate-usus\n\n#Satay #Indonesian #Food"
+  },
+  {
+    "id": 80,
+    "title": "Avocado Coffee Ice",
+    "image": "https://nusantaraeats.com/images/es-alpukat-kopi.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-alpukat-kopi",
+    "caption": "Refresh your day 🧊🍹\n\nAvocado Coffee Ice from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-alpukat-kopi\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 81,
+    "title": "Extra Spicy Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-pedas.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-pedas",
+    "caption": "Extra Spicy Fried Rice 🍛\n\nJava cuisine.\n\n⏱ 25 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-pedas\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 82,
+    "title": "Balinese Spiced Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-bumbu-bali.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-bumbu-bali",
+    "caption": "Grilled perfection 🔥🍢\n\nBalinese Spiced Grilled Chicken from Bali\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-bumbu-bali\n\n#Satay #BaliFood #Island"
+  },
+  {
+    "id": 83,
+    "title": "Makassar Rib Soup",
+    "image": "https://nusantaraeats.com/images/sop-konro-makassar.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-konro-makassar",
+    "caption": "Comfort in a bowl 🍜\n\nMakassar Rib Soup from South Sulawesi (Makassar)\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-konro-makassar\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 84,
+    "title": "Aceh Birambi Cake",
+    "image": "https://nusantaraeats.com/images/kue-cara-birambi.jpg",
+    "link": "https://nusantaraeats.com/recipes/kue-cara-birambi",
+    "caption": "Street food vibes 🍡\n\nAceh Birambi Cake from Aceh\n\nFull recipe 👉 nusantaraeats.com/recipes/kue-cara-birambi\n\n#StreetFood #AcehFood #Spicy"
+  },
+  {
+    "id": 85,
+    "title": "Gulai Goat Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-kambing-gulai.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-kambing-gulai",
+    "caption": "Gulai Goat Fried Rice 🍛\n\nWest Sumatra cuisine.\n\n⏱ 60 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-kambing-gulai\n\n#IndonesianFood #PadangFood #Minang"
+  },
+  {
+    "id": 86,
+    "title": "Rainbow Tea Ice",
+    "image": "https://nusantaraeats.com/images/es-teh-pelangi.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-teh-pelangi",
+    "caption": "Refresh your day 🧊🍹\n\nRainbow Tea Ice from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-teh-pelangi\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 87,
+    "title": "Butter Fried Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-goreng-mentega.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-goreng-mentega",
+    "caption": "Butter Fried Chicken 🍛\n\nChinese-Indonesian cuisine.\n\n⏱ 60 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-goreng-mentega\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 88,
+    "title": "Grilled Rib Soup Special",
+    "image": "https://nusantaraeats.com/images/sup-konro-bakar.jpg",
+    "link": "https://nusantaraeats.com/recipes/sup-konro-bakar",
+    "caption": "Comfort in a bowl 🍜\n\nGrilled Rib Soup Special from South Sulawesi\n\nFull recipe 👉 nusantaraeats.com/recipes/sup-konro-bakar\n\n#Soto #Makassar #Sulawesi"
+  },
+  {
+    "id": 89,
+    "title": "Smashed Chicken Rice Bowl",
+    "image": "https://nusantaraeats.com/images/nasi-ayam-geprek.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-ayam-geprek",
+    "caption": "Smashed Chicken Rice Bowl 🍛\n\nJava cuisine.\n\n⏱ 50 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-ayam-geprek\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 90,
+    "title": "Avocado Juice",
+    "image": "https://nusantaraeats.com/images/es-jus-alpukat.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-jus-alpukat",
+    "caption": "Refresh your day 🧊🍹\n\nAvocado Juice from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-jus-alpukat\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 91,
+    "title": "Original Betawi Soto",
+    "image": "https://nusantaraeats.com/images/soto-betawi-original.jpg",
+    "link": "https://nusantaraeats.com/recipes/soto-betawi-original",
+    "caption": "Comfort in a bowl 🍜\n\nOriginal Betawi Soto from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/soto-betawi-original\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 92,
+    "title": "Citul Rice Crackers",
+    "image": "https://nusantaraeats.com/images/kue-kue-citul.jpg",
+    "link": "https://nusantaraeats.com/recipes/kue-kue-citul",
+    "caption": "Street food vibes 🍡\n\nCitul Rice Crackers from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/kue-kue-citul\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 93,
+    "title": "Fresh Young Coconut",
+    "image": "https://nusantaraeats.com/images/es-kelapa-muda.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-kelapa-muda",
+    "caption": "Refresh your day 🧊🍹\n\nFresh Young Coconut from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-kelapa-muda\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 94,
+    "title": "Petai Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-petai-stink.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-petai-stink",
+    "caption": "Petai Fried Rice 🍛\n\nIndonesia cuisine.\n\n⏱ 30 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-petai-stink\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 95,
+    "title": "Dawet Ayu Ice",
+    "image": "https://nusantaraeats.com/images/es-dawet-ayu.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-dawet-ayu",
+    "caption": "Refresh your day 🧊🍹\n\nDawet Ayu Ice from Central Java (Banjarnegara)\n\nFull recipe 👉 nusantaraeats.com/recipes/es-dawet-ayu\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 96,
+    "title": "Lotek Vegetable Salad",
+    "image": "https://nusantaraeats.com/images/lotek.jpg",
+    "link": "https://nusantaraeats.com/recipes/lotek",
+    "caption": "Lotek Vegetable Salad 🍛\n\nWest Java (Sunda) cuisine.\n\n⏱ 40 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/lotek\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 97,
+    "title": "Timbel Wrapped Rice",
+    "image": "https://nusantaraeats.com/images/nasi-timbel.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-timbel",
+    "caption": "Timbel Wrapped Rice 🍛\n\nWest Java (Sunda) cuisine.\n\n⏱ 60 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-timbel\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 98,
+    "title": "Makassar Beef Rib Soup",
+    "image": "https://nusantaraeats.com/images/sop-konro.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-konro",
+    "caption": "Comfort in a bowl 🍜\n\nMakassar Beef Rib Soup from South Sulawesi (Makassar)\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-konro\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 99,
+    "title": "Ternate Raw Fish Salad",
+    "image": "https://nusantaraeats.com/images/gohu-ikan.jpg",
+    "link": "https://nusantaraeats.com/recipes/gohu-ikan",
+    "caption": "Ternate Raw Fish Salad 🍛\n\nNorth Maluku (Ternate) cuisine.\n\n⏱ 30 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/gohu-ikan\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 100,
+    "title": "Dirty Duck Rice",
+    "image": "https://nusantaraeats.com/images/nasi-bebek-bengil.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-bebek-bengil",
+    "caption": "Dirty Duck Rice 🍛\n\nBali (Ubud) cuisine.\n\n⏱ 120 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-bebek-bengil\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 101,
+    "title": "North Sulawesi Woku Fish",
+    "image": "https://nusantaraeats.com/images/ikan-bakar-woku.jpg",
+    "link": "https://nusantaraeats.com/recipes/ikan-bakar-woku",
+    "caption": "Grilled perfection 🔥🍢\n\nNorth Sulawesi Woku Fish from North Sulawesi\n\nFull recipe 👉 nusantaraeats.com/recipes/ikan-bakar-woku\n\n#Satay #Manado #Minahasa"
+  },
+  {
+    "id": 102,
+    "title": "Raw Vegetable Salad with Peanut Sauce",
+    "image": "https://nusantaraeats.com/images/karedok.jpg",
+    "link": "https://nusantaraeats.com/recipes/karedok",
+    "caption": "Raw Vegetable Salad with Peanut Sauce 🍛\n\nWest Java (Sunda) cuisine.\n\n⏱ 25 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/karedok\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 103,
+    "title": "Honey Glazed Oxtail Soup",
+    "image": "https://nusantaraeats.com/images/sop-buntut-madu.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-buntut-madu",
+    "caption": "Comfort in a bowl 🍜\n\nHoney Glazed Oxtail Soup from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-buntut-madu\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 104,
+    "title": "Creamy Coconut Rice",
+    "image": "https://nusantaraeats.com/images/nasi-uduk-cream.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-uduk-cream",
+    "caption": "Creamy Coconut Rice 🍛\n\nJakarta cuisine.\n\n⏱ 60 min | Easy\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-uduk-cream\n\n#IndonesianFood #JakartaFood #Betawi"
+  },
+  {
+    "id": 105,
+    "title": "Sweet Soy Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-kecap.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-kecap",
+    "caption": "Grilled perfection 🔥🍢\n\nSweet Soy Grilled Chicken from Java\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-kecap\n\n#Satay #Indonesian #Food"
+  },
+  {
+    "id": 106,
+    "title": "Premium Grilled Oxtail",
+    "image": "https://nusantaraeats.com/images/sop-buntut-bakar-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-buntut-bakar-premium",
+    "caption": "Comfort in a bowl 🍜\n\nPremium Grilled Oxtail from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-buntut-bakar-premium\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 107,
+    "title": "Premium Seafood Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-seafood-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-seafood-premium",
+    "caption": "Premium Seafood Fried Rice 🍛\n\nChinese-Indonesian cuisine.\n\n⏱ 40 min | Hard\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-seafood-premium\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 108,
+    "title": "Premium Balinese Duck",
+    "image": "https://nusantaraeats.com/images/ayam-betutu-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-betutu-premium",
+    "caption": "Premium Balinese Duck 🍛\n\nBali cuisine.\n\n⏱ 300 min | Hard\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-betutu-premium\n\n#IndonesianFood #BaliFood #Island"
+  },
+  {
+    "id": 109,
+    "title": "Prawn Satay Bali",
+    "image": "https://nusantaraeats.com/images/sate-lilit-udang.jpg",
+    "link": "https://nusantaraeats.com/recipes/sate-lilit-udang",
+    "caption": "Grilled perfection 🔥🍢\n\nPrawn Satay Bali from Bali\n\nFull recipe 👉 nusantaraeats.com/recipes/sate-lilit-udang\n\n#Satay #BaliFood #Island"
+  },
+  {
+    "id": 110,
+    "title": "Honey Chicken Rice",
+    "image": "https://nusantaraeats.com/images/nasi-ayam-bakar-madu.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-ayam-bakar-madu",
+    "caption": "Honey Chicken Rice 🍛\n\nIndonesia cuisine.\n\n⏱ 75 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-ayam-bakar-madu\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 111,
+    "title": "Premium Konro Soup",
+    "image": "https://nusantaraeats.com/images/sop-conro-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-conro-premium",
+    "caption": "Comfort in a bowl 🍜\n\nPremium Konro Soup from South Sulawesi\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-conro-premium\n\n#Soto #Makassar #Sulawesi"
+  },
+  {
+    "id": 112,
+    "title": "Premium Jakarta Salad",
+    "image": "https://nusantaraeats.com/images/gado-gado-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/gado-gado-premium",
+    "caption": "Premium Jakarta Salad 🍛\n\nJakarta cuisine.\n\n⏱ 45 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/gado-gado-premium\n\n#IndonesianFood #JakartaFood #Betawi"
+  },
+  {
+    "id": 113,
+    "title": "Premium Sweet Martabak",
+    "image": "https://nusantaraeats.com/images/martabak-manis-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/martabak-manis-premium",
+    "caption": "Street food vibes 🍡\n\nPremium Sweet Martabak from Indonesia (Modern)\n\nFull recipe 👉 nusantaraeats.com/recipes/martabak-manis-premium\n\n#StreetFood #Indonesian #Food"
+  },
+  {
+    "id": 114,
+    "title": "Premium Cendol",
+    "image": "https://nusantaraeats.com/images/es-cendol-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-cendol-premium",
+    "caption": "Refresh your day 🧊🍹\n\nPremium Cendol from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/es-cendol-premium\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 115,
+    "title": "Premium Tumpeng",
+    "image": "https://nusantaraeats.com/images/nasi-tumpeng-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-tumpeng-premium",
+    "caption": "Premium Tumpeng 🍛\n\nJava cuisine.\n\n⏱ 180 min | Hard\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-tumpeng-premium\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 116,
+    "title": "Premium Padang Satay",
+    "image": "https://nusantaraeats.com/images/sate-padang-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/sate-padang-premium",
+    "caption": "Grilled perfection 🔥🍢\n\nPremium Padang Satay from West Sumatra\n\nFull recipe 👉 nusantaraeats.com/recipes/sate-padang-premium\n\n#Satay #PadangFood #Minang"
+  },
+  {
+    "id": 117,
+    "title": "Premium Rica-Rica Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-rica-rica-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-rica-rica-premium",
+    "caption": "Premium Rica-Rica Chicken 🍛\n\nNorth Sulawesi cuisine.\n\n⏱ 60 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-rica-rica-premium\n\n#IndonesianFood #Manado #Minahasa"
+  },
+  {
+    "id": 118,
+    "title": "Saffron Chicken Soup",
+    "image": "https://nusantaraeats.com/images/sop-saffron.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-saffron",
+    "caption": "Comfort in a bowl 🍜\n\nSaffron Chicken Soup from Indonesia (Fusion)\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-saffron\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 119,
+    "title": "Premium Yellow Rice",
+    "image": "https://nusantaraeats.com/images/nasi-kuning-premium.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-kuning-premium",
+    "caption": "Premium Yellow Rice 🍛\n\nIndonesia cuisine.\n\n⏱ 60 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-kuning-premium\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 120,
+    "title": "Wagyu Rendang",
+    "image": "https://nusantaraeats.com/images/rendang-wagyu.jpg",
+    "link": "https://nusantaraeats.com/recipes/rendang-wagyu",
+    "caption": "Wagyu Rendang 🍛\n\nWest Sumatra cuisine.\n\n⏱ 240 min | Hard\n\nFull recipe 👉 nusantaraeats.com/recipes/rendang-wagyu\n\n#IndonesianFood #PadangFood #Minang"
+  },
+  {
+    "id": 121,
+    "title": "Wagyu Meatball Soup",
+    "image": "https://nusantaraeats.com/images/bakso-wagyu.jpg",
+    "link": "https://nusantaraeats.com/recipes/bakso-wagyu",
+    "caption": "Comfort in a bowl 🍜\n\nWagyu Meatball Soup from Indonesia\n\nFull recipe 👉 nusantaraeats.com/recipes/bakso-wagyu\n\n#Soto #Indonesian #Food"
+  },
+  {
+    "id": 122,
+    "title": "Matcha Avocado Ice",
+    "image": "https://nusantaraeats.com/images/es-matcha-alpukat.jpg",
+    "link": "https://nusantaraeats.com/recipes/es-matcha-alpukat",
+    "caption": "Refresh your day 🧊🍹\n\nMatcha Avocado Ice from Indonesia (Modern)\n\nFull recipe 👉 nusantaraeats.com/recipes/es-matcha-alpukat\n\n#Drinks #Indonesian #Food"
+  },
+  {
+    "id": 123,
+    "title": "Truffle Grilled Chicken",
+    "image": "https://nusantaraeats.com/images/ayam-bakar-truffle.jpg",
+    "link": "https://nusantaraeats.com/recipes/ayam-bakar-truffle",
+    "caption": "Grilled perfection 🔥🍢\n\nTruffle Grilled Chicken from Indonesia (Fusion)\n\nFull recipe 👉 nusantaraeats.com/recipes/ayam-bakar-truffle\n\n#Satay #Indonesian #Food"
+  },
+  {
+    "id": 124,
+    "title": "Truffle Oxtail Soup",
+    "image": "https://nusantaraeats.com/images/sop-buntut-truffle.jpg",
+    "link": "https://nusantaraeats.com/recipes/sop-buntut-truffle",
+    "caption": "Comfort in a bowl 🍜\n\nTruffle Oxtail Soup from Jakarta\n\nFull recipe 👉 nusantaraeats.com/recipes/sop-buntut-truffle\n\n#Soto #JakartaFood #Betawi"
+  },
+  {
+    "id": 125,
+    "title": "Truffle Fried Rice",
+    "image": "https://nusantaraeats.com/images/nasi-goreng-truffle.jpg",
+    "link": "https://nusantaraeats.com/recipes/nasi-goreng-truffle",
+    "caption": "Truffle Fried Rice 🍛\n\nIndonesia (Modern) cuisine.\n\n⏱ 30 min | Medium\n\nFull recipe 👉 nusantaraeats.com/recipes/nasi-goreng-truffle\n\n#IndonesianFood #Indonesian #Food"
+  },
+  {
+    "id": 126,
+    "title": "Tiramisu Martabak",
+    "image": "https://nusantaraeats.com/images/martabak-tiramisu.jpg",
+    "link": "https://nusantaraeats.com/recipes/martabak-tiramisu",
+    "caption": "Street food vibes 🍡\n\nTiramisu Martabak from Indonesia (Modern)\n\nFull recipe 👉 nusantaraeats.com/recipes/martabak-tiramisu\n\n#StreetFood #Indonesian #Food"
+  }
+]
