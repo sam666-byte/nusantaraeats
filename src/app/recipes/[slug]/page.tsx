@@ -255,7 +255,14 @@ export default async function RecipePage({ params }: Props) {
 
         {/* Hero Image */}
         <div className="relative h-72 overflow-hidden rounded-2xl border border-amber-500/20 sm:h-[28rem]">
-          <img src={recipe.image} alt={`${recipe.shortTitle || recipe.title.replace(/ Recipe:.*$/, '')} — traditional ${recipe.origin} dish`} className="h-full w-full object-cover" />
+          <img
+            src={recipe.image}
+            alt={`Authentic ${recipe.shortTitle || recipe.title.replace(/ Recipe:.*$/, '').replace(/ Recipe$/, '')} from ${recipe.origin} — traditional Indonesian ${recipe.kategori === 'makanan-berat' ? 'main dish' : recipe.kategori === 'sup-soto' ? 'soup' : recipe.kategori === 'sate-panggang' ? 'grilled dish' : recipe.kategori === 'jajanan' ? 'snack' : 'drink'} with step-by-step cooking instructions`}
+            className="h-full w-full object-cover"
+            width="1200"
+            height="630"
+            loading="eager"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8">
             <h1 className="font-serif text-4xl font-black text-white sm:text-5xl md:text-6xl">{recipe.title}</h1>

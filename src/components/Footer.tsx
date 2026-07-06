@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { KATEGORI_LIST } from "@/types";
+import FooterViewCounter from "./FooterViewCounter";
 
 export default function Footer() {
   return (
@@ -33,16 +35,10 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-amber-400">Categories</h3>
             <ul className="space-y-2.5">
-              {[
-                { name: "Main Dishes", href: "/categories/makanan-berat", icon: "🍛" },
-                { name: "Soups & Soto", href: "/categories/sup-soto", icon: "🍜" },
-                { name: "Satay & Grilled", href: "/categories/sate-panggang", icon: "🍢" },
-                { name: "Snacks", href: "/categories/jajanan", icon: "🍡" },
-                { name: "Drinks", href: "/categories/minuman", icon: "🍹" },
-              ].map((c) => (
-                <li key={c.name}>
-                  <Link href={c.href} className="flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-amber-400">
-                    <span>{c.icon}</span> {c.name}
+              {KATEGORI_LIST.map((k) => (
+                <li key={k.id}>
+                  <Link href={`/categories/${k.id}`} className="flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-amber-400">
+                    <span>{k.icon}</span> {k.name}
                   </Link>
                 </li>
               ))}
@@ -58,8 +54,8 @@ export default function Footer() {
                 { name: "Java", href: "/regions/java" },
                 { name: "Bali", href: "/regions/bali" },
                 { name: "Sulawesi", href: "/regions/sulawesi" },
-                { name: "Papua", href: "/regions/papua" },
-                { name: "Aceh", href: "/regions/aceh" },
+                { name: "Sumatra", href: "/regions/sumatra" },
+                { name: "Papua & Maluku", href: "/regions/papua-maluku" },
               ].map((r) => (
                 <li key={r.name}>
                   <Link href={r.href} className="text-sm text-zinc-500 transition-colors hover:text-amber-400">
@@ -105,7 +101,7 @@ export default function Footer() {
             <span>◆</span>
             <span className="mx-1">34 Regions</span>
             <span>◆</span>
-            <span className="mx-1">4K+ Photos</span>
+            <FooterViewCounter />
           </div>
         </div>
       </div>

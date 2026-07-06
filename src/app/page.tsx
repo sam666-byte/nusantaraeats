@@ -180,10 +180,10 @@ export default function Home() {
               Indonesian Cuisine
             </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm font-semibold leading-relaxed text-zinc-300 sm:text-base">
             500+ Recipes • Traditional • Regional • Step-by-Step
           </p>
-          <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-zinc-500">
+          <p className="mx-auto mt-2 max-w-xl text-xs font-medium leading-relaxed text-zinc-400">
             From the richness of Indonesian spices, traditions, and the warmth of its kitchen.
             Every recipe tells a story — from Sabang to Merauke.
           </p>
@@ -351,6 +351,58 @@ export default function Home() {
                 </button>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MOST POPULAR (Top Rated) ─── */}
+      <section className="relative z-10 border-t border-amber-500/10 px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 text-center">
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-amber-400">
+              — Community Favorites —
+            </p>
+            <h2 className="mt-2 font-serif text-3xl font-bold text-white sm:text-4xl">
+              Most <span className="bg-gradient-to-r from-amber-300 to-amber-600 bg-clip-text text-transparent">Popular</span> Recipes
+            </h2>
+            <p className="mt-3 text-sm text-zinc-500">Top-rated recipes loved by our community</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {recipes
+              .sort((a, b) => b.rating - a.rating)
+              .slice(0, 8)
+              .map((r) => (
+                <Link
+                  key={r.id}
+                  href={`/recipes/${r.slug}`}
+                  className="group overflow-hidden rounded-xl border border-amber-500/10 bg-zinc-900 transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/30 hover:shadow-lg hover:shadow-amber-500/10"
+                >
+                  <div className="relative h-40 overflow-hidden">
+                    <img
+                      src={r.image}
+                      alt={`Authentic ${r.shortTitle || r.title.replace(/ Recipe:.*$/, '').replace(/ Recipe$/, '')} from ${r.origin} — traditional Indonesian ${r.kategori === 'makanan-berat' ? 'main dish' : r.kategori === 'sup-soto' ? 'soup' : r.kategori === 'sate-panggang' ? 'grilled dish' : r.kategori === 'jajanan' ? 'snack' : 'drink'}`}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      width="600"
+                      height="400"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="absolute bottom-2 left-2 flex items-center gap-1">
+                      <span className="text-sm text-amber-400">{"★".repeat(Math.floor(r.rating))}</span>
+                      <span className="text-xs text-zinc-300">{r.rating}</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-serif text-sm font-bold text-white group-hover:text-amber-400 line-clamp-1">{r.shortTitle || r.title.replace(/ Recipe:.*$/, "").replace(/ Recipe$/, "")}</h3>
+                    <p className="mt-1 text-xs text-zinc-500">{r.origin} · {r.waktu} mins</p>
+                  </div>
+                </Link>
+              ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/recipes" className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-zinc-900 px-6 py-3 text-sm font-semibold text-amber-400 transition-all hover:bg-zinc-800 hover:border-amber-500/30">
+              View All 500+ Recipes →
+            </Link>
           </div>
         </div>
       </section>

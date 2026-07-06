@@ -3,6 +3,14 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+Disallow: /*.json$
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 User-agent: GPTBot
 Allow: /
@@ -13,7 +21,12 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+# Sitemap
 Sitemap: https://nusantaraeats.com/sitemap.xml
+Sitemap: https://nusantaraeats.com/feed.xml
 
 # Crawl-delay for polite bots
 User-agent: Baiduspider

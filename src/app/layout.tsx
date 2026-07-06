@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "rss-feed": "https://nusantaraeats.com/feed.xml",
+  },
 };
 
 export default function RootLayout({

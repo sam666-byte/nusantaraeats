@@ -10,7 +10,7 @@
 
 ---
 
-## Current State (Last Updated: 2026-06-30)
+## Current State (Last Updated: 2026-07-01)
 
 ### Recipe Categories
 | Category | Slug | Count |
@@ -31,6 +31,66 @@
 7. ✅ **IndexNow submission** — 100+ URLs submitted to Bing/Yandex/DuckDuckGo
 8. ✅ **Google Search Console** — sitemap already registered
 9. ✅ **SEO strategy files** created for organic traffic growth
+
+---
+
+## Cloudflare Workers AI — Free Tier Models
+
+### Setup
+- **KV Namespace:** `nusantaraeats-views` (ID: `7736b7450fc74eba80ab78f51068b3c6`)
+- **KV Binding:** `VIEWS_KV` (production + preview)
+- **AI Binding:** Add `[[ai]]` + `binding = "AI"` to wrangler.toml to enable
+- **Account ID:** `243dd09cf194815c3fce5ce09528167c`
+- **API Token:** `cfat_30WwxWSazNdtuL82R1Mn6XG0u7IAcrqNSwpMh2gEd69ea728`
+
+### Free Tier: 10,000 Neurons/day
+
+#### LLM Text Models (Available for Free)
+| Model | Input Cost (neurons/M tokens) | Est. Free Tokens/Day |
+|-------|-------------------------------|---------------------|
+| `@cf/meta/llama-3.2-1b-instruct` | 2,457 | ~4M |
+| `@cf/meta/llama-3.2-3b-instruct` | 4,625 | ~2M |
+| `@cf/meta/llama-3.1-8b-instruct-fp8-fast` | 4,119 | ~2.4M |
+| `@cf/meta/llama-3.2-11b-vision-instruct` | 4,410 | ~2.2M (supports images!) |
+| `@cf/meta/llama-4-scout-17b-16e-instruct` | 24,545 | ~400K |
+| `@cf/mistral/mistral-7b-instruct-v0.1` | 10,000 | ~1M |
+| `@cf/qwen/qwen3-30b-a3b-fp8` | 4,625 | ~2M |
+| `@cf/google/gemma-3-12b-it` | 31,371 | ~320K |
+| `@cf/ibm-granite/granite-4.0-h-micro` | 1,542 | **~6.5M** (cheapest!) |
+
+#### Image Generation
+| Model | Cost | Est. Free Images/Day |
+|-------|------|---------------------|
+| `@cf/black-forest-labs/flux-1-schnell` | 4.8 neurons per 512x512 tile | ~2,000 |
+
+#### Audio
+| Model | Cost | Est. Free Audio/Day |
+|-------|------|---------------------|
+| `@cf/openai/whisper` | 41.14 neurons/min | ~240 minutes |
+
+#### Embeddings
+| Model | Cost |
+|-------|------|
+| `@cf/baai/bge-small-en-v1.5` | 1,841 neurons/M tokens |
+| `@cf/baai/bge-m3` | 1,075 neurons/M tokens |
+
+### Example: AI Chat in Cloudflare Functions
+```javascript
+// functions/api/chat.js
+export async function onRequest(context) {
+  const { messages } = await context.request.json();
+  const result = await context.env.AI.run("@cf/meta/llama-3.2-1b-instruct", {
+    messages,
+  });
+  return new Response(JSON.stringify(result));
+}
+```
+
+### wrangler.toml AI Config
+```toml
+[[ai]]
+binding = "AI"
+```
 
 ---
 
@@ -321,7 +381,26 @@ node generate-sitemap.js
 
 ---
 
-## SEO Implementation (2026-07-01)
+## SEO Implementation (2026-07-01) — POST-DEPLOY FIXES
+
+### All Fixes Deployed
+1. ✅ **Broken region links fixed** — Homepage regions now match valid routes (west-sumatra, java, bali, sulawesi, sumatra, kalimantan, papua-maluku, jakarta)
+2. ✅ **Footer region links fixed** — Papua → papua-maluku, Aceh → sumatra (no more 404)
+3. ✅ **Recipe detail `/regions/indonesia` link removed** — Changed to `/recipes`
+4. ✅ **Schema JSON-LD cookTime removed** — Only `totalTime` used (no fake prepTime/cookTime split)
+5. ✅ **Ingredient subtitles filtered from schema** — "Ground spice paste:" no longer in `recipeIngredient`
+6. ✅ **FAQ "Indonesia, Indonesia" duplication fixed** — Now "originates from Indonesia."
+7. ✅ **FAQ "quick preparation" hallucination fixed** — Checks instructions for slow-cooking keywords
+8. ✅ **FAQ ingredient subtitle cleanup** — Filtered from FAQ generation
+9. ✅ **Rendang totalTime corrected** — `waktu` updated from 30 to 240 minutes (PT4H)
+10. ✅ **Sitemap updated** — 8 regional URLs added (520 total)
+11. ✅ **View counter implemented** — Cloudflare KV + API + ViewCounter component
+
+### View Counter Setup
+- **API:** `functions/api/views/[[slug]].js`
+- **Component:** `src/components/ViewCounter.tsx`
+- **KV Namespace:** `nusantaraeats-views` (ID: `7736b7450fc74eba80ab78f51068b3c6`)
+- **Binding:** `VIEWS_KV` on Cloudflare Pages project
 
 ### Technical SEO
 - ✅ **robots.txt** optimized with GPTBot, ChatGPT-User, Baiduspider, Yandex directives
@@ -333,7 +412,7 @@ node generate-sitemap.js
 - ✅ **Open Graph** and **Twitter cards** on all pages
 - ✅ **Canonical URLs** on all pages
 - ✅ **Internal linking**: related recipes, same origin, ingredient-based links
-- ✅ **Sitemap** updated to 512 URLs
+- ✅ **Sitemap** updated to 520 URLs (500 recipes + 5 categories + 8 regions + 7 other pages)
 
 ### On-Page SEO
 - ✅ **Title tags**: 500+ unique, SEO-optimized
@@ -379,4 +458,4 @@ node generate-sitemap.js
 
 ---
 
-*Last updated: 2026-07-01*
+*Last updated: 2026-07-01 (v2 — post-deploy SEO fixes + view counter + Cloudflare Workers AI docs)*

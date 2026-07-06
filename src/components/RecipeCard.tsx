@@ -45,8 +45,10 @@ export default function RecipeCard({
       >
         <img
           src={recipe.image}
-          alt={`${recipe.shortTitle || recipe.title} — traditional ${recipe.origin} dish`}
+          alt={`Authentic ${recipe.shortTitle || recipe.title.replace(/ Recipe:.*$/, '').replace(/ Recipe$/, '')} from ${recipe.origin} — traditional Indonesian ${recipe.kategori === 'makanan-berat' ? 'main dish' : recipe.kategori === 'sup-soto' ? 'soup' : recipe.kategori === 'sate-panggang' ? 'grilled dish' : recipe.kategori === 'jajanan' ? 'snack' : 'drink'}`}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          width="800"
+          height="448"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

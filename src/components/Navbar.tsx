@@ -25,6 +25,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/recipes", label: "Recipes" },
+    { href: "/guides/indonesian-food-guide", label: "Food Guide" },
     { href: "/about", label: "About Us" },
   ];
 

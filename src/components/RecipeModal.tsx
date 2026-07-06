@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { Recipe } from "@/types";
+import { getRegionIdFromOrigin } from "@/lib/regions";
 
 function getSavedRecipes(): string[] {
   if (typeof window === "undefined") return [];
@@ -324,7 +325,14 @@ ${recipe.tips ? `<div class="tip"><strong>Tips:</strong> ${recipe.tips}</div>` :
             <span className="rounded-full border border-amber-500/15 bg-zinc-800 px-3 py-1">⏱ {recipe.waktu} mins</span>
             <span className="rounded-full border border-amber-500/15 bg-zinc-800 px-3 py-1">👥 {recipe.porsi}</span>
             <span className="rounded-full border border-amber-500/15 bg-zinc-800 px-3 py-1">📊 {recipe.kesulitan}</span>
-            <span className="rounded-full border border-amber-500/15 bg-zinc-800 px-3 py-1">🗺️ {recipe.origin}</span>
+            {(() => {
+              const regionId = getRegionIdFromOrigin(recipe.origin, recipe.title, recipe.description);
+              return regionId ? (
+                <Link href={`/regions/${regionId}`} onClick={onClose} className="rounded-full border border-amber-500/15 bg-zinc-800 px-3 py-1 hover:border-amber-500/30 hover:text-amber-400 transition-colors">🗺️ {recipe.origin}</Link>
+              ) : (
+                <span className="rounded-full border border-amber-500/15 bg-zinc-800 px-3 py-1">🗺️ {recipe.origin}</span>
+              );
+            })()}
           </div>
 
           <p className="mt-3 text-sm leading-relaxed text-zinc-300">{recipe.description}</p>
