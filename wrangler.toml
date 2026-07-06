@@ -2,9 +2,6 @@ name = "nusantaraeats"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "out"
 
-# Cloudflare Account
-account_id = "243dd09cf194815c3fce5ce09528167c"
-
 # KV namespace for view counters
 [[kv_namespaces]]
 binding = "VIEWS_KV"
