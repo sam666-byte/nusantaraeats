@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin — NusantaraEats</title>
+  <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
@@ -170,10 +171,10 @@
   <div id="loginScreen">
     <h1>Nusantara<span>Eats</span></h1>
     <p>Panel Admin — Kelola Resep</p>
-    <input type="text" id="username" placeholder="Username" autocomplete="off">
-    <input type="password" id="password" placeholder="Password">
+    <input type="email" id="email" placeholder="Email" autocomplete="username">
+    <input type="password" id="password" placeholder="Password" autocomplete="current-password">
     <button onclick="handleLogin()">Masuk</button>
-    <div id="loginError">Username atau password salah</div>
+    <div id="loginError">Email atau password salah</div>
   </div>
 
   <!-- DASHBOARD -->
@@ -181,7 +182,7 @@
     <div class="dash-header">
       <div>
         <h2>Nusantara<span>Eats</span> Admin</h2>
-        <div class="user" id="userDisplay">samir</div>
+        <div class="user" id="userDisplay"></div>
       </div>
       <button class="logout" onclick="handleLogout()">Keluar</button>
     </div>
@@ -313,30 +314,58 @@
   <script src="../recipes-data.js?v=1782527000"></script>
   <script>
     // ─── AUTH ───
-    const ADMIN_USER = "samir";
-    const ADMIN_PASS = "jamal";
-    let isLoggedIn = localStorage.getItem("nusantaraeats_admin") === "true";
+    // Credentials are verified by Supabase Auth; the browser only holds the
+    // resulting access token, and every write is authorized server side by RLS.
+    let isLoggedIn = window.sbAuth.isSignedIn();
 
-    function handleLogin() {
-      const u = document.getElementById("username").value;
-      const p = document.getElementById("password").value;
-      if (u === ADMIN_USER && p === ADMIN_PASS) {
-        localStorage.setItem("nusantaraeats_admin", "true");
-        isLoggedIn = true;
-        showDashboard();
-      } else {
-        document.getElementById("loginError").style.display = "block";
+    async function handleLogin() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const error = document.getElementById("loginError");
+      error.style.display = "none";
+      let ok = false;
+      try {
+        ok = await window.sbAuth.signIn(email, password);
+      } catch (e) {
+        ok = false;
       }
+      if (!ok) {
+        error.style.display = "block";
+        return;
+      }
+      document.getElementById("password").value = "";
+      isLoggedIn = true;
+      showDashboard();
     }
 
     function handleLogout() {
-      localStorage.removeItem("nusantaraeats_admin");
+      window.sbAuth.signOut();
       isLoggedIn = false;
       document.getElementById("dashboard").style.display = "none";
       document.getElementById("loginScreen").style.display = "block";
     }
 
+    function escapeHtml(value) {
+      return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    }
+
+    const DATA_IMAGE_URL = /^data:image\/(png|jpeg|jpg|gif|webp|avif);base64,[a-z0-9+/=]+$/i;
+
+    function safeImageUrl(url) {
+      const raw = String(url == null ? "" : url).trim();
+      if (DATA_IMAGE_URL.test(raw)) return raw;
+      try {
+        const parsed = new URL(raw, window.location.href);
+        if (parsed.protocol === "http:" || parsed.protocol === "https:") return parsed.href;
+      } catch (e) {}
+      return "";
+    }
+
     function showDashboard() {
+      const session = window.sbAuth.getSession();
+      document.getElementById("userDisplay").textContent = (session && session.user && session.user.email) || "";
       document.getElementById("loginScreen").style.display = "none";
       document.getElementById("dashboard").style.display = "block";
       setupUpload("fGambarUpload", "fGambarPreview", "fGambar");
@@ -379,7 +408,7 @@
       });
       url.addEventListener("input", function() {
         if (this.value) {
-          preview.src = this.value;
+          preview.src = safeImageUrl(this.value);
           preview.style.display = "block";
         }
       });
@@ -389,7 +418,7 @@
     function showPreview(inputId, previewId, url) {
       const preview = document.getElementById(previewId);
       if (url) {
-        preview.src = url;
+        preview.src = safeImageUrl(url);
         preview.style.display = "block";
       }
     }
@@ -407,21 +436,29 @@
       const tbody = document.getElementById("recipeTableBody");
       tbody.innerHTML = adminRecipes.map(r => `
         <tr>
-          <td><img src="${r.gambar}" class="preview-img" onerror="this.style.display='none'" loading="lazy"></td>
-          <td><strong>${r.nama}</strong></td>
-          <td>${r.kategori}</td>
+          <td><img src="${escapeHtml(safeImageUrl(r.gambar))}" class="preview-img" loading="lazy"></td>
+          <td><strong>${escapeHtml(r.nama)}</strong></td>
+          <td>${escapeHtml(r.kategori)}</td>
           <td>${r.rating ? '★'.repeat(Math.floor(r.rating)) + '☆'.repeat(5-Math.floor(r.rating)) : '☆☆☆☆☆'}</td>
-          <td><button class="edit-btn" onclick="editRecipe(${r.id})">Edit</button><button class="del-btn" onclick="deleteRecipe(${r.id})">Hapus</button></td>
+          <td><button class="edit-btn" onclick="editRecipe(${Number(r.id)})">Edit</button><button class="del-btn" onclick="deleteRecipe(${Number(r.id)})">Hapus</button></td>
         </tr>
       `).join("");
+      tbody.querySelectorAll(".preview-img").forEach(img => {
+        img.addEventListener("error", () => { img.style.display = "none"; });
+      });
     }
 
     // ─── CRUD ───
-    function deleteRecipe(id) {
+    async function deleteRecipe(id) {
       if (!confirm("Hapus resep ini?")) return;
+      try {
+        await window.apiDelete(id);
+      } catch (e) {
+        showToast("❌ Gagal menghapus: " + e.message);
+        return;
+      }
       adminRecipes = adminRecipes.filter(r => r.id !== id);
       saveAdmin();
-      window.apiDelete(id);
       renderAdmin();
       showToast("✅ Resep dihapus");
     }
@@ -443,7 +480,7 @@
       switchTab("edit");
     }
 
-    function handleEditRecipe(e) {
+    async function handleEditRecipe(e) {
       e.preventDefault();
       const id = parseInt(document.getElementById("eId").value);
       const idx = adminRecipes.findIndex(r => r.id === id);
@@ -462,14 +499,19 @@
         langkah: document.getElementById("eLangkah").value.trim().split("\n").map(l => l.trim()).filter(l => l),
       };
 
+      try {
+        await window.apiUpdate(adminRecipes[idx].id, adminRecipes[idx]);
+      } catch (err) {
+        showToast("❌ Gagal menyimpan: " + err.message);
+        return;
+      }
       saveAdmin();
-      window.apiUpdate(adminRecipes[idx].id, adminRecipes[idx]);
       renderAdmin();
       switchTab("recipes");
       showToast("✅ Resep berhasil diupdate!");
     }
 
-    function handleAddRecipe(e) {
+    async function handleAddRecipe(e) {
       e.preventDefault();
       const nama = document.getElementById("fNama").value.trim();
       const kategori = document.getElementById("fKategori").value;
@@ -502,9 +544,14 @@
         langkah
       };
 
+      try {
+        await window.apiInsert(newRecipe);
+      } catch (err) {
+        showToast("❌ Gagal menyimpan: " + err.message);
+        return;
+      }
       adminRecipes.unshift(newRecipe);
       saveAdmin();
-      window.apiInsert(newRecipe);
       renderAdmin();
       document.getElementById("addForm").reset();
       switchTab("recipes");

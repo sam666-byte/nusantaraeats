@@ -1,1 +1,4 @@
 .wrangler/
+unsplash-config.json
+.env
+*.env
