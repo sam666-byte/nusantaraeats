@@ -310,7 +310,7 @@
   <div class="toast" id="toast"></div>
 
   <script src="../supabase-config.js?v=1782527000"></script>
-  <script src="../recipes-data.js?v=1782527000"></script>
+  <script src="../assets/site-utils.js?v=1782527000"></script>
   <script>
     // ─── AUTH ───
     const ADMIN_USER = "samir";
@@ -351,20 +351,27 @@
       try {
         adminRecipes = await window.apiFetch();
       } catch (e) {
-        adminRecipes = JSON.parse(localStorage.getItem("resepKitaRecipesV2")) || [];
+        adminRecipes = SiteUtils.loadStoredRecipes();
       }
       renderAdmin();
     }
 
     function saveAdmin() {
       // Backup ke localStorage
-      localStorage.setItem("resepKitaRecipesV2", JSON.stringify(adminRecipes));
+      SiteUtils.saveRecipes(adminRecipes);
+    }
+
+    // ─── PREVIEW FOTO ───
+    function setPreviewImage(previewId, src) {
+      if (!src) return;
+      const preview = document.getElementById(previewId);
+      preview.src = src;
+      preview.style.display = "block";
     }
 
     // ─── IMAGE UPLOAD ───
     function setupUpload(inputId, previewId, urlId) {
       const input = document.getElementById(inputId);
-      const preview = document.getElementById(previewId);
       const url = document.getElementById(urlId);
       input.addEventListener("change", function() {
         const file = this.files[0];
@@ -372,26 +379,13 @@
         const reader = new FileReader();
         reader.onload = function(e) {
           url.value = e.target.result;
-          preview.src = e.target.result;
-          preview.style.display = "block";
+          setPreviewImage(previewId, e.target.result);
         };
         reader.readAsDataURL(file);
       });
       url.addEventListener("input", function() {
-        if (this.value) {
-          preview.src = this.value;
-          preview.style.display = "block";
-        }
+        setPreviewImage(previewId, this.value);
       });
-    }
-
-    // ─── PREVIEW FOTO ───
-    function showPreview(inputId, previewId, url) {
-      const preview = document.getElementById(previewId);
-      if (url) {
-        preview.src = url;
-        preview.style.display = "block";
-      }
     }
 
     // ─── RENDER ───
@@ -410,7 +404,7 @@
           <td><img src="${r.gambar}" class="preview-img" onerror="this.style.display='none'" loading="lazy"></td>
           <td><strong>${r.nama}</strong></td>
           <td>${r.kategori}</td>
-          <td>${r.rating ? '★'.repeat(Math.floor(r.rating)) + '☆'.repeat(5-Math.floor(r.rating)) : '☆☆☆☆☆'}</td>
+          <td>${SiteUtils.renderStars(r.rating)}</td>
           <td><button class="edit-btn" onclick="editRecipe(${r.id})">Edit</button><button class="del-btn" onclick="deleteRecipe(${r.id})">Hapus</button></td>
         </tr>
       `).join("");
@@ -423,7 +417,7 @@
       saveAdmin();
       window.apiDelete(id);
       renderAdmin();
-      showToast("✅ Resep dihapus");
+      SiteUtils.showToast("✅ Resep dihapus");
     }
 
     function editRecipe(id) {
@@ -437,7 +431,7 @@
       document.getElementById("ePorsi").value = r.porsi;
       document.getElementById("eKesulitan").value = r.kesulitan;
       document.getElementById("eGambar").value = r.gambar || "";
-      showPreview("eGambarPreview", "eGambarPreview", r.gambar || "");
+      setPreviewImage("eGambarPreview", r.gambar || "");
       document.getElementById("eBahan").value = (r.bahan || []).join("\n");
       document.getElementById("eLangkah").value = (r.langkah || []).join("\n");
       switchTab("edit");
@@ -466,7 +460,7 @@
       window.apiUpdate(adminRecipes[idx].id, adminRecipes[idx]);
       renderAdmin();
       switchTab("recipes");
-      showToast("✅ Resep berhasil diupdate!");
+      SiteUtils.showToast("✅ Resep berhasil diupdate!");
     }
 
     function handleAddRecipe(e) {
@@ -482,7 +476,7 @@
       const langkahRaw = document.getElementById("fLangkah").value.trim();
 
       if (!nama || !waktu || !porsi || !bahanRaw || !langkahRaw) {
-        showToast("⚠️ Isi semua field yang wajib");
+        SiteUtils.showToast("⚠️ Isi semua field yang wajib");
         return;
       }
 
@@ -508,7 +502,7 @@
       renderAdmin();
       document.getElementById("addForm").reset();
       switchTab("recipes");
-      showToast("✅ Resep berhasil ditambahkan!");
+      SiteUtils.showToast("✅ Resep berhasil ditambahkan!");
     }
 
     // ─── TABS ───
@@ -527,7 +521,7 @@
       a.href = URL.createObjectURL(blob);
       a.download = `nusantaraeats-recipes-${new Date().toISOString().slice(0,10)}.json`;
       a.click();
-      showToast("✅ Data resep di-export");
+      SiteUtils.showToast("✅ Data resep di-export");
     }
 
     function importData(e) {
@@ -543,9 +537,9 @@
           renderAdmin();
           document.getElementById("importResult").textContent = `✅ Berhasil import ${data.length} resep`;
           document.getElementById("importResult").style.display = "block";
-          showToast(`✅ ${data.length} resep di-import`);
+          SiteUtils.showToast(`✅ ${data.length} resep di-import`);
         } catch(err) {
-          showToast("❌ File JSON tidak valid");
+          SiteUtils.showToast("❌ File JSON tidak valid");
         }
       };
       reader.readAsText(file);
@@ -555,16 +549,7 @@
     function resetToDefault() {
       if (!confirm("Reset ke data dari Supabase? Semua perubahan lokal akan hilang.")) return;
       loadAdminData();
-      showToast("🔄 Reload dari Supabase");
-    }
-
-    // ─── TOAST ───
-    function showToast(msg) {
-      const t = document.getElementById("toast");
-      t.textContent = msg;
-      t.classList.add("show");
-      clearTimeout(t._t);
-      t._t = setTimeout(() => t.classList.remove("show"), 2500);
+      SiteUtils.showToast("🔄 Reload dari Supabase");
     }
 
     // ─── INIT ───

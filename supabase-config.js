@@ -2,6 +2,31 @@
 var SB_URL = "https://xdnhywlbibaniwefdsuz.supabase.co";
 var SB_KEY = "sb_publishable_HM6YJ8A372MPKvufkCoAxA_kYerAP0u";
 
+// ─── REST helpers ───
+function sbHeaders(extra) {
+  var headers = { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY };
+  for (var key in extra || {}) headers[key] = extra[key];
+  return headers;
+}
+
+function sbRequest(path, options) {
+  var opts = options || {};
+  return fetch(SB_URL + "/rest/v1" + path, {
+    method: opts.method || "GET",
+    headers: sbHeaders(opts.headers),
+    body: opts.body === undefined ? undefined : JSON.stringify(opts.body)
+  });
+}
+
+// Upserts a row, swallowing network errors so the UI keeps working offline.
+function sbUpsert(row) {
+  return sbRequest("/recipes", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Prefer: "resolution=merge-duplicates" },
+    body: row
+  }).catch(function () {});
+}
+
 // ─── Inline data (preloaded, no async needed) ───
 window.recipes = [
  {"id":1,"nama":"Nasi Goreng Jawa","kategori":"makanan-berat","waktu":30,"porsi":"2 orang","kesulitan":"Mudah","rating":4.8,"gambar":"https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1200&q=80","bahan":["2 piring nasi putih dingin","2 siung bawang putih cincang","3 siung bawang merah iris","2 butir telur","1 sdm kecap manis","1 sdt garam","½ sdt merica","Minyak kelapa secukupnya","Pelengkap: kerupuk, acar, tomat, daun bawang"],"langkah":["Panaskan minyak, tumis bawang merah dan bawang putih hingga harum.","Sisihkan ke pinggir wajan, masukkan telur, orak-arik hingga matang.","Masukkan nasi, aduk rata dengan api besar.","Tambahkan kecap manis, garam, merica. Aduk cepat hingga merata.","Masak 3-5 menit hingga nasi sedikit kering.","Sajikan hangat dengan kerupuk, acar, dan irisan tomat."]},
@@ -116,35 +141,21 @@ window.apiFetch = async function () {
 };
 
 window.apiInsert = async function (recipe) {
-  try {
-    await fetch(`${SB_URL}/rest/v1/recipes`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "resolution=merge-duplicates" },
-      body: JSON.stringify(recipe),
-    });
-  } catch(e) {}
+  await sbUpsert(recipe);
   window.recipes.unshift(recipe);
 };
 
 window.apiUpdate = async function (id, data) {
-  try {
-    await fetch(`${SB_URL}/rest/v1/recipes`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "resolution=merge-duplicates" },
-      body: JSON.stringify(data),
-    });
-  } catch(e) {}
+  await sbUpsert(data);
   var idx = window.recipes.findIndex(function(r) { return r.id === id; });
   if (idx > -1) window.recipes[idx] = data;
 };
 
 window.apiDelete = async function (id) {
-  try {
-    await fetch(`${SB_URL}/rest/v1/recipes?id=eq.${id}`, {
-      method: "DELETE",
-      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "return=minimal" },
-    });
-  } catch(e) {}
+  await sbRequest(`/recipes?id=eq.${id}`, {
+    method: "DELETE",
+    headers: { Prefer: "return=minimal" }
+  }).catch(function () {});
   window.recipes = window.recipes.filter(function(r) { return r.id !== id; });
 };
 
@@ -154,9 +165,7 @@ window.apiDelete = async function (id) {
   const inlineRecipes = window.recipes.slice();
   try {
     // Fetch existing IDs from Supabase
-    const res = await fetch(SB_URL + "/rest/v1/recipes?select=id", {
-      headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
-    });
+    const res = await sbRequest("/recipes?select=id");
     if (res.ok) {
       const existing = await res.json();
       const existingIds = new Set((existing || []).map(function(r) { return r.id; }));
@@ -165,20 +174,12 @@ window.apiDelete = async function (id) {
       if (toInsert.length > 0) {
         console.log("Inserting " + toInsert.length + " missing recipes into Supabase...");
         for (let i = 0; i < toInsert.length; i++) {
-          try {
-            await fetch(SB_URL + "/rest/v1/recipes", {
-              method: "POST",
-              headers: {"Content-Type": "application/json", apikey: SB_KEY, Authorization: "Bearer " + SB_KEY },
-              body: JSON.stringify(toInsert[i])
-            });
-          } catch(e) {}
+          await sbUpsert(toInsert[i]);
         }
         console.log("Insert done!");
       }
       // Now fetch ALL recipes from Supabase (they should all be there now)
-      const res2 = await fetch(SB_URL + "/rest/v1/recipes?select=*&order=id.asc", {
-        headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
-      });
+      const res2 = await sbRequest("/recipes?select=*&order=id.asc");
       if (res2.ok) {
         const remote = await res2.json();
         if (remote && remote.length > 0) {

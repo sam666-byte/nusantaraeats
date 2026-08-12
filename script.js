@@ -5,10 +5,6 @@
 // --- DATA ---
 let currentFilter = 'all';
 
-function saveRecipes() {
-    localStorage.setItem('resepKitaRecipesV2', JSON.stringify(window.recipes || []));
-}
-
 // --- PARTICLE CANVAS (Subtle Gold Dust) ---
 (function initParticles() {
     const canvas = document.getElementById('particleCanvas');
@@ -89,10 +85,12 @@ function saveRecipes() {
     });
 })();
 
-// --- TRANSLATION HELPERS ---
-function tDiff(d) { return {Mudah:"Easy",Sedang:"Medium",Sulit:"Hard"}[d]||d; }
-function tPorsi(p) { return p.replace(/orang/g,"servings").replace(/gelas/g,"glasses").replace(/porsi/g,"servings"); }
-function tWaktu(m) { return m+" mins"; }
+// --- FILTER BUTTONS ---
+function setActiveFilterButton(filter) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    const targetBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+    if (targetBtn) targetBtn.classList.add('active');
+}
 
 // --- RENDER RECIPES ---
 function renderRecipes(filter = 'all', searchQuery = '') {
@@ -124,7 +122,6 @@ function renderRecipes(filter = 'all', searchQuery = '') {
     noResults.style.display = 'none';
 
     data.forEach((recipe, index) => {
-        const stars = '★'.repeat(Math.floor(recipe.rating)) + '☆'.repeat(5 - Math.floor(recipe.rating));
         const card = document.createElement('div');
         card.className = 'recipe-card';
         card.style.animationDelay = `${index * 0.06}s`;
@@ -136,15 +133,13 @@ function renderRecipes(filter = 'all', searchQuery = '') {
                      alt="${recipe.nama}" 
                      loading="lazy"
                      onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\\'height:240px;background:var(--black-600);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:14px;\\'>📷 Foto ${recipe.nama}</div>';">
-                <span class="recipe-card-badge">${tDiff(recipe.kesulitan)}</span>
+                <span class="recipe-card-badge">${SiteUtils.translateDifficulty(recipe.kesulitan)}</span>
             </div>
             <div class="recipe-card-body">
                 <h3>${recipe.nama}</h3>
-                <div class="recipe-card-rating">${stars} <small style="color:#A8A29A; font-family:Inter,sans-serif;">${recipe.rating}</small></div>
+                <div class="recipe-card-rating">${SiteUtils.renderStars(recipe.rating)} <small style="color:#A8A29A; font-family:Inter,sans-serif;">${recipe.rating}</small></div>
                 <div class="recipe-card-meta">
-                    <span>⏱ ${tWaktu(recipe.waktu)}</span>
-                    <span>👥 ${tPorsi(recipe.porsi)}</span>
-                    <span>📊 ${tDiff(recipe.kesulitan)}</span>
+                    ${SiteUtils.formatRecipeMeta(recipe).map(m => `<span>${m}</span>`).join('\n                    ')}
                 </div>
             </div>
         `;
@@ -157,8 +152,7 @@ function renderRecipes(filter = 'all', searchQuery = '') {
 document.getElementById('searchBtn').addEventListener('click', () => {
     const query = document.getElementById('searchInput').value;
     currentFilter = 'all';
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector('[data-filter="all"]').classList.add('active');
+    setActiveFilterButton('all');
     renderRecipes('all', query);
     document.getElementById('recipes').scrollIntoView({ behavior: 'smooth' });
 });
@@ -170,9 +164,8 @@ document.getElementById('searchInput').addEventListener('keyup', (e) => {
 // --- FILTER BAR ---
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
         currentFilter = btn.getAttribute('data-filter');
+        setActiveFilterButton(currentFilter);
         document.getElementById('searchInput').value = '';
         renderRecipes(currentFilter);
     });
@@ -183,9 +176,7 @@ document.querySelectorAll('.category-card').forEach(card => {
     card.addEventListener('click', () => {
         const kat = card.getAttribute('data-kategori');
         currentFilter = kat;
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        const targetBtn = document.querySelector(`.filter-btn[data-filter="${kat}"]`);
-        if (targetBtn) targetBtn.classList.add('active');
+        setActiveFilterButton(kat);
         document.getElementById('searchInput').value = '';
         renderRecipes(kat);
         document.getElementById('recipes').scrollIntoView({ behavior: 'smooth' });
@@ -202,11 +193,8 @@ function openRecipeModal(recipe) {
         this.src = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80';
     };
     document.getElementById('modalTitle').textContent = recipe.nama;
-    document.getElementById('modalMeta').innerHTML = `
-        ⏱️ ${tWaktu(recipe.waktu)} &nbsp;|&nbsp; 👥 ${tPorsi(recipe.porsi)} &nbsp;|&nbsp; 📊 ${tDiff(recipe.kesulitan)}
-    `;
-    const stars = '★'.repeat(Math.floor(recipe.rating)) + '☆'.repeat(5 - Math.floor(recipe.rating));
-    document.getElementById('modalRating').textContent = stars;
+    document.getElementById('modalMeta').innerHTML = SiteUtils.formatRecipeMeta(recipe).join(' &nbsp;|&nbsp; ');
+    document.getElementById('modalRating').textContent = SiteUtils.renderStars(recipe.rating);
 
     document.getElementById('modalIngredients').innerHTML = recipe.bahan
         .map(b => `<li>${b}</li>`)
@@ -229,18 +217,6 @@ function closeRecipeModal() {
 modalClose.addEventListener('click', closeRecipeModal);
 recipeModal.querySelector('.modal-backdrop').addEventListener('click', closeRecipeModal);
 
-
-
-// --- TOAST ---
-function showToast(message) {
-    const toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.classList.add('show');
-    clearTimeout(toast._timeout);
-    toast._timeout = setTimeout(() => {
-        toast.classList.remove('show');
-    }, 2500);
-}
 
 // --- KEYBOARD ---
 document.addEventListener('keydown', (e) => {
