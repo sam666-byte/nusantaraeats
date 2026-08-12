@@ -1,0 +1,19 @@
+{
+  "name": "nusantaraeats",
+  "version": "1.0.0",
+  "description": "Platform resep masakan Indonesia super mewah dengan foto 4K asli, desain premium dark-elegant, dan pengalaman browsing yang memukau. Dibangun sebagai versi Indonesia dari Allrecipes.com — tapi jauh lebih mewah.",
+  "main": "index.html",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.10",
+    "jsdom": "^26.1.0",
+    "vitest": "^4.1.10"
+  }
+}

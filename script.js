@@ -275,3 +275,17 @@ window._onReady = function () {
     setTimeout(poll, 150);
   }
 })();
+
+// Exposed for unit tests only; `module` is undefined in the browser.
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = {
+        saveRecipes,
+        tDiff,
+        tPorsi,
+        tWaktu,
+        renderRecipes,
+        openRecipeModal,
+        closeRecipeModal,
+        showToast,
+    };
+}
