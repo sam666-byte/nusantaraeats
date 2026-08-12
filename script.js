@@ -6,7 +6,13 @@
 let currentFilter = 'all';
 
 function saveRecipes() {
-    localStorage.setItem('resepKitaRecipesV2', JSON.stringify(window.recipes || []));
+    try {
+        localStorage.setItem('resepKitaRecipesV2', JSON.stringify(window.recipes || []));
+        return true;
+    } catch (e) {
+        console.error('Failed to save recipes to localStorage:', e);
+        return false;
+    }
 }
 
 // --- PARTICLE CANVAS (Subtle Gold Dust) ---
@@ -77,6 +83,7 @@ function saveRecipes() {
 // --- HEADER SCROLL ---
 (function headerScroll() {
     const header = document.getElementById('header');
+    if (!header) return;
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const now = window.scrollY;
@@ -91,13 +98,17 @@ function saveRecipes() {
 
 // --- TRANSLATION HELPERS ---
 function tDiff(d) { return {Mudah:"Easy",Sedang:"Medium",Sulit:"Hard"}[d]||d; }
-function tPorsi(p) { return p.replace(/orang/g,"servings").replace(/gelas/g,"glasses").replace(/porsi/g,"servings"); }
+function tPorsi(p) { return String(p || "").replace(/orang/g,"servings").replace(/gelas/g,"glasses").replace(/porsi/g,"servings"); }
 function tWaktu(m) { return m+" mins"; }
 
 // --- RENDER RECIPES ---
 function renderRecipes(filter = 'all', searchQuery = '') {
     const grid = document.getElementById('recipeGrid');
     const noResults = document.getElementById('noResults');
+    if (!grid || !noResults) {
+        console.error('renderRecipes: #recipeGrid or #noResults is missing from the page');
+        return;
+    }
     let data = window.recipes || [];
 
     // Filter by category
@@ -109,9 +120,9 @@ function renderRecipes(filter = 'all', searchQuery = '') {
     if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         data = data.filter(r =>
-            r.nama.toLowerCase().includes(q) ||
-            r.kategori.includes(q) ||
-            r.bahan.some(b => b.toLowerCase().includes(q))
+            (r.nama || '').toLowerCase().includes(q) ||
+            (r.kategori || '').includes(q) ||
+            (r.bahan || []).some(b => String(b).toLowerCase().includes(q))
         );
     }
 
@@ -154,18 +165,30 @@ function renderRecipes(filter = 'all', searchQuery = '') {
 }
 
 // --- SEARCH ---
-document.getElementById('searchBtn').addEventListener('click', () => {
-    const query = document.getElementById('searchInput').value;
-    currentFilter = 'all';
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector('[data-filter="all"]').classList.add('active');
-    renderRecipes('all', query);
-    document.getElementById('recipes').scrollIntoView({ behavior: 'smooth' });
-});
+const searchBtn = document.getElementById('searchBtn');
+const searchInput = document.getElementById('searchInput');
 
-document.getElementById('searchInput').addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') document.getElementById('searchBtn').click();
-});
+if (searchBtn && searchInput) {
+    searchBtn.addEventListener('click', () => {
+        currentFilter = 'all';
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        const allBtn = document.querySelector('[data-filter="all"]');
+        if (allBtn) allBtn.classList.add('active');
+        renderRecipes('all', searchInput.value);
+        scrollToRecipes();
+    });
+
+    searchInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') searchBtn.click();
+    });
+} else {
+    console.error('Search controls are missing from the page; search is disabled');
+}
+
+function scrollToRecipes() {
+    const section = document.getElementById('recipes');
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+}
 
 // --- FILTER BAR ---
 document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -173,7 +196,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentFilter = btn.getAttribute('data-filter');
-        document.getElementById('searchInput').value = '';
+        if (searchInput) searchInput.value = '';
         renderRecipes(currentFilter);
     });
 });
@@ -186,9 +209,9 @@ document.querySelectorAll('.category-card').forEach(card => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         const targetBtn = document.querySelector(`.filter-btn[data-filter="${kat}"]`);
         if (targetBtn) targetBtn.classList.add('active');
-        document.getElementById('searchInput').value = '';
+        if (searchInput) searchInput.value = '';
         renderRecipes(kat);
-        document.getElementById('recipes').scrollIntoView({ behavior: 'smooth' });
+        scrollToRecipes();
     });
 });
 
@@ -197,43 +220,60 @@ const recipeModal = document.getElementById('recipeModal');
 const modalClose = document.getElementById('modalClose');
 
 function openRecipeModal(recipe) {
-    document.getElementById('modalImage').src = recipe.gambar;
-    document.getElementById('modalImage').onerror = function() {
-        this.src = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80';
-    };
-    document.getElementById('modalTitle').textContent = recipe.nama;
-    document.getElementById('modalMeta').innerHTML = `
+    if (!recipeModal) {
+        console.error('openRecipeModal: #recipeModal is missing from the page');
+        return;
+    }
+    const modalImage = document.getElementById('modalImage');
+    if (modalImage) {
+        modalImage.src = recipe.gambar;
+        modalImage.onerror = function() {
+            this.src = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80';
+        };
+    }
+    setModalContent('modalTitle', 'textContent', recipe.nama);
+    setModalContent('modalMeta', 'innerHTML', `
         ⏱️ ${tWaktu(recipe.waktu)} &nbsp;|&nbsp; 👥 ${tPorsi(recipe.porsi)} &nbsp;|&nbsp; 📊 ${tDiff(recipe.kesulitan)}
-    `;
+    `);
     const stars = '★'.repeat(Math.floor(recipe.rating)) + '☆'.repeat(5 - Math.floor(recipe.rating));
-    document.getElementById('modalRating').textContent = stars;
-
-    document.getElementById('modalIngredients').innerHTML = recipe.bahan
-        .map(b => `<li>${b}</li>`)
-        .join('');
-
-    document.getElementById('modalSteps').innerHTML = recipe.langkah
-        .map((l, i) => `<li>${l}</li>`)
-        .join('');
+    setModalContent('modalRating', 'textContent', stars);
+    setModalContent('modalIngredients', 'innerHTML', (recipe.bahan || []).map(b => `<li>${b}</li>`).join(''));
+    setModalContent('modalSteps', 'innerHTML', (recipe.langkah || []).map(l => `<li>${l}</li>`).join(''));
 
     recipeModal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    recipeModal.querySelector('.modal-content').scrollTop = 0;
+    const content = recipeModal.querySelector('.modal-content');
+    if (content) content.scrollTop = 0;
+}
+
+function setModalContent(id, prop, value) {
+    const el = document.getElementById(id);
+    if (!el) {
+        console.error(`Recipe modal element #${id} is missing from the page`);
+        return;
+    }
+    el[prop] = value;
 }
 
 function closeRecipeModal() {
+    if (!recipeModal) return;
     recipeModal.classList.remove('active');
     document.body.style.overflow = '';
 }
 
-modalClose.addEventListener('click', closeRecipeModal);
-recipeModal.querySelector('.modal-backdrop').addEventListener('click', closeRecipeModal);
+if (modalClose) modalClose.addEventListener('click', closeRecipeModal);
+const modalBackdrop = recipeModal && recipeModal.querySelector('.modal-backdrop');
+if (modalBackdrop) modalBackdrop.addEventListener('click', closeRecipeModal);
 
 
 
 // --- TOAST ---
 function showToast(message) {
     const toast = document.getElementById('toast');
+    if (!toast) {
+        console.warn('showToast: #toast is missing, message not shown:', message);
+        return;
+    }
     toast.textContent = message;
     toast.classList.add('show');
     clearTimeout(toast._timeout);
@@ -252,26 +292,56 @@ document.addEventListener('keydown', (e) => {
 // --- VISITOR COUNTER ---
 (function () {
   fetch("https://api.countapi.xyz/hit/nusantaraeats/visits")
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw new Error(`visitor counter responded ${r.status} ${r.statusText}`);
+      return r.json();
+    })
     .then(d => {
       const el = document.getElementById("visitorCount");
       if (el) el.textContent = (d.value || 0).toLocaleString();
     })
-    .catch(() => {});
+    .catch(e => {
+      console.warn("Visitor counter unavailable:", e);
+    });
 })();
 
 // --- READY CHECK ---
+let renderedOnReady = false;
+
 window._onReady = function () {
+  renderedOnReady = true;
   const el = document.getElementById("statRecipes");
   if (el) el.textContent = (window.recipes || []).length;
   renderRecipes();
 };
 
-// Poll until data loaded (handles any race condition)
-(function poll() {
-  if (window.supabaseReady && window.recipes.length > 0) {
+// Poll until data loaded (handles any race condition), but give up instead of
+// polling forever when the data source never becomes available.
+const DATA_POLL_INTERVAL_MS = 150;
+const DATA_POLL_TIMEOUT_MS = 15000;
+
+(function poll(waited = 0) {
+  if (renderedOnReady) return;
+  if (window.supabaseReady && (window.recipes || []).length > 0) {
     window._onReady();
-  } else {
-    setTimeout(poll, 150);
+    return;
   }
+  if (waited >= DATA_POLL_TIMEOUT_MS) {
+    console.error(`Recipe data unavailable after ${DATA_POLL_TIMEOUT_MS}ms`, {
+      supabaseReady: !!window.supabaseReady,
+      recipeCount: (window.recipes || []).length,
+      syncError: window.recipeSyncError,
+    });
+    window._onReady();
+    if ((window.recipes || []).length === 0) {
+      const noResults = document.getElementById('noResults');
+      if (noResults) {
+        noResults.textContent = 'Gagal memuat resep. Coba muat ulang halaman.';
+        noResults.style.display = 'block';
+      }
+      showToast('⚠️ Gagal memuat resep');
+    }
+    return;
+  }
+  setTimeout(() => poll(waited + DATA_POLL_INTERVAL_MS), DATA_POLL_INTERVAL_MS);
 })();

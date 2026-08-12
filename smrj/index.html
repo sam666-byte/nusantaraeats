@@ -351,14 +351,34 @@
       try {
         adminRecipes = await window.apiFetch();
       } catch (e) {
-        adminRecipes = JSON.parse(localStorage.getItem("resepKitaRecipesV2")) || [];
+        console.error("Failed to load recipes from Supabase, falling back to localStorage:", e);
+        adminRecipes = readLocalBackup();
+        showToast("⚠️ Gagal memuat dari server, memakai data lokal");
       }
       renderAdmin();
     }
 
+    function readLocalBackup() {
+      try {
+        const raw = localStorage.getItem("resepKitaRecipesV2");
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        console.error("Local recipe backup is corrupt:", e);
+        return [];
+      }
+    }
+
     function saveAdmin() {
       // Backup ke localStorage
-      localStorage.setItem("resepKitaRecipesV2", JSON.stringify(adminRecipes));
+      try {
+        localStorage.setItem("resepKitaRecipesV2", JSON.stringify(adminRecipes));
+        return true;
+      } catch (e) {
+        console.error("Failed to write local recipe backup:", e);
+        showToast("⚠️ Backup lokal gagal disimpan");
+        return false;
+      }
     }
 
     // ─── IMAGE UPLOAD ───
@@ -417,13 +437,23 @@
     }
 
     // ─── CRUD ───
-    function deleteRecipe(id) {
+    // Reports the outcome of a Supabase write instead of assuming it succeeded.
+    async function syncRemote(operation, successMessage) {
+      try {
+        await operation();
+        showToast(successMessage);
+      } catch (e) {
+        console.error("Supabase write failed:", e);
+        showToast("❌ Gagal simpan ke server (tersimpan lokal): " + e.message);
+      }
+    }
+
+    async function deleteRecipe(id) {
       if (!confirm("Hapus resep ini?")) return;
       adminRecipes = adminRecipes.filter(r => r.id !== id);
       saveAdmin();
-      window.apiDelete(id);
       renderAdmin();
-      showToast("✅ Resep dihapus");
+      await syncRemote(() => window.apiDelete(id), "✅ Resep dihapus");
     }
 
     function editRecipe(id) {
@@ -443,7 +473,7 @@
       switchTab("edit");
     }
 
-    function handleEditRecipe(e) {
+    async function handleEditRecipe(e) {
       e.preventDefault();
       const id = parseInt(document.getElementById("eId").value);
       const idx = adminRecipes.findIndex(r => r.id === id);
@@ -463,13 +493,12 @@
       };
 
       saveAdmin();
-      window.apiUpdate(adminRecipes[idx].id, adminRecipes[idx]);
       renderAdmin();
       switchTab("recipes");
-      showToast("✅ Resep berhasil diupdate!");
+      await syncRemote(() => window.apiUpdate(adminRecipes[idx].id, adminRecipes[idx]), "✅ Resep berhasil diupdate!");
     }
 
-    function handleAddRecipe(e) {
+    async function handleAddRecipe(e) {
       e.preventDefault();
       const nama = document.getElementById("fNama").value.trim();
       const kategori = document.getElementById("fKategori").value;
@@ -504,11 +533,10 @@
 
       adminRecipes.unshift(newRecipe);
       saveAdmin();
-      window.apiInsert(newRecipe);
       renderAdmin();
       document.getElementById("addForm").reset();
       switchTab("recipes");
-      showToast("✅ Resep berhasil ditambahkan!");
+      await syncRemote(() => window.apiInsert(newRecipe), "✅ Resep berhasil ditambahkan!");
     }
 
     // ─── TABS ───
@@ -545,8 +573,17 @@
           document.getElementById("importResult").style.display = "block";
           showToast(`✅ ${data.length} resep di-import`);
         } catch(err) {
+          console.error("Recipe import failed:", err);
+          const result = document.getElementById("importResult");
+          result.textContent = `❌ Import gagal: ${err.message}`;
+          result.style.color = "var(--danger)";
+          result.style.display = "block";
           showToast("❌ File JSON tidak valid");
         }
+      };
+      reader.onerror = () => {
+        console.error("Failed to read import file:", reader.error);
+        showToast("❌ Gagal membaca file");
       };
       reader.readAsText(file);
       e.target.value = "";
