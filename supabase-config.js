@@ -107,6 +107,50 @@ window.recipes = [
 ];
 window.supabaseReady = false;
 
+// ─── Auth (Supabase Auth, email + password) ───
+// Writes require a signed-in user; the publishable key alone grants read-only
+// access. Enforce this server side with RLS policies on the recipes table.
+var SB_SESSION_STORAGE_KEY = "nusantaraeats_sb_session";
+
+window.sbAuth = {
+  getSession: function () {
+    try {
+      return JSON.parse(sessionStorage.getItem(SB_SESSION_STORAGE_KEY) || "null");
+    } catch (e) {
+      return null;
+    }
+  },
+  isSignedIn: function () {
+    var s = window.sbAuth.getSession();
+    return !!(s && s.access_token && s.expires_at > Date.now() / 1000);
+  },
+  signIn: async function (email, password) {
+    var res = await fetch(SB_URL + "/auth/v1/token?grant_type=password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: SB_KEY },
+      body: JSON.stringify({ email: email, password: password }),
+    });
+    if (!res.ok) return false;
+    var session = await res.json();
+    if (!session || !session.access_token) return false;
+    sessionStorage.setItem(SB_SESSION_STORAGE_KEY, JSON.stringify(session));
+    return true;
+  },
+  signOut: function () {
+    sessionStorage.removeItem(SB_SESSION_STORAGE_KEY);
+  },
+};
+
+function sbAuthHeaders() {
+  var session = window.sbAuth.getSession();
+  if (!window.sbAuth.isSignedIn()) throw new Error("Not signed in");
+  return {
+    "Content-Type": "application/json",
+    apikey: SB_KEY,
+    Authorization: "Bearer " + session.access_token,
+  };
+}
+
 // ─── API Functions ───
 window.apiFetch = async function () {
   while (!window.supabaseReady) {
@@ -116,78 +160,58 @@ window.apiFetch = async function () {
 };
 
 window.apiInsert = async function (recipe) {
-  try {
-    await fetch(`${SB_URL}/rest/v1/recipes`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "resolution=merge-duplicates" },
-      body: JSON.stringify(recipe),
-    });
-  } catch(e) {}
+  var headers = sbAuthHeaders();
+  headers.Prefer = "resolution=merge-duplicates";
+  var res = await fetch(SB_URL + "/rest/v1/recipes", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(recipe),
+  });
+  if (!res.ok) throw new Error("Insert failed (" + res.status + ")");
   window.recipes.unshift(recipe);
 };
 
 window.apiUpdate = async function (id, data) {
-  try {
-    await fetch(`${SB_URL}/rest/v1/recipes`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "resolution=merge-duplicates" },
-      body: JSON.stringify(data),
-    });
-  } catch(e) {}
+  var headers = sbAuthHeaders();
+  headers.Prefer = "resolution=merge-duplicates";
+  var res = await fetch(SB_URL + "/rest/v1/recipes", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error("Update failed (" + res.status + ")");
   var idx = window.recipes.findIndex(function(r) { return r.id === id; });
   if (idx > -1) window.recipes[idx] = data;
 };
 
 window.apiDelete = async function (id) {
-  try {
-    await fetch(`${SB_URL}/rest/v1/recipes?id=eq.${id}`, {
-      method: "DELETE",
-      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: "return=minimal" },
-    });
-  } catch(e) {}
-  window.recipes = window.recipes.filter(function(r) { return r.id !== id; });
+  var numericId = Number(id);
+  if (!Number.isFinite(numericId)) throw new Error("Invalid recipe id");
+  var headers = sbAuthHeaders();
+  headers.Prefer = "return=minimal";
+  var res = await fetch(SB_URL + "/rest/v1/recipes?id=eq." + encodeURIComponent(numericId), {
+    method: "DELETE",
+    headers: headers,
+  });
+  if (!res.ok) throw new Error("Delete failed (" + res.status + ")");
+  window.recipes = window.recipes.filter(function(r) { return r.id !== numericId; });
 };
 
 // --- Async Init: fetch from Supabase, fallback to inline ---
 (async function initFromSupabase() {
   if (!window.recipes) window.recipes = [];
-  const inlineRecipes = window.recipes.slice();
   try {
-    // Fetch existing IDs from Supabase
-    const res = await fetch(SB_URL + "/rest/v1/recipes?select=id", {
-      headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
+    const res = await fetch(SB_URL + "/rest/v1/recipes?select=*&order=id.asc", {
+      headers: { apikey: SB_KEY }
     });
     if (res.ok) {
-      const existing = await res.json();
-      const existingIds = new Set((existing || []).map(function(r) { return r.id; }));
-      // Find recipes in inline that are NOT in Supabase
-      const toInsert = inlineRecipes.filter(function(r) { return !existingIds.has(r.id); });
-      if (toInsert.length > 0) {
-        console.log("Inserting " + toInsert.length + " missing recipes into Supabase...");
-        for (let i = 0; i < toInsert.length; i++) {
-          try {
-            await fetch(SB_URL + "/rest/v1/recipes", {
-              method: "POST",
-              headers: {"Content-Type": "application/json", apikey: SB_KEY, Authorization: "Bearer " + SB_KEY },
-              body: JSON.stringify(toInsert[i])
-            });
-          } catch(e) {}
-        }
-        console.log("Insert done!");
-      }
-      // Now fetch ALL recipes from Supabase (they should all be there now)
-      const res2 = await fetch(SB_URL + "/rest/v1/recipes?select=*&order=id.asc", {
-        headers: { apikey: SB_KEY, Authorization: "Bearer " + SB_KEY }
-      });
-      if (res2.ok) {
-        const remote = await res2.json();
-        if (remote && remote.length > 0) {
-          window.recipes = remote;
-        }
+      const remote = await res.json();
+      if (remote && remote.length > 0) {
+        window.recipes = remote;
       }
     }
   } catch(e) {
-    console.log("Supabase sync failed, using inline data");
+    // Keep the inline data as fallback.
   }
   window.supabaseReady = true;
   if (window._onReady) window._onReady();

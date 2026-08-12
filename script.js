@@ -89,9 +89,31 @@ function saveRecipes() {
     });
 })();
 
+// --- SANITIZERS ---
+function escapeHtml(value) {
+    return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+const DATA_IMAGE_URL = /^data:image\/(png|jpeg|jpg|gif|webp|avif);base64,[a-z0-9+/=]+$/i;
+
+function safeImageUrl(url) {
+    const raw = String(url == null ? '' : url).trim();
+    if (DATA_IMAGE_URL.test(raw)) return raw;
+    try {
+        const parsed = new URL(raw, window.location.href);
+        if (parsed.protocol === 'http:' || parsed.protocol === 'https:') return parsed.href;
+    } catch (e) {}
+    return 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80';
+}
+
 // --- TRANSLATION HELPERS ---
 function tDiff(d) { return {Mudah:"Easy",Sedang:"Medium",Sulit:"Hard"}[d]||d; }
-function tPorsi(p) { return p.replace(/orang/g,"servings").replace(/gelas/g,"glasses").replace(/porsi/g,"servings"); }
+function tPorsi(p) { return String(p == null ? '' : p).replace(/orang/g,"servings").replace(/gelas/g,"glasses").replace(/porsi/g,"servings"); }
 function tWaktu(m) { return m+" mins"; }
 
 // --- RENDER RECIPES ---
@@ -132,22 +154,28 @@ function renderRecipes(filter = 'all', searchQuery = '') {
         card.innerHTML = `
             <div class="recipe-card-img-wrap">
                 <img class="recipe-card-img" 
-                     src="${recipe.gambar}" 
-                     alt="${recipe.nama}" 
-                     loading="lazy"
-                     onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\\'height:240px;background:var(--black-600);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:14px;\\'>📷 Foto ${recipe.nama}</div>';">
-                <span class="recipe-card-badge">${tDiff(recipe.kesulitan)}</span>
+                     src="${escapeHtml(safeImageUrl(recipe.gambar))}" 
+                     alt="${escapeHtml(recipe.nama)}" 
+                     loading="lazy">
+                <span class="recipe-card-badge">${escapeHtml(tDiff(recipe.kesulitan))}</span>
             </div>
             <div class="recipe-card-body">
-                <h3>${recipe.nama}</h3>
-                <div class="recipe-card-rating">${stars} <small style="color:#A8A29A; font-family:Inter,sans-serif;">${recipe.rating}</small></div>
+                <h3>${escapeHtml(recipe.nama)}</h3>
+                <div class="recipe-card-rating">${stars} <small style="color:#A8A29A; font-family:Inter,sans-serif;">${escapeHtml(recipe.rating)}</small></div>
                 <div class="recipe-card-meta">
-                    <span>⏱ ${tWaktu(recipe.waktu)}</span>
-                    <span>👥 ${tPorsi(recipe.porsi)}</span>
-                    <span>📊 ${tDiff(recipe.kesulitan)}</span>
+                    <span>⏱ ${escapeHtml(tWaktu(recipe.waktu))}</span>
+                    <span>👥 ${escapeHtml(tPorsi(recipe.porsi))}</span>
+                    <span>📊 ${escapeHtml(tDiff(recipe.kesulitan))}</span>
                 </div>
             </div>
         `;
+        const cardImg = card.querySelector('.recipe-card-img');
+        cardImg.addEventListener('error', () => {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'recipe-card-img-fallback';
+            placeholder.textContent = `📷 ${recipe.nama}`;
+            cardImg.replaceWith(placeholder);
+        });
         card.addEventListener('click', () => openRecipeModal(recipe));
         grid.appendChild(card);
     });
@@ -197,28 +225,31 @@ const recipeModal = document.getElementById('recipeModal');
 const modalClose = document.getElementById('modalClose');
 
 function openRecipeModal(recipe) {
-    document.getElementById('modalImage').src = recipe.gambar;
+    document.getElementById('modalImage').src = safeImageUrl(recipe.gambar);
     document.getElementById('modalImage').onerror = function() {
         this.src = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80';
     };
     document.getElementById('modalTitle').textContent = recipe.nama;
-    document.getElementById('modalMeta').innerHTML = `
-        ⏱️ ${tWaktu(recipe.waktu)} &nbsp;|&nbsp; 👥 ${tPorsi(recipe.porsi)} &nbsp;|&nbsp; 📊 ${tDiff(recipe.kesulitan)}
-    `;
+    document.getElementById('modalMeta').textContent =
+        `⏱️ ${tWaktu(recipe.waktu)}  |  👥 ${tPorsi(recipe.porsi)}  |  📊 ${tDiff(recipe.kesulitan)}`;
     const stars = '★'.repeat(Math.floor(recipe.rating)) + '☆'.repeat(5 - Math.floor(recipe.rating));
     document.getElementById('modalRating').textContent = stars;
 
-    document.getElementById('modalIngredients').innerHTML = recipe.bahan
-        .map(b => `<li>${b}</li>`)
-        .join('');
-
-    document.getElementById('modalSteps').innerHTML = recipe.langkah
-        .map((l, i) => `<li>${l}</li>`)
-        .join('');
+    renderListItems(document.getElementById('modalIngredients'), recipe.bahan);
+    renderListItems(document.getElementById('modalSteps'), recipe.langkah);
 
     recipeModal.classList.add('active');
     document.body.style.overflow = 'hidden';
     recipeModal.querySelector('.modal-content').scrollTop = 0;
+}
+
+function renderListItems(list, items) {
+    list.textContent = '';
+    (items || []).forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        list.appendChild(li);
+    });
 }
 
 function closeRecipeModal() {
