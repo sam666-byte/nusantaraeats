@@ -1,741 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indonesian Recipes Collection | NusantaraEats</title>
-  <meta name="description" content="Browse 100 authentic Indonesian recipes. From Rendang to Nasi Goreng, explore the rich flavors of Indonesian cuisine.">
-  <link rel="canonical" href="https://nusantaraeats.com/recipes/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    .archive { max-width: 1200px; margin: 0 auto; padding: 120px 24px 60px; }
-    .archive h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
-    .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 32px; }
-    .archive-card { background: var(--surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; overflow: hidden; transition: all 0.3s; }
-    .archive-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-    .archive-card img { width: 100%; height: 180px; object-fit: cover; }
-    .archive-card .body { padding: 16px; }
-    .archive-card h3 { font-size: 16px; color: var(--text); margin-bottom: 6px; }
-    .archive-card .rating { color: var(--gold); font-size: 13px; }
-    .archive-card .difficulty { font-size: 11px; color: var(--muted); text-transform: uppercase; }
-    .archive-card a { text-decoration: none; color: inherit; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Indonesian Recipes — Browse 100+ Dishes | NusantaraEats</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SFZEDPPK7S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SFZEDPPK7S');
+</script>
+<meta name="description" content="Browse all 100+ authentic Indonesian recipes. Filter by category — main dishes, soups, satay, snacks, desserts, drinks — or search for your favorite.">
+<link rel="canonical" href="https://nusantaraeats.com/recipes/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nusantaraeats.com/recipes/">
+<meta property="og:title" content="All Indonesian Recipes — NusantaraEats">
+<meta property="og:description" content="Browse 100+ authentic Indonesian recipes by category or search.">
+<meta property="og:image" content="https://nusantaraeats.com/og-cover.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All Indonesian Recipes — NusantaraEats">
+<meta name="twitter:description" content="Browse 100+ authentic Indonesian recipes by category or search.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"All Indonesian Recipes","description":"Browse all authentic Indonesian recipes.","url":"https://nusantaraeats.com/recipes/"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#D4AF37;--gold-dark:#8B6914;--bg:#0A0A0A;--surface:#141414;--text:#F0ECE6;--muted:#A8A29A;--faint:#6B6560;--line:rgba(212,175,55,.14)}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;letter-spacing:1px;text-decoration:none;color:var(--text)}
+.logo em{color:var(--gold);font-style:italic}
+.main-nav{display:flex;gap:28px}
+.main-nav a{text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted)}
+.main-nav a:hover,.main-nav a.active{color:var(--gold)}
+.page-hero{padding:72px 0 40px;text-align:center}
+.page-hero .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,56px);font-weight:900;margin-bottom:14px}
+.page-hero h1 em{color:var(--gold);font-style:italic}
+.page-hero p{color:var(--muted);font-weight:300;max-width:620px;margin:0 auto 30px}
+.crumbs{font-size:12.5px;color:var(--faint);margin-bottom:18px}
+.crumbs a{color:var(--faint);text-decoration:none}
+.crumbs a:hover{color:var(--gold)}
+.controls{position:sticky;top:68px;z-index:50;background:rgba(10,10,10,.94);backdrop-filter:blur(12px);padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.controls-inner{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.search-box{flex:1;min-width:240px;position:relative}
+.search-box input{width:100%;background:#111;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 18px 13px 46px;color:var(--text);font-size:15px;font-family:'Inter',sans-serif}
+.search-box input:focus{outline:none;border-color:var(--gold)}
+.search-box::before{content:'🔍';position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:.6}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{background:transparent;border:1px solid rgba(255,255,255,.14);color:var(--muted);border-radius:20px;padding:9px 18px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+.filter-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold-dark));border-color:transparent;color:#0a0a0a;font-weight:700}
+.result-count{font-size:13px;color:var(--faint);margin:26px 0 20px}
+.recipe-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px;padding-bottom:80px}
+.card{background:var(--surface);border:1px solid rgba(255,255,255,.05);border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .25s,border-color .25s;display:flex;flex-direction:column;color:var(--text)}
+.card:hover{transform:translateY(-5px);border-color:rgba(212,175,55,.4)}
+.card.hidden{display:none}
+.card-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:#1a1a1a}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-cat{position:absolute;top:12px;left:12px;background:rgba(10,10,10,.78);backdrop-filter:blur(6px);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px}
+.card-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body h3{font-family:'Playfair Display',serif;font-size:19px;line-height:1.35}
+.card-body p{font-size:13.5px;color:var(--muted);font-weight:300;flex:1}
+.card-foot{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--faint);border-top:1px solid rgba(255,255,255,.05);padding-top:12px}
+.stars{color:var(--gold);letter-spacing:2px;font-size:13px}
+.stars small{color:var(--faint);font-family:'Inter',sans-serif;letter-spacing:0}
+.no-results{display:none;text-align:center;padding:60px 20px;color:var(--muted)}
+.no-results.show{display:block}
+.site-footer{border-top:1px solid var(--line);padding:44px 0 28px;background:#080808}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--faint)}
+.footer-inner a{color:var(--faint);text-decoration:none;margin-left:16px}
+.footer-inner a:hover{color:var(--gold)}
+@media(max-width:900px){.main-nav{display:none}}
+</style>
 </head>
-<body style="background:#0a0a0a;color:#f0ece6;font-family:'Inter',sans-serif">
-  <div class="archive">
-    <a href="/" style="color:var(--gold);text-decoration:none;font-size:13px">← Back to Home</a>
-    <h1 style="margin-top:8px">Indonesian Recipes</h1>
-    <p style="color:var(--muted);margin-top:8px">100 authentic Indonesian recipes with step-by-step instructions</p>
+<body>
 
-    <div class="archive-grid">
-      <a href="/recipes/nasi-goreng-jawa/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1200&q=80" alt="Nasi Goreng (Indonesian Fried Rice)" loading="lazy">
-          <div class="body">
-            <h3>Nasi Goreng (Indonesian Fried Rice)</h3>
-            <div class="rating">★★★★☆ 4.8</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/rendang-daging-sapi-padang/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=1200&q=80" alt="Beef Rendang Padang (Slow-Cooked Beef in Coconut Milk)" loading="lazy">
-          <div class="body">
-            <h3>Beef Rendang Padang (Slow-Cooked Beef in Coconut Milk)</h3>
-            <div class="rating">★★★★☆ 4.9</div>
-            <div class="difficulty">Hard</div>
-          </div>
-        </a><a href="/recipes/sate-ayam-madura/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1200&q=80" alt="Sate Ayam Madura (Madura-Style Chicken Satay)" loading="lazy">
-          <div class="body">
-            <h3>Sate Ayam Madura (Madura-Style Chicken Satay)</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/soto-ayam-lamongan/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1626804475297-410ac11f41c5?w=1200&q=80" alt="Soto Ayam Lamongan (Traditional Chicken Soup)" loading="lazy">
-          <div class="body">
-            <h3>Soto Ayam Lamongan (Traditional Chicken Soup)</h3>
-            <div class="rating">★★★★☆ 4.8</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/gado-gado-betawi/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80" alt="Gado-Gado Betawi (Indonesian Salad with Peanut Sauce)" loading="lazy">
-          <div class="body">
-            <h3>Gado-Gado Betawi (Indonesian Salad with Peanut Sauce)</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/bakso-malang-komplit/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1200&q=80" alt="Bakso Malang (Complete Beef Meatball Soup)" loading="lazy">
-          <div class="body">
-            <h3>Bakso Malang (Complete Beef Meatball Soup)</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/martabak-manis-bangka/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80" alt="Martabak Manis Bangka (Sweet Stuffed Pancake)" loading="lazy">
-          <div class="body">
-            <h3>Martabak Manis Bangka (Sweet Stuffed Pancake)</h3>
-            <div class="rating">★★★★☆ 4.9</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/es-cendol-dawet-ayu/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1200&q=80" alt="Es Cendol Dawet (Traditional Iced Dessert)" loading="lazy">
-          <div class="body">
-            <h3>Es Cendol Dawet (Traditional Iced Dessert)</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/pempek-kapal-selam-palembang/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1562967914-608f3c9e17e4?w=1200&q=80" alt="Pempek Kapal Selam (Palembang Fish Cakes)" loading="lazy">
-          <div class="body">
-            <h3>Pempek Kapal Selam (Palembang Fish Cakes)</h3>
-            <div class="rating">★★★★☆ 4.8</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/es-teler-nusantara/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=1200&q=80" alt="Es Teler (Indonesian Mixed Fruit Drink)" loading="lazy">
-          <div class="body">
-            <h3>Es Teler (Indonesian Mixed Fruit Drink)</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/ayam-goreng-lengkuas/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Ayam Goreng Lengkuas (Galangal Fried Chicken)" loading="lazy">
-          <div class="body">
-            <h3>Ayam Goreng Lengkuas (Galangal Fried Chicken)</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/tumis-kangkung-belacan/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&q=80" alt="Stir-Fried Water Spinach with Shrimp Paste" loading="lazy">
-          <div class="body">
-            <h3>Stir-Fried Water Spinach with Shrimp Paste</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/ikan-bakar-jimbaran/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80" alt="Ikan Bakar Jimbaran (Jimbaran Grilled Fish)" loading="lazy">
-          <div class="body">
-            <h3>Ikan Bakar Jimbaran (Jimbaran Grilled Fish)</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/sop-buntut-sapi/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1200&q=80" alt="Oxtail Soup (Sop Buntut)" loading="lazy">
-          <div class="body">
-            <h3>Oxtail Soup (Sop Buntut)</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/mie-goreng-jawa/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1552611052-33e04de1b100?w=1200&q=80" alt="Mie Goreng Jawa (Javanese Fried Noodles)" loading="lazy">
-          <div class="body">
-            <h3>Mie Goreng Jawa (Javanese Fried Noodles)</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/sambal-goreng-kentang-ati/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1563379928-29f3c0a26a3c?w=1200&q=80" alt="Sambal Goreng Kentang Ati (Spicy Potatoes with Liver)" loading="lazy">
-          <div class="body">
-            <h3>Sambal Goreng Kentang Ati (Spicy Potatoes with Liver)</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/capcay-kuah-kental/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1563379928-29f3c0a26a3c?w=1200&q=80" alt="Capcay (Indonesian Mixed Vegetables in Thick Sauce)" loading="lazy">
-          <div class="body">
-            <h3>Capcay (Indonesian Mixed Vegetables in Thick Sauce)</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/pepes-ikan-mas/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1546069901-d5bfd2c3a5a9?w=1200&q=80" alt="Pepes Ikan Mas (Steamed Spiced Carp in Banana Leaf)" loading="lazy">
-          <div class="body">
-            <h3>Pepes Ikan Mas (Steamed Spiced Carp in Banana Leaf)</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/sop-iga-sapi/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1200&q=80" alt="Beef Rib Soup (Sop Iga Sapi)" loading="lazy">
-          <div class="body">
-            <h3>Beef Rib Soup (Sop Iga Sapi)</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/nasi-liwet-solo/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=1200&q=80" alt="Nasi Liwet Solo (Solo-Style Coconut Rice)" loading="lazy">
-          <div class="body">
-            <h3>Nasi Liwet Solo (Solo-Style Coconut Rice)</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/ayam-bakar-taliwang/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1559825597-6ea0c737e3e4?w=1200&q=80" alt="Ayam Taliwang (Lombok Grilled Chicken)" loading="lazy">
-          <div class="body">
-            <h3>Ayam Taliwang (Lombok Grilled Chicken)</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/gudeg-nangka-muda/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1200&q=80" alt="Gudeg (Young Jackfruit Sweet Stew)" loading="lazy">
-          <div class="body">
-            <h3>Gudeg (Young Jackfruit Sweet Stew)</h3>
-            <div class="rating">★★★★☆ 4.8</div>
-            <div class="difficulty">Hard</div>
-          </div>
-        </a><a href="/recipes/pisang-goreng-crispy/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80" alt="Pisang Goreng (Crispy Indonesian Banana Fritters)" loading="lazy">
-          <div class="body">
-            <h3>Pisang Goreng (Crispy Indonesian Banana Fritters)</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/tahu-gejrot/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1562967914-608f3c9e17e4?w=1200&q=80" alt="Tahu Gejrot (Crispy Tofu in Sweet Sour Sauce)" loading="lazy">
-          <div class="body">
-            <h3>Tahu Gejrot (Crispy Tofu in Sweet Sour Sauce)</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-campur-khas-surabaya/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=1200&q=80" alt="Es Campur (Surabaya Mixed Ice Dessert)" loading="lazy">
-          <div class="body">
-            <h3>Es Campur (Surabaya Mixed Ice Dessert)</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/perkedel-kentang/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&q=80" alt="Perkedel Kentang (Indonesian Potato Fritters)" loading="lazy">
-          <div class="body">
-            <h3>Perkedel Kentang (Indonesian Potato Fritters)</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/ikan-nila-bakar/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80" alt="Grilled Tilapia (Ikan Nila Bakar)" loading="lazy">
-          <div class="body">
-            <h3>Grilled Tilapia (Ikan Nila Bakar)</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/bubur-ayam-jakarta/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1626804475297-410ac11f41c5?w=1200&q=80" alt="Bubur Ayam Jakarta (Jakarta Chicken Congee)" loading="lazy">
-          <div class="body">
-            <h3>Bubur Ayam Jakarta (Jakarta Chicken Congee)</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/tempe-mendoan/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1562967914-608f3c9e17e4?w=1200&q=80" alt="Tempe Mendoan (Crispy Tempeh Fritters)" loading="lazy">
-          <div class="body">
-            <h3>Tempe Mendoan (Crispy Tempeh Fritters)</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/sop-ayam-pak-min-klaten/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1626804475297-410ac11f41c5?w=1200&q=80" alt="Sop Ayam Pak Min Klaten (Clear Chicken Soup)" loading="lazy">
-          <div class="body">
-            <h3>Sop Ayam Pak Min Klaten (Clear Chicken Soup)</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/pallubasa/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Pallubasa" loading="lazy">
-          <div class="body">
-            <h3>Pallubasa</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/sate-padang/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sate Padang" loading="lazy">
-          <div class="body">
-            <h3>Sate Padang</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/sate-lilit-bali/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sate Lilit Bali" loading="lazy">
-          <div class="body">
-            <h3>Sate Lilit Bali</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/sate-pusut/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sate Pusut" loading="lazy">
-          <div class="body">
-            <h3>Sate Pusut</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/sate-klatak/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sate Klatak" loading="lazy">
-          <div class="body">
-            <h3>Sate Klatak</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/sate-maranggi/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sate Maranggi" loading="lazy">
-          <div class="body">
-            <h3>Sate Maranggi</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/gudeg-jogja/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Gudeg Jogja" loading="lazy">
-          <div class="body">
-            <h3>Gudeg Jogja</h3>
-            <div class="rating">★★★★☆ 4.8</div>
-            <div class="difficulty">Hard</div>
-          </div>
-        </a><a href="/recipes/sayur-lodeh/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sayur Lodeh" loading="lazy">
-          <div class="body">
-            <h3>Sayur Lodeh</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/lontong-sayur/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Lontong Sayur" loading="lazy">
-          <div class="body">
-            <h3>Lontong Sayur</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/ketoprak/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Ketoprak" loading="lazy">
-          <div class="body">
-            <h3>Ketoprak</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/nasi-uduk-betawi/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Nasi Uduk Betawi" loading="lazy">
-          <div class="body">
-            <h3>Nasi Uduk Betawi</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/nasi-kuning/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Nasi Kuning" loading="lazy">
-          <div class="body">
-            <h3>Nasi Kuning</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/nasi-tumpeng/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Nasi Tumpeng" loading="lazy">
-          <div class="body">
-            <h3>Nasi Tumpeng</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Hard</div>
-          </div>
-        </a><a href="/recipes/bubur-manado/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Bubur Manado" loading="lazy">
-          <div class="body">
-            <h3>Bubur Manado</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/sop-saudara/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sop Saudara" loading="lazy">
-          <div class="body">
-            <h3>Sop Saudara</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/tinutuan/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Tinutuan" loading="lazy">
-          <div class="body">
-            <h3>Tinutuan</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/klepon/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Klepon" loading="lazy">
-          <div class="body">
-            <h3>Klepon</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/onde-onde/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Onde-Onde" loading="lazy">
-          <div class="body">
-            <h3>Onde-Onde</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/kue-lapis/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kue Lapis" loading="lazy">
-          <div class="body">
-            <h3>Kue Lapis</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/kue-lumpur/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kue Lumpur" loading="lazy">
-          <div class="body">
-            <h3>Kue Lumpur</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/bika-ambon/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Bika Ambon" loading="lazy">
-          <div class="body">
-            <h3>Bika Ambon</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Hard</div>
-          </div>
-        </a><a href="/recipes/putri-salju/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Putri Salju" loading="lazy">
-          <div class="body">
-            <h3>Putri Salju</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/kastengel/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kastengel" loading="lazy">
-          <div class="body">
-            <h3>Kastengel</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/nastar/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Nastar" loading="lazy">
-          <div class="body">
-            <h3>Nastar</h3>
-            <div class="rating">★★★★☆ 4.8</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/lemang/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Lemang" loading="lazy">
-          <div class="body">
-            <h3>Lemang</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Hard</div>
-          </div>
-        </a><a href="/recipes/wajik/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Wajik" loading="lazy">
-          <div class="body">
-            <h3>Wajik</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-doger/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Doger" loading="lazy">
-          <div class="body">
-            <h3>Es Doger</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-bir-pletok/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Bir Pletok" loading="lazy">
-          <div class="body">
-            <h3>Es Bir Pletok</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/wedang-uwuh/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Wedang Uwuh" loading="lazy">
-          <div class="body">
-            <h3>Wedang Uwuh</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/wedang-ronde/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Wedang Ronde" loading="lazy">
-          <div class="body">
-            <h3>Wedang Ronde</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/bandrek/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Bandrek" loading="lazy">
-          <div class="body">
-            <h3>Bandrek</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/sekoteng/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sekoteng" loading="lazy">
-          <div class="body">
-            <h3>Sekoteng</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/lahang/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Lahang" loading="lazy">
-          <div class="body">
-            <h3>Lahang</h3>
-            <div class="rating">★★★★☆ 4.2</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-gempol/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Gempol" loading="lazy">
-          <div class="body">
-            <h3>Es Gempol</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/cendol/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Cendol" loading="lazy">
-          <div class="body">
-            <h3>Cendol</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-kopyor/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Kopyor" loading="lazy">
-          <div class="body">
-            <h3>Es Kopyor</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/ayam-betutu/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Ayam Betutu" loading="lazy">
-          <div class="body">
-            <h3>Ayam Betutu</h3>
-            <div class="rating">★★★★☆ 4.8</div>
-            <div class="difficulty">Hard</div>
-          </div>
-        </a><a href="/recipes/ayam-geprek/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Ayam Geprek" loading="lazy">
-          <div class="body">
-            <h3>Ayam Geprek</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/ayam-pop/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Ayam Pop" loading="lazy">
-          <div class="body">
-            <h3>Ayam Pop</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/rendang-jengkol/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Rendang Jengkol" loading="lazy">
-          <div class="body">
-            <h3>Rendang Jengkol</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/dendeng-batokok/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Dendeng Batokok" loading="lazy">
-          <div class="body">
-            <h3>Dendeng Batokok</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/gulai-tambusu/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Gulai Tambusu" loading="lazy">
-          <div class="body">
-            <h3>Gulai Tambusu</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/kalio/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kalio" loading="lazy">
-          <div class="body">
-            <h3>Kalio</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/pindang-patin/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Pindang Patin" loading="lazy">
-          <div class="body">
-            <h3>Pindang Patin</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/tempoyak/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Tempoyak" loading="lazy">
-          <div class="body">
-            <h3>Tempoyak</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/mie-aceh/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Mie Aceh" loading="lazy">
-          <div class="body">
-            <h3>Mie Aceh</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/kuah-beulangong/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kuah Beulangong" loading="lazy">
-          <div class="body">
-            <h3>Kuah Beulangong</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Hard</div>
-          </div>
-        </a><a href="/recipes/sop-kambing/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Sop Kambing" loading="lazy">
-          <div class="body">
-            <h3>Sop Kambing</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/timlo-solo/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Timlo Solo" loading="lazy">
-          <div class="body">
-            <h3>Timlo Solo</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/tongseng/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Tongseng" loading="lazy">
-          <div class="body">
-            <h3>Tongseng</h3>
-            <div class="rating">★★★★☆ 4.7</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/tutug-oncom/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Tutug Oncom" loading="lazy">
-          <div class="body">
-            <h3>Tutug Oncom</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/kupat-tahu/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kupat Tahu" loading="lazy">
-          <div class="body">
-            <h3>Kupat Tahu</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/serabi/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Serabi" loading="lazy">
-          <div class="body">
-            <h3>Serabi</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/dadar-gulung/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Dadar Gulung" loading="lazy">
-          <div class="body">
-            <h3>Dadar Gulung</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/lemper/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Lemper" loading="lazy">
-          <div class="body">
-            <h3>Lemper</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/arem-arem/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Arem-Arem" loading="lazy">
-          <div class="body">
-            <h3>Arem-Arem</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/kue-putu/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kue Putu" loading="lazy">
-          <div class="body">
-            <h3>Kue Putu</h3>
-            <div class="rating">★★★★☆ 4.6</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/cenil/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Cenil" loading="lazy">
-          <div class="body">
-            <h3>Cenil</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/gethuk/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Gethuk" loading="lazy">
-          <div class="body">
-            <h3>Gethuk</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/mochi/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Mochi" loading="lazy">
-          <div class="body">
-            <h3>Mochi</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/kue-cubit/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kue Cubit" loading="lazy">
-          <div class="body">
-            <h3>Kue Cubit</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/pukis/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Pukis" loading="lazy">
-          <div class="body">
-            <h3>Pukis</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/bakpia/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Bakpia" loading="lazy">
-          <div class="body">
-            <h3>Bakpia</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/wingko/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Wingko" loading="lazy">
-          <div class="body">
-            <h3>Wingko</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/kue-talam/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Kue Talam" loading="lazy">
-          <div class="body">
-            <h3>Kue Talam</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Medium</div>
-          </div>
-        </a><a href="/recipes/es-palu-butung/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Palu Butung" loading="lazy">
-          <div class="body">
-            <h3>Es Palu Butung</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-kelapa-muda/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Kelapa Muda" loading="lazy">
-          <div class="body">
-            <h3>Es Kelapa Muda</h3>
-            <div class="rating">★★★★☆ 4.5</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-tebu/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Tebu" loading="lazy">
-          <div class="body">
-            <h3>Es Tebu</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-timun-serut/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Timun Serut" loading="lazy">
-          <div class="body">
-            <h3>Es Timun Serut</h3>
-            <div class="rating">★★★★☆ 4.3</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a><a href="/recipes/es-kacang-merah/" class="archive-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80" alt="Es Kacang Merah" loading="lazy">
-          <div class="body">
-            <h3>Es Kacang Merah</h3>
-            <div class="rating">★★★★☆ 4.4</div>
-            <div class="difficulty">Easy</div>
-          </div>
-        </a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">Nusantara<em>Eats</em></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/recipes/" class="active">All Recipes</a>
+      <a href="/recipes/#categories">Categories</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <span style="color:var(--gold)">All Recipes</span></nav>
+    <span class="eyebrow">The Full Collection</span>
+    <h1>Every Recipe, <em>One Place</em></h1>
+    <p>100+ authentic Indonesian recipes — search by craving, or filter by category. Every card below is a real link to a full step-by-step recipe page.</p>
+  </div>
+</section>
+
+<div class="controls">
+  <div class="container controls-inner">
+    <div class="search-box"><input type="search" id="searchInput" placeholder="Search recipes… try &quot;rendang&quot; or &quot;chicken&quot;" aria-label="Search recipes"></div>
+    <div class="filters" role="group" aria-label="Filter by category">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="main-dishes">Main Dishes</button>
+      <button class="filter-btn" data-cat="soups-soto">Soups &amp; Soto</button>
+      <button class="filter-btn" data-cat="satay-grill">Satay &amp; Grill</button>
+      <button class="filter-btn" data-cat="snacks">Snacks</button>
+      <button class="filter-btn" data-cat="desserts">Desserts</button>
+      <button class="filter-btn" data-cat="drinks">Drinks</button>
     </div>
   </div>
-  <footer style="border-top:1px solid rgba(255,255,255,0.06);padding:24px;text-align:center;font-size:12px;color:var(--muted)">
-    <p>© 2026 <a href="/" style="color:var(--gold);text-decoration:none">NusantaraEats</a> — Authentic Indonesian Recipes</p>
-  </footer>
+</div>
+
+<main class="container">
+  <p class="result-count" id="resultCount">Showing 100 of 100 recipes</p>
+  <div class="recipe-grid" id="recipeGrid">
+    <a href="/recipes/rendang-daging-sapi-padang/" class="card" data-cat="main-dishes" data-name="beef rendang padang (slow-cooked beef in coconut milk) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://muchbutter.com/wp-content/uploads/2023/11/Beef-Rendang47-768x1024.jpg" alt="Beef Rendang Padang (Slow-Cooked Beef in Coconut Milk)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Beef Rendang Padang (Slow-Cooked Beef in Coconut Milk)</h3>
+        <p>Beef Rendang Padang (Slow-Cooked Beef in Coconut Milk) is a beloved Indonesian dish that brings together the rich...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.9</small></span><span>4 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/martabak-manis-bangka/" class="card" data-cat="snacks-appetizers" data-name="martabak manis bangka (sweet stuffed pancake) snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://www.chocolatesandchai.com/wp-content/uploads/2024/10/Martabak-Manis-4.jpg" alt="Martabak Manis Bangka (Sweet Stuffed Pancake)" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Martabak Manis Bangka (Sweet Stuffed Pancake)</h3>
+        <p>Martabak Manis Bangka (Sweet Stuffed Pancake) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.9</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/ayam-betutu/" class="card" data-cat="main-dishes" data-name="ayam betutu main dishes indonesian recipe">
+      <div class="card-img"><img src="https://kochzauber.eu/assets/img/recipes/indonesisch-ayam-betutu-1280.jpg" alt="Ayam Betutu" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Ayam Betutu</h3>
+        <p>Ayam Betutu is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.8</small></span><span>3 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/gudeg-nangka-muda/" class="card" data-cat="main-dishes" data-name="gudeg (young jackfruit sweet stew) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://yogyaku.com/wp-content/uploads/2024/04/Gudeg-asal-jogja.jpg" alt="Gudeg (Young Jackfruit Sweet Stew)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Gudeg (Young Jackfruit Sweet Stew)</h3>
+        <p>Gudeg (Young Jackfruit Sweet Stew) is a beloved Indonesian dish that brings together the rich flavors of traditional...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.8</small></span><span>4 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/gudeg-jogja/" class="card" data-cat="main-dishes" data-name="gudeg jogja main dishes indonesian recipe">
+      <div class="card-img"><img src="https://yogyaku.com/wp-content/uploads/2024/04/Gudeg-asal-jogja.jpg" alt="Gudeg Jogja" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Gudeg Jogja</h3>
+        <p>Gudeg Jogja is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.8</small></span><span>4 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/nasi-goreng-jawa/" class="card" data-cat="main-dishes" data-name="nasi goreng (indonesian fried rice) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://headbangerskitchen.com/wp-content/uploads/2023/06/Nasi-Goreng-1-scaled.jpg" alt="Nasi Goreng (Indonesian Fried Rice)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Nasi Goreng (Indonesian Fried Rice)</h3>
+        <p>Nasi Goreng (Indonesian Fried Rice) is a beloved Indonesian dish that brings together the rich flavors of traditional...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.8</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/nastar/" class="card" data-cat="snacks-appetizers" data-name="nastar snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://akcdn.detik.net.id/visual/2021/12/17/nastar-1_169.jpeg?w=700&amp;q=90" alt="Nastar" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Nastar</h3>
+        <p>Nastar is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.8</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/pempek-kapal-selam-palembang/" class="card" data-cat="snacks-appetizers" data-name="pempek kapal selam (palembang fish cakes) snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://sultantv.co/wp-content/uploads/2025/01/2169492648.jpg" alt="Pempek Kapal Selam (Palembang Fish Cakes)" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Pempek Kapal Selam (Palembang Fish Cakes)</h3>
+        <p>Pempek Kapal Selam (Palembang Fish Cakes) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.8</small></span><span>100 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/soto-ayam-lamongan/" class="card" data-cat="soups-stews" data-name="soto ayam lamongan (traditional chicken soup) soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://eatwithgarlic.com/cdn-cgi/image/width=960,fit=cover,format=auto,quality=80,sharpen=1,metadata=none/https://cdn.eatwithgarlic.com/recipes/soto-ayam-lamongan-ml66qv64/cover-1770098174925.png" alt="Soto Ayam Lamongan (Traditional Chicken Soup)" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Soto Ayam Lamongan (Traditional Chicken Soup)</h3>
+        <p>Soto Ayam Lamongan (Traditional Chicken Soup) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.8</small></span><span>100 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/ayam-geprek/" class="card" data-cat="main-dishes" data-name="ayam geprek main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.rasaprima.co.id/wp-content/uploads/2024/10/ayam-geprek-sambal-indonesian-food-geprek-fried-chicken-with-sambal-hot-chili-sauce-served-rice-980x653.jpg" alt="Ayam Geprek" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Ayam Geprek</h3>
+        <p>Ayam Geprek is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/ayam-bakar-taliwang/" class="card" data-cat="grilled-satay" data-name="ayam taliwang (lombok grilled chicken) grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://www.doktertraveler.com/wp-content/uploads/2025/08/Ayam-Taliwang-NTB.jpg" alt="Ayam Taliwang (Lombok Grilled Chicken)" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Ayam Taliwang (Lombok Grilled Chicken)</h3>
+        <p>Ayam Taliwang (Lombok Grilled Chicken) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sop-iga-sapi/" class="card" data-cat="soups-stews" data-name="beef rib soup (sop iga sapi) soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://dashofinsight.com/wp-content/uploads/2025/07/sop-iga-sapi.jpg" alt="Beef Rib Soup (Sop Iga Sapi)" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Beef Rib Soup (Sop Iga Sapi)</h3>
+        <p>Beef Rib Soup (Sop Iga Sapi) is a beloved Indonesian dish that brings together the rich flavors of traditional spices...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>150 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/bika-ambon/" class="card" data-cat="snacks-appetizers" data-name="bika ambon snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://www.willflyforfood.net/wp-content/uploads/2023/02/indonesian-desserts-bika-ambon-medan.jpg.webp" alt="Bika Ambon" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Bika Ambon</h3>
+        <p>Bika Ambon is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>3 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-cendol-dawet-ayu/" class="card" data-cat="beverages" data-name="es cendol dawet (traditional iced dessert) beverages indonesian recipe">
+      <div class="card-img"><img src="https://jajabakes.com/wp-content/uploads/2021/06/cendol-3.jpg" alt="Es Cendol Dawet (Traditional Iced Dessert)" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Cendol Dawet (Traditional Iced Dessert)</h3>
+        <p>Es Cendol Dawet (Traditional Iced Dessert) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>50 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/ikan-bakar-jimbaran/" class="card" data-cat="grilled-satay" data-name="ikan bakar jimbaran (jimbaran grilled fish) grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://howtobali.com/wp-content/uploads/2022/05/shuthow-bali-traditional-indonesian-culinary-food-makanan-Jimbaran-bakar-fish-800x600-1.jpg" alt="Ikan Bakar Jimbaran (Jimbaran Grilled Fish)" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Ikan Bakar Jimbaran (Jimbaran Grilled Fish)</h3>
+        <p>Ikan Bakar Jimbaran (Jimbaran Grilled Fish) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/klepon/" class="card" data-cat="snacks-appetizers" data-name="klepon snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://foodspot.co.id/blog/wp-content/uploads/2019/07/klepon-50470227-1.jpg" alt="Klepon" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Klepon</h3>
+        <p>Klepon is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/nasi-liwet-solo/" class="card" data-cat="main-dishes" data-name="nasi liwet solo (solo-style coconut rice) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://blog.tiket.com/wp-content/uploads/2020/11/7.-Nasi-Liwet.jpg" alt="Nasi Liwet Solo (Solo-Style Coconut Rice)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Nasi Liwet Solo (Solo-Style Coconut Rice)</h3>
+        <p>Nasi Liwet Solo (Solo-Style Coconut Rice) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/nasi-tumpeng/" class="card" data-cat="main-dishes" data-name="nasi tumpeng main dishes indonesian recipe">
+      <div class="card-img"><img src="https://masakan-nusantara.com/wp-content/uploads/2019/08/tumpeng-banner.jpeg" alt="Nasi Tumpeng" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Nasi Tumpeng</h3>
+        <p>Nasi Tumpeng is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sop-buntut-sapi/" class="card" data-cat="soups-stews" data-name="oxtail soup (sop buntut) soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://img.qraved.co/v2/image/data/2016/05/30/sop_buntut-x.jpg" alt="Oxtail Soup (Sop Buntut)" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Oxtail Soup (Sop Buntut)</h3>
+        <p>Oxtail Soup (Sop Buntut) is a beloved Indonesian dish that brings together the rich flavors of traditional spices and...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>3 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sate-ayam-madura/" class="card" data-cat="grilled-satay" data-name="sate ayam madura (madura-style chicken satay) grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://pdbifiles.nos.jkt-1.neo.id/files/2017/12/12/andri77_Sate_Ayam_Madura.jpg" alt="Sate Ayam Madura (Madura-Style Chicken Satay)" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Sate Ayam Madura (Madura-Style Chicken Satay)</h3>
+        <p>Sate Ayam Madura (Madura-Style Chicken Satay) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>75 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sate-lilit-bali/" class="card" data-cat="grilled-satay" data-name="sate lilit bali grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://www.bali-island.com/wp-content/uploads/2025/06/Sate-Lilit-Bali.jpg" alt="Sate Lilit Bali" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Sate Lilit Bali</h3>
+        <p>Sate Lilit Bali is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/tongseng/" class="card" data-cat="main-dishes" data-name="tongseng main dishes indonesian recipe">
+      <div class="card-img"><img src="https://cnc-magazine.oramiland.com/parenting/images/Tongseng_Sapi_Santan.width-800.format-webp.webp" alt="Tongseng" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Tongseng</h3>
+        <p>Tongseng is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.7</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/ayam-goreng-lengkuas/" class="card" data-cat="main-dishes" data-name="ayam goreng lengkuas (galangal fried chicken) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.cookmeindonesian.com/wp-content/uploads/2021/11/ayam-goreng-lengkuas-fin1.jpg" alt="Ayam Goreng Lengkuas (Galangal Fried Chicken)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Ayam Goreng Lengkuas (Galangal Fried Chicken)</h3>
+        <p>Ayam Goreng Lengkuas (Galangal Fried Chicken) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/bakso-malang-komplit/" class="card" data-cat="soups-stews" data-name="bakso malang (complete beef meatball soup) soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://img.qraved.co/v2/image/data/main-photo-1546404306447-x.png" alt="Bakso Malang (Complete Beef Meatball Soup)" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Bakso Malang (Complete Beef Meatball Soup)</h3>
+        <p>Bakso Malang (Complete Beef Meatball Soup) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>2 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/bubur-ayam-jakarta/" class="card" data-cat="main-dishes" data-name="bubur ayam jakarta (jakarta chicken congee) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://cdn1-production-images-kly.akamaized.net/cBXDtqIOcFFvXFK1G8ZOKZ92Muo=/673x379/smart/filters:quality(75):strip_icc()/kly-media-production/medias/5465382/original/061536000_1767766631-bubur_ayam.jpg" alt="Bubur Ayam Jakarta (Jakarta Chicken Congee)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Bubur Ayam Jakarta (Jakarta Chicken Congee)</h3>
+        <p>Bubur Ayam Jakarta (Jakarta Chicken Congee) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/cendol/" class="card" data-cat="beverages" data-name="cendol beverages indonesian recipe">
+      <div class="card-img"><img src="https://tsingbei.com/wp-content/uploads/2024/12/5ef1b36539f22.jpg" alt="Cendol" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Cendol</h3>
+        <p>Cendol is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-teler-nusantara/" class="card" data-cat="beverages" data-name="es teler (indonesian mixed fruit drink) beverages indonesian recipe">
+      <div class="card-img"><img src="https://whattocooktoday.com/wp-content/uploads/2022/06/es-teler-1.jpg" alt="Es Teler (Indonesian Mixed Fruit Drink)" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Teler (Indonesian Mixed Fruit Drink)</h3>
+        <p>Es Teler (Indonesian Mixed Fruit Drink) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>25 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kastengel/" class="card" data-cat="snacks-appetizers" data-name="kastengel snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://www.frisianflag.com/storage/app/media/uploaded-files/kastengel-premium-margarin.jpg" alt="Kastengel" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Kastengel</h3>
+        <p>Kastengel is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kue-putu/" class="card" data-cat="snacks-appetizers" data-name="kue putu snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://garapmedia.com/wp-content/uploads/2025/10/resep-kue-putu-yang-lembut-harum-dan-tanpa-cetakan.webp" alt="Kue Putu" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Kue Putu</h3>
+        <p>Kue Putu is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/mie-aceh/" class="card" data-cat="main-dishes" data-name="mie aceh main dishes indonesian recipe">
+      <div class="card-img"><img src="https://whattocooktoday.com/wp-content/uploads/2017/01/IMG_4993.jpg" alt="Mie Aceh" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Mie Aceh</h3>
+        <p>Mie Aceh is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/nasi-kuning/" class="card" data-cat="main-dishes" data-name="nasi kuning main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.frisianflag.com/storage/app/media/uploaded-files/resep-nasi-kuning-tradisional.jpg" alt="Nasi Kuning" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Nasi Kuning</h3>
+        <p>Nasi Kuning is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/nasi-uduk-betawi/" class="card" data-cat="main-dishes" data-name="nasi uduk betawi main dishes indonesian recipe">
+      <div class="card-img"><img src="https://whattocooktoday.com/wp-content/uploads/2020/06/nasi-uduk-13.jpg" alt="Nasi Uduk Betawi" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Nasi Uduk Betawi</h3>
+        <p>Nasi Uduk Betawi is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/onde-onde/" class="card" data-cat="snacks-appetizers" data-name="onde-onde snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://www.tastingtable.com/img/gallery/onde-onde-is-the-sweet-rice-cake-with-a-gooey-sugar-center/l-intro-1690477540.jpg" alt="Onde-Onde" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Onde-Onde</h3>
+        <p>Onde-Onde is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/pepes-ikan-mas/" class="card" data-cat="main-dishes" data-name="pepes ikan mas (steamed spiced carp in banana leaf) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://asset-a.grid.id/crop/0x0:0x0/945x630/photo/2021/02/16/resep-pepes-ikan-mas-menu-utama-20210216052139.jpg" alt="Pepes Ikan Mas (Steamed Spiced Carp in Banana Leaf)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Pepes Ikan Mas (Steamed Spiced Carp in Banana Leaf)</h3>
+        <p>Pepes Ikan Mas (Steamed Spiced Carp in Banana Leaf) is a beloved Indonesian dish that brings together the rich flavors...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/putri-salju/" class="card" data-cat="snacks-appetizers" data-name="putri salju snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://akcdn.detik.net.id/visual/2021/05/04/kue-putri-salju_169.jpeg?w=700&amp;q=90" alt="Putri Salju" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Putri Salju</h3>
+        <p>Putri Salju is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sate-maranggi/" class="card" data-cat="grilled-satay" data-name="sate maranggi grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://www.rukita.co/stories/wp-content/uploads/2023/06/sate-maranggi.webp" alt="Sate Maranggi" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Sate Maranggi</h3>
+        <p>Sate Maranggi is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>2 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sate-padang/" class="card" data-cat="grilled-satay" data-name="sate padang grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://whattocooktoday.com/wp-content/uploads/2010/08/IMG_2691.jpg" alt="Sate Padang" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Sate Padang</h3>
+        <p>Sate Padang is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/serabi/" class="card" data-cat="snacks-appetizers" data-name="serabi snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://restaurantkamasutra.nl/wp-content/uploads/2020/10/serabi-indonesian-pancake.jpg" alt="Serabi" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Serabi</h3>
+        <p>Serabi is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>40 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sop-ayam-pak-min-klaten/" class="card" data-cat="soups-stews" data-name="sop ayam pak min klaten (clear chicken soup) soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://whattocooktoday.com/wp-content/uploads/2012/08/IMG_7413.jpg" alt="Sop Ayam Pak Min Klaten (Clear Chicken Soup)" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Sop Ayam Pak Min Klaten (Clear Chicken Soup)</h3>
+        <p>Sop Ayam Pak Min Klaten (Clear Chicken Soup) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sop-kambing/" class="card" data-cat="soups-stews" data-name="sop kambing soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://www.dapurkobe.co.id/wp-content/uploads/sop-kambing-pedas.jpg" alt="Sop Kambing" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Sop Kambing</h3>
+        <p>Sop Kambing is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.6</small></span><span>150 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/ayam-pop/" class="card" data-cat="main-dishes" data-name="ayam pop main dishes indonesian recipe">
+      <div class="card-img"><img src="https://whattocooktoday.com/wp-content/uploads/2019/01/ayam-pop-4.jpg" alt="Ayam Pop" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Ayam Pop</h3>
+        <p>Ayam Pop is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/bakpia/" class="card" data-cat="snacks-appetizers" data-name="bakpia snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://www.agoda.com/wp-content/uploads/2024/09/Bakpia-Pathok-yogyakarta-indonesia.jpg" alt="Bakpia" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Bakpia</h3>
+        <p>Bakpia is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/bubur-manado/" class="card" data-cat="main-dishes" data-name="bubur manado main dishes indonesian recipe">
+      <div class="card-img"><img src="https://garapmedia.com/wp-content/uploads/2025/08/cara-membuat-bubur-manado-yang-lezat-dan-mudah-untuk-pemula-di-rumah.png" alt="Bubur Manado" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Bubur Manado</h3>
+        <p>Bubur Manado is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/dadar-gulung/" class="card" data-cat="snacks-appetizers" data-name="dadar gulung snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://bellyrumbles.com/wp-content/uploads/2023/07/dadar-gulung-recipe.jpg" alt="Dadar Gulung" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Dadar Gulung</h3>
+        <p>Dadar Gulung is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/dendeng-batokok/" class="card" data-cat="main-dishes" data-name="dendeng batokok main dishes indonesian recipe">
+      <div class="card-img"><img src="https://resepkoki.id/wp-content/uploads/2019/08/Resep-Dendeng-Batokok.jpg" alt="Dendeng Batokok" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Dendeng Batokok</h3>
+        <p>Dendeng Batokok is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-campur-khas-surabaya/" class="card" data-cat="beverages" data-name="es campur (surabaya mixed ice dessert) beverages indonesian recipe">
+      <div class="card-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Es_Campur_2.JPG/1280px-Es_Campur_2.JPG" alt="Es Campur (Surabaya Mixed Ice Dessert)" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Campur (Surabaya Mixed Ice Dessert)</h3>
+        <p>Es Campur (Surabaya Mixed Ice Dessert) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>15 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-kelapa-muda/" class="card" data-cat="beverages" data-name="es kelapa muda beverages indonesian recipe">
+      <div class="card-img"><img src="https://www.goersapp.com/blog/wp-content/uploads/2025/02/Es-Kelapa-Muda.webp" alt="Es Kelapa Muda" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Kelapa Muda</h3>
+        <p>Es Kelapa Muda is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>10 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-kopyor/" class="card" data-cat="beverages" data-name="es kopyor beverages indonesian recipe">
+      <div class="card-img"><img src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/bb87c211-984d-44b0-9fc4-c8fabecf2211_Go-Biz_20210413_154756.jpeg" alt="Es Kopyor" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Kopyor</h3>
+        <p>Es Kopyor is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>15 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/gado-gado-betawi/" class="card" data-cat="main-dishes" data-name="gado-gado betawi (indonesian salad with peanut sauce) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://buzzwacket.com/wp-content/uploads/2025/02/street-food-Indonesia-mendunia-gado-gado-1024x585.png" alt="Gado-Gado Betawi (Indonesian Salad with Peanut Sauce)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Gado-Gado Betawi (Indonesian Salad with Peanut Sauce)</h3>
+        <p>Gado-Gado Betawi (Indonesian Salad with Peanut Sauce) is a beloved Indonesian dish that brings together the rich...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>50 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/ikan-nila-bakar/" class="card" data-cat="grilled-satay" data-name="grilled tilapia (ikan nila bakar) grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://img-global.cpcdn.com/recipes/44756e0fe6eab109/751x532cq70/ikan-nila-bakar-foto-resep-utama.jpg" alt="Grilled Tilapia (Ikan Nila Bakar)" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Grilled Tilapia (Ikan Nila Bakar)</h3>
+        <p>Grilled Tilapia (Ikan Nila Bakar) is a beloved Indonesian dish that brings together the rich flavors of traditional...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kalio/" class="card" data-cat="main-dishes" data-name="kalio main dishes indonesian recipe">
+      <div class="card-img"><img src="https://blessedbeyondwords.com/wp-content/uploads/2025/07/62949728e9277.jpg" alt="Kalio" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Kalio</h3>
+        <p>Kalio is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>150 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/ketoprak/" class="card" data-cat="main-dishes" data-name="ketoprak main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.indonesia.travel/contentassets/8909c008f40d497e8db1ba188b9a69f1/ketoprak.jpeg" alt="Ketoprak" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Ketoprak</h3>
+        <p>Ketoprak is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>20 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kuah-beulangong/" class="card" data-cat="soups-stews" data-name="kuah beulangong soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxWC1LylHazaV4u0O-HKn-ZWtVqgIs2HIkje7wCRzI7xaROLjzL43ihvSkful-fvPjMKMh10kGWIE3vNH5joVWAciNEt_6r3D5qge8SuiDM_ibpQQdZ_wY8nPJMuosrZn03aJfeFKxO7Q/s640/Kuah+Beulangong.jpg" alt="Kuah Beulangong" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Kuah Beulangong</h3>
+        <p>Kuah Beulangong is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>3 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kue-cubit/" class="card" data-cat="snacks-appetizers" data-name="kue cubit snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://come2indonesia.com/wp-content/uploads/2021/02/KUE-CUBIT-3.jpg" alt="Kue Cubit" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Kue Cubit</h3>
+        <p>Kue Cubit is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kue-lapis/" class="card" data-cat="snacks-appetizers" data-name="kue lapis snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://images.ctfassets.net/yn1b2kwt1vbo/475mTjdxatSMoRTg9ini2D/690be3d36d3b52cb17aa7c1b94b0f3e8/Kueh_Lapis-3.jpg?w=1000&amp;h=667&amp;fl=progressive&amp;q=80&amp;fm=jpg" alt="Kue Lapis" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Kue Lapis</h3>
+        <p>Kue Lapis is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kue-lumpur/" class="card" data-cat="snacks-appetizers" data-name="kue lumpur snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://cdn1-production-images-kly.akamaized.net/NQ143f4gKO9k09YEXPRXezd55_s=/1360x1812/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3102825/original/056738100_1586936949-kue_lumpur.jpg" alt="Kue Lumpur" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Kue Lumpur</h3>
+        <p>Kue Lumpur is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kue-talam/" class="card" data-cat="snacks-appetizers" data-name="kue talam snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://unimmafm.com/wp-content/uploads/2022/09/kue-talam.jpg" alt="Kue Talam" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Kue Talam</h3>
+        <p>Kue Talam is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/kupat-tahu/" class="card" data-cat="main-dishes" data-name="kupat tahu main dishes indonesian recipe">
+      <div class="card-img"><img src="https://travellingindonesia.com/wp-content/uploads/2023/07/Kupat-Tahu.webp" alt="Kupat Tahu" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Kupat Tahu</h3>
+        <p>Kupat Tahu is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/lemang/" class="card" data-cat="main-dishes" data-name="lemang main dishes indonesian recipe">
+      <div class="card-img"><img src="https://cdn.tasteatlas.com/images/dishes/988854725a34422bb29bc7d015353407.jpg?w=1476&amp;h=830" alt="Lemang" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Lemang</h3>
+        <p>Lemang is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>3 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/lontong-sayur/" class="card" data-cat="main-dishes" data-name="lontong sayur main dishes indonesian recipe">
+      <div class="card-img"><img src="https://nibble-images.b-cdn.net/nibble/original_images/lontong-sayur.jpg?class=large" alt="Lontong Sayur" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Lontong Sayur</h3>
+        <p>Lontong Sayur is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/mie-goreng-jawa/" class="card" data-cat="main-dishes" data-name="mie goreng jawa (javanese fried noodles) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://whattocooktoday.com/wp-content/uploads/2010/11/mie-goreng-jawa-24.jpg" alt="Mie Goreng Jawa (Javanese Fried Noodles)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Mie Goreng Jawa (Javanese Fried Noodles)</h3>
+        <p>Mie Goreng Jawa (Javanese Fried Noodles) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>25 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/mochi/" class="card" data-cat="snacks-appetizers" data-name="mochi snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://imgx.sonora.id/crop/0x0:0x0/x/photo/2024/09/15/65bdc880b88e5jpg-20240915060633.jpg" alt="Mochi" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Mochi</h3>
+        <p>Mochi is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/pallubasa/" class="card" data-cat="soups-stews" data-name="pallubasa soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://www.tasteatlas.com/images/dishes/2c44912077144f8a8c79e1f5ad9860fc.jpg?mw=1300" alt="Pallubasa" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Pallubasa</h3>
+        <p>Pallubasa is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>150 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/pindang-patin/" class="card" data-cat="main-dishes" data-name="pindang patin main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.cookmeindonesian.com/wp-content/uploads/2020/06/pindang-patin-final-1.jpg" alt="Pindang Patin" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Pindang Patin</h3>
+        <p>Pindang Patin is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/pisang-goreng-crispy/" class="card" data-cat="snacks-appetizers" data-name="pisang goreng (crispy indonesian banana fritters) snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://kharismafmbandung.com/wp-content/uploads/2023/07/pisang-goreng.jpeg" alt="Pisang Goreng (Crispy Indonesian Banana Fritters)" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Pisang Goreng (Crispy Indonesian Banana Fritters)</h3>
+        <p>Pisang Goreng (Crispy Indonesian Banana Fritters) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>20 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/pukis/" class="card" data-cat="snacks-appetizers" data-name="pukis snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://tasteofnusa.com/wp-content/uploads/2022/10/kue-pukis-indonesian-coconut-milk-cake-1.jpg" alt="Pukis" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Pukis</h3>
+        <p>Pukis is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sambal-goreng-kentang-ati/" class="card" data-cat="snacks-appetizers" data-name="sambal goreng kentang ati (spicy potatoes with liver) snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://storage.googleapis.com/bakingworld-web-production/uploads/media/content_banner/banner-ati-ampela-1742369669134.jpg" alt="Sambal Goreng Kentang Ati (Spicy Potatoes with Liver)" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Sambal Goreng Kentang Ati (Spicy Potatoes with Liver)</h3>
+        <p>Sambal Goreng Kentang Ati (Spicy Potatoes with Liver) is a beloved Indonesian dish that brings together the rich...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sambal-terasi/" class="card" data-cat="snacks-appetizers" data-name="sambal terasi (indonesian shrimp paste chili sauce) snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://pdbifiles.nos.jkt-1.neo.id/files/2017/11/13/oakirbin_sambalterasi.jpg" alt="Sambal Terasi (Indonesian Shrimp Paste Chili Sauce)" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Sambal Terasi (Indonesian Shrimp Paste Chili Sauce)</h3>
+        <p>Indonesia's most iconic chili condiment — fiery chilies ground with toasted shrimp paste, shallots, and tomato, then fried until deeply savory.</p>
+        <div class="card-foot"><span class="stars">★★★★★ <small>4.8</small></span><span>20 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sate-klatak/" class="card" data-cat="grilled-satay" data-name="sate klatak grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://petualang.travelingyuk.com/uploads/2019/12/10.jpg" alt="Sate Klatak" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Sate Klatak</h3>
+        <p>Sate Klatak is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sop-saudara/" class="card" data-cat="soups-stews" data-name="sop saudara soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://cnc-magazine.oramiland.com/parenting/images/resep_sop_saudara.width-800.format-webp.webp" alt="Sop Saudara" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Sop Saudara</h3>
+        <p>Sop Saudara is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/timlo-solo/" class="card" data-cat="soups-stews" data-name="timlo solo soups &amp; stews indonesian recipe">
+      <div class="card-img"><img src="https://cdn.8mediatech.com/gambar/9839681988-rekomendasi_10_timlo_solo_terbaik_tahun_2025_dengan_kuah_segar_yang_harus_di_coba.jpg" alt="Timlo Solo" loading="lazy"><span class="card-cat">Soups &amp; Stews</span></div>
+      <div class="card-body">
+        <h3>Timlo Solo</h3>
+        <p>Timlo Solo is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/wedang-ronde/" class="card" data-cat="beverages" data-name="wedang ronde beverages indonesian recipe">
+      <div class="card-img"><img src="https://blessedbeyondwords.com/wp-content/uploads/2025/10/Wedang-Ronde-1.jpg" alt="Wedang Ronde" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Wedang Ronde</h3>
+        <p>Wedang Ronde is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/wedang-uwuh/" class="card" data-cat="beverages" data-name="wedang uwuh beverages indonesian recipe">
+      <div class="card-img"><img src="https://www.moeslim.id/wp-content/uploads/2024/06/wedang-uwuh.jpg" alt="Wedang Uwuh" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Wedang Uwuh</h3>
+        <p>Wedang Uwuh is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.5</small></span><span>25 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/arem-arem/" class="card" data-cat="snacks-appetizers" data-name="arem-arem snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://www.luxcrato.com/wp-content/uploads/2025/11/img-featured-arem-arem.png" alt="Arem-Arem" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Arem-Arem</h3>
+        <p>Arem-Arem is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/bandrek/" class="card" data-cat="beverages" data-name="bandrek beverages indonesian recipe">
+      <div class="card-img"><img src="https://blog.tokowahab.com/wp-content/uploads/2025/12/Cara-Membuat-Resep-Bandrek-Minuman-Hangat-Tradisional-Kaya-Manfaat.jpg" alt="Bandrek" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Bandrek</h3>
+        <p>Bandrek is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>20 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/capcay-kuah-kental/" class="card" data-cat="main-dishes" data-name="capcay (indonesian mixed vegetables in thick sauce) main dishes indonesian recipe">
+      <div class="card-img"><img src="https://akcdn.detik.net.id/visual/2022/02/02/capcay_169.jpeg?w=750&amp;q=90" alt="Capcay (Indonesian Mixed Vegetables in Thick Sauce)" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Capcay (Indonesian Mixed Vegetables in Thick Sauce)</h3>
+        <p>Capcay (Indonesian Mixed Vegetables in Thick Sauce) is a beloved Indonesian dish that brings together the rich flavors...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>20 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-doger/" class="card" data-cat="beverages" data-name="es doger beverages indonesian recipe">
+      <div class="card-img"><img src="https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/08/01033817/Resep-Es-Doger-Ala-Restoran-Lengkap-dengan-Toping-Pilihan-.jpg" alt="Es Doger" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Doger</h3>
+        <p>Es Doger is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>20 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-kacang-merah/" class="card" data-cat="beverages" data-name="es kacang merah beverages indonesian recipe">
+      <div class="card-img"><img src="https://api.omela.com/storage/content-editor-images/WkjUoFOO6mfg6l2adNdY1PAtYGAvzaNQtESlecay.jpg" alt="Es Kacang Merah" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Kacang Merah</h3>
+        <p>Es Kacang Merah is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>15 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/gethuk/" class="card" data-cat="snacks-appetizers" data-name="gethuk snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://i.pinimg.com/736x/02/d8/71/02d871e76f9b18df01c007bfd119a7ae.jpg" alt="Gethuk" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Gethuk</h3>
+        <p>Gethuk is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/gulai-tambusu/" class="card" data-cat="main-dishes" data-name="gulai tambusu main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.finnafood.com/blog/wp-content/uploads/2025/03/gulai-tambusu2.jpg" alt="Gulai Tambusu" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Gulai Tambusu</h3>
+        <p>Gulai Tambusu is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>90 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/lemper/" class="card" data-cat="snacks-appetizers" data-name="lemper snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://www.thuisbezorgd.nl/foodwiki/uploads/2017/05/lemper-2-1080x956.jpg" alt="Lemper" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Lemper</h3>
+        <p>Lemper is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/rendang-jengkol/" class="card" data-cat="main-dishes" data-name="rendang jengkol main dishes indonesian recipe">
+      <div class="card-img"><img src="https://buckets.sasa.co.id/v1/AUTH_Assets/Assets/p/website/medias/page_medias/Rendang_Jengkol.jpeg" alt="Rendang Jengkol" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Rendang Jengkol</h3>
+        <p>Rendang Jengkol is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>3 hrs</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sate-pusut/" class="card" data-cat="grilled-satay" data-name="sate pusut grilled &amp; satay indonesian recipe">
+      <div class="card-img"><img src="https://www.indonesia.travel/contentassets/716017593ef841be91cbc7e84c8351be/sate-pusut.jpg" alt="Sate Pusut" loading="lazy"><span class="card-cat">Grilled &amp; Satay</span></div>
+      <div class="card-body">
+        <h3>Sate Pusut</h3>
+        <p>Sate Pusut is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sayur-lodeh/" class="card" data-cat="main-dishes" data-name="sayur lodeh main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.rukita.co/stories/wp-content/uploads/2022/04/resep-sayur-lodeh-jawa.jpeg" alt="Sayur Lodeh" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Sayur Lodeh</h3>
+        <p>Sayur Lodeh is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/tumis-kangkung-belacan/" class="card" data-cat="main-dishes" data-name="stir-fried water spinach with shrimp paste main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.rotinrice.com/wp-content/uploads/2014/03/KangkungBelacan-3.jpg" alt="Stir-Fried Water Spinach with Shrimp Paste" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Stir-Fried Water Spinach with Shrimp Paste</h3>
+        <p>Stir-Fried Water Spinach with Shrimp Paste is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>15 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/tahu-gejrot/" class="card" data-cat="snacks-appetizers" data-name="tahu gejrot (crispy tofu in sweet sour sauce) snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://www.cookmeindonesian.com/wp-content/uploads/2021/01/tahu-gejrot2.jpg" alt="Tahu Gejrot (Crispy Tofu in Sweet Sour Sauce)" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Tahu Gejrot (Crispy Tofu in Sweet Sour Sauce)</h3>
+        <p>Tahu Gejrot (Crispy Tofu in Sweet Sour Sauce) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>15 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/tempe-mendoan/" class="card" data-cat="snacks-appetizers" data-name="tempe mendoan (crispy tempeh fritters) snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://cdn.tasteatlas.com/images/dishes/277a587e95d141deb51d7bca702ec824.jpg?m=facebook" alt="Tempe Mendoan (Crispy Tempeh Fritters)" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Tempe Mendoan (Crispy Tempeh Fritters)</h3>
+        <p>Tempe Mendoan (Crispy Tempeh Fritters) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>15 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/tinutuan/" class="card" data-cat="main-dishes" data-name="tinutuan main dishes indonesian recipe">
+      <div class="card-img"><img src="https://img-global.cpcdn.com/recipes/76d960dcc388f4ec/751x532cq70/tinutuan-bubur-manado-foto-resep-utama.jpg" alt="Tinutuan" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Tinutuan</h3>
+        <p>Tinutuan is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/tutug-oncom/" class="card" data-cat="main-dishes" data-name="tutug oncom main dishes indonesian recipe">
+      <div class="card-img"><img src="https://imgcdn.espos.id/@espos/images/2023/06/nasi-tutug-oncom-1.jpg?quality=60" alt="Tutug Oncom" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Tutug Oncom</h3>
+        <p>Tutug Oncom is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/wajik/" class="card" data-cat="snacks-appetizers" data-name="wajik snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://img.myloview.se/canvastavlor/wajik-traditional-indonesian-snack-made-from-steamed-sticky-rice-sugar-coconut-milk-and-pandan-leaves-700-353298563.jpg" alt="Wajik" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Wajik</h3>
+        <p>Wajik is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>60 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/wingko/" class="card" data-cat="snacks-appetizers" data-name="wingko snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&amp;q=80" alt="Wingko" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Wingko</h3>
+        <p>Wingko is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.4</small></span><span>45 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/cenil/" class="card" data-cat="snacks-appetizers" data-name="cenil snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://blessedbeyondwords.com/wp-content/uploads/2025/09/5f58c31f77e76.jpg" alt="Cenil" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Cenil</h3>
+        <p>Cenil is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-bir-pletok/" class="card" data-cat="beverages" data-name="es bir pletok beverages indonesian recipe">
+      <div class="card-img"><img src="https://www.indonesia.travel/contentassets/322168549aaf4be5b8a80643264230e7/bir-pletok.jpeg" alt="Es Bir Pletok" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Bir Pletok</h3>
+        <p>Es Bir Pletok is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-gempol/" class="card" data-cat="beverages" data-name="es gempol beverages indonesian recipe">
+      <div class="card-img"><img src="https://static.tripzilla.id/media/25684/conversions/5-1-EsGempolPleret-By-kulinerdisolo-w768.webp" alt="Es Gempol" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Gempol</h3>
+        <p>Es Gempol is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>40 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-palu-butung/" class="card" data-cat="beverages" data-name="es palu butung beverages indonesian recipe">
+      <div class="card-img"><img src="https://cdn.yummy.co.id/content-images/images/20201018/dQ7K6MzeqFCLbWmDxGgx6qysw5fctqPH-31363033303335323433d41d8cd98f00b204e9800998ecf8427e.jpg?x-oss-process=image/format,webp" alt="Es Palu Butung" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Palu Butung</h3>
+        <p>Es Palu Butung is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>15 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-tebu/" class="card" data-cat="beverages" data-name="es tebu beverages indonesian recipe">
+      <div class="card-img"><img src="https://jayaagungmesin.com/wp-content/uploads/2022/10/es-tebu.png" alt="Es Tebu" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Tebu</h3>
+        <p>Es Tebu is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>10 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/es-timun-serut/" class="card" data-cat="beverages" data-name="es timun serut beverages indonesian recipe">
+      <div class="card-img"><img src="https://cnc-magazine.oramiland.com/parenting/images/es_timun_serut.width-800.format-webp.webp" alt="Es Timun Serut" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Es Timun Serut</h3>
+        <p>Es Timun Serut is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>10 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/perkedel-kentang/" class="card" data-cat="snacks-appetizers" data-name="perkedel kentang (indonesian potato fritters) snacks &amp; appetizers indonesian recipe">
+      <div class="card-img"><img src="https://akcdn.detik.net.id/visual/2020/03/30/03617d5d-9e4c-41cb-ab10-a0a563f44957_169.jpeg?w=700&amp;q=90" alt="Perkedel Kentang (Indonesian Potato Fritters)" loading="lazy"><span class="card-cat">Snacks &amp; Appetizers</span></div>
+      <div class="card-body">
+        <h3>Perkedel Kentang (Indonesian Potato Fritters)</h3>
+        <p>Perkedel Kentang (Indonesian Potato Fritters) is a beloved Indonesian dish that brings together the rich flavors of...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/sekoteng/" class="card" data-cat="beverages" data-name="sekoteng beverages indonesian recipe">
+      <div class="card-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivVxzOQ0gdoYpdllkNidcGU7NnLBis7O_xGoShkSNu89wFRB2guJ7XRPvKHIbRgurA4Kz9vOUW73GuJbY6o8jhyphenhypheni5RPn2dvb6Jb65ybgQ6CV495pPCgJeUSNkvBuP-auRXkIAu1Mhe38MJ/w1200-h630-p-k-no-nu/Sekoteng-odeon-bogor.jpg" alt="Sekoteng" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Sekoteng</h3>
+        <p>Sekoteng is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/tempoyak/" class="card" data-cat="main-dishes" data-name="tempoyak main dishes indonesian recipe">
+      <div class="card-img"><img src="https://www.indonesia.travel/contentassets/95861b4ff81b4c04a3a7c629bb964e6e/gulai-tempoyak.jpeg" alt="Tempoyak" loading="lazy"><span class="card-cat">Main Dishes</span></div>
+      <div class="card-body">
+        <h3>Tempoyak</h3>
+        <p>Tempoyak is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh...</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.3</small></span><span>30 min</span></div>
+      </div>
+    </a>
+    <a href="/recipes/lahang/" class="card" data-cat="beverages" data-name="lahang beverages indonesian recipe">
+      <div class="card-img"><img src="https://petualang.travelingyuk.com/uploads/2022/12/Lahang-sangat-langka-ditemukan-di-perkotaan.jpg" alt="Lahang" loading="lazy"><span class="card-cat">Beverages</span></div>
+      <div class="card-body">
+        <h3>Lahang</h3>
+        <p>Lahang is a beloved Indonesian dish that brings together the rich flavors of traditional spices and fresh ingredients....</p>
+        <div class="card-foot"><span class="stars">★★★★☆ <small>4.2</small></span><span>15 min</span></div>
+      </div>
+    </a>
+  </div>
+  <p class="no-results" id="noResults">No recipes found. Try a different search or category.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 <a href="/" style="color:var(--gold);margin:0">NusantaraEats</a> — Authentic Indonesian Recipes</span>
+    <span><a href="/recipes/">All Recipes</a><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+// Search + filter (progressive enhancement — all links work without JS)
+(function(){
+  var input = document.getElementById('searchInput');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
+  var count = document.getElementById('resultCount');
+  var noRes = document.getElementById('noResults');
+  var activeCat = 'all';
+  // Deep-link ?cat= support
+  var m = /[?&]cat=([^&]+)/.exec(location.search);
+  if (m) {
+    var c = decodeURIComponent(m[1]);
+    btns.forEach(function(b){ if (b.dataset.cat === c) { b.classList.add('active'); } else { b.classList.remove('active'); } });
+    var found = btns.some(function(b){ return b.dataset.cat === c; });
+    if (found) activeCat = c;
+  }
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(card) {
+      var okCat = activeCat === 'all' || card.dataset.cat === activeCat;
+      var okQ = !q || card.dataset.name.indexOf(q) !== -1;
+      var show = okCat && okQ;
+      card.classList.toggle('hidden', !show);
+      if (show) shown++;
+    });
+    count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' recipes';
+    noRes.classList.toggle('show', shown === 0);
+  }
+  input.addEventListener('input', apply);
+  btns.forEach(function(b) {
+    b.addEventListener('click', function() {
+      btns.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      activeCat = b.dataset.cat;
+      apply();
+    });
+  });
+  apply();
+})();
+</script>
 </body>
 </html>
