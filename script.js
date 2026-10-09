@@ -249,15 +249,10 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// --- VISITOR COUNTER ---
+// --- VISITOR COUNTER (disabled: countapi.xyz shut down; kept as static placeholder) ---
 (function () {
-  fetch("https://api.countapi.xyz/hit/nusantaraeats/visits")
-    .then(r => r.json())
-    .then(d => {
-      const el = document.getElementById("visitorCount");
-      if (el) el.textContent = (d.value || 0).toLocaleString();
-    })
-    .catch(() => {});
+  const el = document.getElementById("visitorCount");
+  if (el) el.textContent = "100K+";
 })();
 
 // --- READY CHECK ---
